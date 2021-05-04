@@ -1,5 +1,5 @@
 local outFile = nil;
-local modName = "idlframework";
+local modName = "backtones";
 local blockName = "";
 
 local function GenModelBlockItem()
