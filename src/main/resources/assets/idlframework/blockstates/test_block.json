@@ -1,0 +1,5 @@
+{
+	"variants": {
+		"": { "model": "idlframework:block/test_block" }
+	}
+}
