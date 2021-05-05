@@ -16,11 +16,11 @@ public class OreGeneration {
     {
         //if (event.getCategory().equals(Biome.Category.FOREST))
         {
-            generateOre(event.getGeneration(),
-                    OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                    BlockRegistry.obsidianBlock.get().defaultBlockState(),
-                    5,
-                    15,30, 20);
+//            generateOre(event.getGeneration(),
+//                    OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+//                    BlockRegistry.obsidianBlock.get().defaultBlockState(),
+//                    5,
+//                    15,30, 20);
         }
     }
 

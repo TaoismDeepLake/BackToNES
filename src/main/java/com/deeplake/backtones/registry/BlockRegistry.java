@@ -2,6 +2,7 @@ package com.deeplake.backtones.registry;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.blocks.BaseBlockIDF;
+import com.deeplake.backtones.blocks.BlockBreakable;
 import com.deeplake.backtones.blocks.BlockIndestructible;
 import com.deeplake.backtones.items.tabs.TabList;
 import net.minecraft.block.Block;
@@ -32,7 +33,7 @@ public class BlockRegistry {
     //public static final RegistryObject<Block> obsidianBlock = registerWithItem("test_block", BaseBlockIDF::new);
     public static final RegistryObject<Block> castle_wall = registerWithItem("castle_bg", BlockIndestructible::new);
     public static final RegistryObject<Block> castle_floor = registerWithItem("castle_floor", BlockIndestructible::new);
-    public static final RegistryObject<Block> breakable_wall = registerWithItem("breakable_wall", BaseBlockIDF::new);
+    public static final RegistryObject<Block> breakable_wall = registerWithItem("breakable_wall", BlockBreakable::new);
 
     // registerWithItem block
 //    public static final RegistryObject<Block> COPPER_ORE = BLOCKS.registerWithItem("copper_ore", () ->

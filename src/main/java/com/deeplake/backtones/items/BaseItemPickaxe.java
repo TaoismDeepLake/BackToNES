@@ -15,6 +15,6 @@ public class BaseItemPickaxe extends PickaxeItem {
 
     public BaseItemPickaxe()
     {
-        super(BaseItemTier.TEST, DAMAGE_ADD, ATK_SPD_ADD, new Item.Properties().tab(TabList.MISC_GROUP));
+        super(BaseItemTier.MONGOLIAN, DAMAGE_ADD, ATK_SPD_ADD, new Item.Properties().tab(TabList.MISC_GROUP));
     }
 }

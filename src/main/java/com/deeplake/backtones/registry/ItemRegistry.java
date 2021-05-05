@@ -8,7 +8,9 @@ import com.deeplake.backtones.items.MongolianSword;
 import com.deeplake.backtones.items.tabs.TabList;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Food;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,10 +23,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> testIngot2 = ITEMS.register("test_ingot_auto", BaseItemIDF::new);
 
     public static final RegistryObject<Item> MONGO_SWORD = ITEMS.register("mongo_sword", MongolianSword::new);
-    //public static final RegistryObject<Item> MURASAME = ITEMS.register("mongo_sword", MongolianSword::new);
+    //public static final RegistryObject<Item> MURASAMA = ITEMS.register("murasama", MongolianSword::new);
 
-    public static final RegistryObject<Item> PURE_WATER = ITEMS.register("pure_water", BaseItemFood::new);
-    public static final RegistryObject<Item> MANTLE = ITEMS.register("mantle", BaseItemFood::new);
+    public static final RegistryObject<Item> COIN = ITEMS.register("coin", BaseItemIDF::new);
+    public static final RegistryObject<Item> PURE_WATER = ITEMS.register("pure_water", () ->new BaseItemFood(BaseItemFood.F_PURE_WATER));
+    public static final RegistryObject<Item> MANTLE = ITEMS.register("mantle", () ->new BaseItemFood(BaseItemFood.F_MANTLE));
 
 //    public static final RegistryObject<Item> obsidianHelmet = ITEMS.register("obsidian_helmet", () -> new ArmorItem(TEST, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
 //    public static final RegistryObject<Item> obsidianChestplate = ITEMS.register("obsidian_chestplate", () -> new ArmorItem(TEST, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));

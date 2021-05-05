@@ -67,12 +67,21 @@ local function GenTCG(_rarity, _itemName)
 	outFile:close();
 end
 
+--GenItem("misc", "coin");
+--GenItem("tool", "mongo_sword");
+--GenItem("tool", "murasama");
+--GenItem("food", "pure_water");
+--GenItem("food", "mantle");
 
 --GenItem("armor", "obsidian_helmet");
 --GenItem("armor", "obsidian_chestplate");
 --GenItem("armor", "obsidian_leggings");
 --GenItem("armor", "obsidian_boots");
-GenBlock("test_block");
+--GenBlock("test_block");
+
+GenBlock("breakable_wall");
+GenBlock("castle_bg");
+GenBlock("castle_floor");
 
 --
 --for i = 0, 7 do
