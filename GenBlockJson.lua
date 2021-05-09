@@ -79,9 +79,9 @@ end
 --GenItem("armor", "obsidian_boots");
 --GenBlock("test_block");
 
-GenBlock("breakable_wall");
-GenBlock("castle_bg");
-GenBlock("castle_floor");
+GenBlock("covered_floor");
+--GenBlock("castle_bg");
+--GenBlock("castle_floor");
 
 --
 --for i = 0, 7 do

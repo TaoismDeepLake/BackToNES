@@ -8,12 +8,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
 
 public class MongolianSword extends BaseItemSword {
-    public boolean isCorrectToolForDrops(BlockState p_150897_1_) {
-        return p_150897_1_.is(BlockRegistry.breakable_wall.get());
-    }
+//    public boolean isCorrectToolForDrops(BlockState p_150897_1_) {
+//        return p_150897_1_.is(BlockRegistry.BREAKABLE_WALL.get());
+//    }
 
     public float getDestroySpeed(ItemStack p_150893_1_, BlockState p_150893_2_) {
-        if (p_150893_2_.is(BlockRegistry.breakable_wall.get())) {
+        if (p_150893_2_.is(BlockRegistry.BREAKABLE_WALL.get()) || p_150893_2_.is(BlockRegistry.COVERED_WALL.get())) {
             return 1200.0F;
         } else {
             return super.getDestroySpeed(p_150893_1_, p_150893_2_);
