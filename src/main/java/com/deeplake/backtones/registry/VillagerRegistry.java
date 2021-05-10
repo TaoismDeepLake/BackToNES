@@ -1,6 +1,5 @@
 package com.deeplake.backtones.registry;
 
-import com.deeplake.backtones.effects.BaseEffect;
 import com.deeplake.backtones.villager.merchantTrade.PriceInfo;
 import com.deeplake.backtones.villager.merchantTrade.VTradeItemToItem;
 import com.google.common.collect.ImmutableMap;
@@ -10,18 +9,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.EffectType;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.village.PointOfInterestType;
-import net.minecraftforge.common.VillagerTradingManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-
-import static net.minecraft.entity.merchant.villager.VillagerTrades.toIntMap;
 
 public class VillagerRegistry {
 //    public static final Effect B_MANTLE = new BaseEffect(EffectType.BENEFICIAL, 0x777733);
