@@ -1,3 +1,142 @@
+Build: 1.16.5-36.1.16 - Fri Apr 30 17:59:06 GMT 2021
+	trikzon:
+		Add barrels and barrels/wooden block and item tag (#7676)
+
+=========
+Build: 1.16.5-36.1.15 - Fri Apr 30 17:52:19 GMT 2021
+	knightminer4:
+		Fix shears not properly breaking tripwire (MC-129055) (#7718)
+
+=========
+Build: 1.16.5-36.1.14 - Fri Apr 30 17:42:34 GMT 2021
+	cpw:
+		try gradleVersion
+
+	cpw:
+		trim?
+
+	cpw:
+		toString?
+
+	cpw:
+		fiddle
+
+	cpw:
+		split ?
+
+	cpw:
+		try better?
+
+	cpw:
+		with
+
+	cpw:
+		debug
+
+	cpw:
+		debug
+
+	cpw:
+		debug
+
+	cpw:
+		debug
+
+	cpw:
+		tokenize
+
+	cpw:
+		map
+
+	cpw:
+		trims
+
+	cpw:
+		tidy
+
+	cpw:
+		try passing in env
+
+	cpw:
+		try passing in env
+
+	s8johost:
+		Fix Line endings in tooltips not handled properly in multiplayer screen Closes #7738 (#7739)
+
+=========
+Build: 1.16.5-36.1.13 - Fri Apr 23 20:28:12 GMT 2021
+	github:
+		Fix cats, phantoms and pillagers saying they're at BlockPos.ZERO during LivingSpawnEvent.CheckSpawn (#7722)
+
+=========
+Build: 1.16.5-36.1.12 - Fri Apr 23 05:59:08 GMT 2021
+	xfacthd:
+		Pass BlockPos to BlockParticleData used for "fall impact" particle (#7705)
+
+	matthrewp:
+		[1.16] Add missing Multipart Blockstate Builder feature: Nested condition groups (#7677)
+
+=========
+Build: 1.16.5-36.1.10 - Fri Apr 23 05:52:41 GMT 2021
+	sciwhiz12:
+		Check version ranges of optional dependencies when present (#7710)
+		
+		If an optional dependency is present, but it does not conform to the version range,
+		it will now error out in the same fashion as missing required dependencies, instead
+		of a more cryptic error down the line due to a missing method/class/field/etc.
+		
+		Implements and closes #7696
+
+=========
+Build: 1.16.5-36.1.9 - Fri Apr 23 05:45:51 GMT 2021
+	diesieben07:
+		Fix ClientVisualization crashing on systems without monitors (#7719)
+
+=========
+Build: 1.16.5-36.1.8 - Fri Apr 23 05:34:56 GMT 2021
+	atkarimarton:
+		Fix Furnace Minecarts going faster then vanilla (#7725)
+
+=========
+Build: 1.16.5-36.1.7 - Fri Apr 23 05:28:36 GMT 2021
+	ateranimavis:
+		Update for Forge's new maven (#7723)
+
+=========
+Build: 1.16.5-36.1.6 - Sun Apr 18 15:47:08 GMT 2021
+	cpw:
+		A bloody quote FFS
+		
+		Signed-off-by: cpw <cpw+github@weeksfamily.ca>
+
+	cpw:
+		Update for new maven
+		
+		Signed-off-by: cpw <cpw+github@weeksfamily.ca>
+
+=========
+Build: 1.16.5-36.1.4 - Fri Apr 02 18:31:07 GMT 2021
+	cpw:
+		Fix broken java9hacks for j16 handling..
+		
+		Signed-off-by: cpw <cpw+github@weeksfamily.ca>
+
+=========
+Build: 1.16.5-36.1.3 - Tue Mar 30 01:05:30 GMT 2021
+	SizableShrimp:
+		Add generic EntityTeleportEvent (#7694)
+
+=========
+Build: 1.16.5-36.1.2 - Mon Mar 22 06:24:40 GMT 2021
+	covers1624:
+		Restore SS version, fixes findFieldInstanceChecks
+
+=========
+Build: 1.16.5-36.1.1 - Wed Mar 17 17:04:46 GMT 2021
+	diesieben07:
+		Fix sign textures being stitched onto every texture atlas (#7690)
+
+=========
 Build: 1.16.5-36.1.0 - Mon Mar 15 22:11:58 GMT 2021
 	lexmanos:
 		Fix AT order, missed exec line and bump for RB.
@@ -14,7 +153,7 @@ Build: 1.16.5-36.0.62 - Mon Mar 15 21:02:36 GMT 2021
 
 =========
 Build: 1.16.5-36.0.61 - Mon Mar 15 20:20:21 GMT 2021
-	29855886+SizableShrimp:
+	SizableShrimp:
 		Fix datapack exception related to EnumArgument with siblings (#7686)
 		
 		Invalid enum constants are now properly thrown as a CommandSyntaxException
@@ -43,7 +182,7 @@ Build: 1.16.5-36.0.58 - Sat Mar 13 19:07:24 GMT 2021
 
 =========
 Build: 1.16.5-36.0.55 - Fri Mar 12 18:51:48 GMT 2021
-	AterAnimAvis:
+	ateranimavis:
 		Fix potential Deadlock when using custom Item entities. (#7532)
 		
 		Be careful when adding Entities during Chunk Load (#7519) 
@@ -95,7 +234,7 @@ Build: 1.16.5-36.0.46 - Thu Mar 04 20:15:10 GMT 2021
 
 =========
 Build: 1.16.5-36.0.45 - Wed Mar 03 20:50:47 GMT 2021
-	sara:
+	pupnewfster:
 		Fix a few places where the vanilla method was being called instead of the forge one (#7535)
 		
 		Cleanup javadocs references slightly, fix a couple spots not using the proper forge hooks, and remove a couple unneeded patches
@@ -108,7 +247,7 @@ Build: 1.16.5-36.0.44 - Wed Mar 03 05:29:04 GMT 2021
 
 =========
 Build: 1.16.5-36.0.43 - Thu Feb 25 02:37:09 GMT 2021
-	marc.hermans:
+	oriondevelopment:
 		Add support for caching of configuration values. (#7608)
 
 =========
@@ -125,7 +264,7 @@ Build: 1.16.5-36.0.41 - Tue Feb 16 01:28:51 GMT 2021
 
 =========
 Build: 1.16.5-36.0.40 - Tue Feb 16 01:08:21 GMT 2021
-	sara:
+	pupnewfster:
 		Fix a few FluidUtil issues that were causing DispenseFluidContainer to not function properly (#7422)
 
 =========
@@ -182,7 +321,7 @@ Build: 1.16.5-36.0.30 - Mon Feb 15 21:26:11 GMT 2021
 
 =========
 Build: 1.16.5-36.0.29 - Mon Feb 15 21:16:26 GMT 2021
-	AterAnimAvis:
+	ateranimavis:
 		Fix: Clear the last error from glfwInit to prevent vanilla from throwing an exception later in the chain when glfw errors. (#7587)
 
 =========
@@ -202,7 +341,7 @@ Build: 1.16.5-36.0.26 - Mon Feb 15 03:16:02 GMT 2021
 
 =========
 Build: 1.16.5-36.0.25 - Mon Feb 15 03:10:24 GMT 2021
-	40846040+TelepathicGrunt:
+	40846040+telepathicgrunt:
 		Disable syncing of Feature and Biome registries  (#7639)
 
 =========
@@ -222,12 +361,12 @@ Build: 1.16.5-36.0.22 - Wed Feb 10 19:05:16 GMT 2021
 
 =========
 Build: 1.16.5-36.0.21 - Tue Feb 09 22:19:29 GMT 2021
-	sara:
+	pupnewfster:
 		Reintroduce forge's chunk manager to allow mods to force chunks with either a block position or entity (UUID) "owner" and have them properly persist between restarts (#7642)
 
 =========
 Build: 1.16.5-36.0.20 - Tue Feb 09 21:28:24 GMT 2021
-	sara:
+	pupnewfster:
 		Fix two places where querying an object for the new "valid" capability from a capability invalidation listener could cause the object to return the old invalid capability. (#7643)
 
 =========
@@ -265,7 +404,7 @@ Build: 1.16.5-36.0.14 - Tue Feb 02 20:28:08 GMT 2021
 
 =========
 Build: 1.16.5-36.0.13 - Sat Jan 30 02:07:17 GMT 2021
-	richard:
+	pupnewfster:
 		Add a block tag to allow mods to blacklist blocks endermen should not be able to place blocks on top of, similar to how vanilla hardcodes against them being able to place things on bedrock (#7548)
 
 =========
@@ -277,7 +416,7 @@ Build: 1.16.5-36.0.12 - Sat Jan 30 02:01:35 GMT 2021
 
 =========
 Build: 1.16.5-36.0.11 - Sat Jan 30 01:35:10 GMT 2021
-	richard:
+	pupnewfster:
 		Fix existing file tag provider support looking in the wrong folder for custom tag types (#7576)
 
 =========
@@ -1766,7 +1905,7 @@ Build: 1.16.1-32.0.41 - Thu Jul 02 05:54:25 GMT 2020
 
 =========
 Build: 1.16.1-32.0.40 - Thu Jul 02 01:59:30 GMT 2020
-	richard:
+	pupnewfster:
 		Fix FMLServerAboutToStartEvent being fired too late on the integrated server https://github.com/MinecraftForge/MinecraftForge/issues/6859
 
 =========
