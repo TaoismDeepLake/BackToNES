@@ -29,7 +29,7 @@ public class BlockRegistry {
     }
 
     //public static final RegistryObject<Block> obsidianBlock = registerWithItem("test_block", BaseBlockIDF::new);
-    public static final RegistryObject<Block> CASTLE_BG = registerWithItem("castle_bg", BlockIndestructible::new);
+    public static final RegistryObject<Block> CASTLE_BG = registerWithItem("castle_bg", BlockIndestructible::new);//vy'= (vy- g) * 0.98
     public static final RegistryObject<Block> CASTLE_FLOOR = registerWithItem("castle_floor", BlockIndestructible::new);
     public static final RegistryObject<Block> SP_GLASS = registerWithItem("sp_glass", BlockWallGlass::new);
     public static final RegistryObject<Block> BREAKABLE_WALL = registerWithItem("breakable_wall", BlockBreakable::new);
