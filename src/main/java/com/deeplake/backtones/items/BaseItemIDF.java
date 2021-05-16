@@ -1,5 +1,6 @@
 package com.deeplake.backtones.items;
 
+import com.deeplake.backtones.items.tabs.TabList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 
@@ -8,7 +9,7 @@ public class BaseItemIDF extends Item {
     public Properties properties;
 
     public BaseItemIDF() {
-        this(new Properties().tab(ItemGroup.TAB_MISC));
+        this(new Properties().tab(TabList.MISC_GROUP));
     }
 
     public BaseItemIDF(Properties p_i48487_1_) {

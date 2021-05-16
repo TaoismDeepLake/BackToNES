@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "backtones:block/castle_ladder" },
+        "facing=east":  { "model": "backtones:block/castle_ladder", "y": 90 },
+        "facing=south": { "model": "backtones:block/castle_ladder", "y": 180 },
+        "facing=west":  { "model": "backtones:block/castle_ladder", "y": 270 }
+    }
+}

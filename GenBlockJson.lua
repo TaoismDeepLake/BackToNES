@@ -79,7 +79,7 @@ end
 --GenItem("armor", "obsidian_boots");
 --GenBlock("test_block");
 
-GenBlock("sp_glass");
+GenBlock("castle_pegasus");
 --GenBlock("castle_bg");
 --GenBlock("castle_floor");
 

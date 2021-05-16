@@ -34,7 +34,7 @@ public enum BaseArmorTier implements IArmorMaterial {
 //    });
 
     TEST("armor_mor_sniper", 40, new int[]{5, 8, 10, 5}, 20, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
-        return Ingredient.of(ItemRegistry.testIngot2.get());
+        return Ingredient.of(ItemRegistry.COIN.get());
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};

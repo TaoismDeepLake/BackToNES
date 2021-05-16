@@ -4,6 +4,9 @@ import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.blocks.*;
 import com.deeplake.backtones.items.tabs.TabList;
 import net.minecraft.block.Block;
+import net.minecraft.block.LadderBlock;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -31,8 +34,11 @@ public class BlockRegistry {
     //public static final RegistryObject<Block> obsidianBlock = registerWithItem("test_block", BaseBlockIDF::new);
     public static final RegistryObject<Block> CASTLE_BG = registerWithItem("castle_bg", BlockIndestructible::new);//vy'= (vy- g) * 0.98
     public static final RegistryObject<Block> CASTLE_FLOOR = registerWithItem("castle_floor", BlockIndestructible::new);
+    public static final RegistryObject<Block> CASTLE_FLOOR_FAKE = registerWithItem("castle_floor_fake", BlockIndestructibleFake::new);
     public static final RegistryObject<Block> SP_GLASS = registerWithItem("sp_glass", BlockWallGlass::new);
     public static final RegistryObject<Block> BREAKABLE_WALL = registerWithItem("breakable_wall", BlockBreakable::new);
     public static final RegistryObject<Block> COVERED_WALL = registerWithItem("covered_floor", BlockCovered::new);
+    public static final RegistryObject<Block> LADDER = registerWithItem("castle_ladder", LadderBlockMJDS::new);
+    public static final RegistryObject<Block> PEGASUS = registerWithItem("castle_pegasus", BlockIndestructible::new);
 
 }

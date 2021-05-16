@@ -1,13 +1,31 @@
 package com.deeplake.backtones;
 
+import com.deeplake.backtones.registry.BlockRegistry;
 import com.deeplake.backtones.registry.RegistryManager;
 import com.deeplake.backtones.worldgen.infra.InitWorldGen;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.data.BlockModelDefinition;
+import net.minecraft.data.BlockModelFields;
+import net.minecraft.data.FinishedVariantBlockState;
+import net.minecraft.data.ModelsResourceUtil;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.annotation.Nullable;
 
 @Mod(IdlFramework.MOD_ID)
 public class IdlFramework {
@@ -20,6 +38,19 @@ public class IdlFramework {
         RegistryManager.RegisterAll();
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, InitWorldGen::onBiomeLoading);
         MinecraftForge.EVENT_BUS.register(this);
+
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        // do something that can only be done on the client
+        logger.info("FMLClientSetupEvent:Got game settings {}", event.getMinecraftSupplier().get().options);
+        RenderTypeLookup.setRenderLayer(BlockRegistry.SP_GLASS.get(), RenderType.translucent());
+        //RenderTypeLookup.setRenderLayer(BlockRegistry.LADDER.get(), RenderType.cutout());
+
+        BlockColors blockColors = Minecraft.getInstance().getBlockColors();
+        //int getColor(BlockState block, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_);
+        blockColors.register((blockState, iBlockDisplayReader, pos, i) -> iBlockDisplayReader != null && pos != null ? BiomeColors.getAverageGrassColor(iBlockDisplayReader, pos) : -1, BlockRegistry.CASTLE_BG.get());
     }
 
     public static void LogWarning(String str, Object...args)

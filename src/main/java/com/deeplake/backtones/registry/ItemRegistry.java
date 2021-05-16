@@ -20,8 +20,6 @@ import static com.deeplake.backtones.items.infra.BaseArmorTier.TEST;
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IdlFramework.MOD_ID);
 
-    public static final RegistryObject<Item> testIngot2 = ITEMS.register("test_ingot_auto", BaseItemIDF::new);
-
     public static final RegistryObject<Item> MONGO_SWORD = ITEMS.register("mongo_sword", MongolianSword::new);
     //public static final RegistryObject<Item> MURASAMA = ITEMS.register("murasama", MongolianSword::new);
 
