@@ -8,5 +8,7 @@
   "block.backtones.castle_bg": "Castle Wall",
   "block.backtones.castle_floor": "Castle Floor",
   "itemGroup.group1": "Back To NES",
-  "nes.mjds": "Majou Densetsu 2 - Daimashikyou Galious"
+  "nes.mjds": "Majou Densetsu 2 - Daimashikyou Galious",
+  "backtones.msg.deal.success": "Bought %sx %s(s) for %sx %s(s)",
+  "backtones.msg.deal.fail": "I sell %sx %s(s) for %sx %s(s)"
 }

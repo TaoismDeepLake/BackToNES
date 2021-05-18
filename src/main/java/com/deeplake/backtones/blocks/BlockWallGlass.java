@@ -14,7 +14,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BlockWallGlass extends AbstractGlassBlock {
+public class BlockWallGlass extends AbstractGlassBlock implements IBlockMJDS{
     public BlockWallGlass() {
         super(Properties.of(Material.GLASS)
                 .strength(-1.0F, 3600000.0F)

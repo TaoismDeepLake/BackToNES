@@ -5,7 +5,7 @@ import net.minecraftforge.common.ToolType;
 
 import static com.deeplake.backtones.util.CommonDef.JUMP_FACTOR_MJDS;
 
-public class BlockBreakable extends BaseBlockMJDS {
+public class BlockBreakable extends BaseBlockMJDS implements IBlockMJDS{
     public BlockBreakable() {
         super();
     }

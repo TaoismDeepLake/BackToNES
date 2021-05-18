@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.CommonDef.JUMP_FACTOR_MJDS;
 
-public class BaseBlockMJDS extends BaseBlockIDF {
+public class BaseBlockMJDS extends BaseBlockIDF implements IBlockMJDS {
     public BaseBlockMJDS(Properties p_i48440_1_) {
         super(p_i48440_1_
                 .strength(800.0F, 1F)

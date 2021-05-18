@@ -1,7 +1,7 @@
 package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
-import com.sun.javafx.geom.Vec3d;
+import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -17,10 +18,40 @@ import net.minecraftforge.fml.common.Mod;
 public class EventsJumpHelper {
 
     @SubscribeEvent
+    public static void onFall(LivingFallEvent event)
+    {
+        World world = event.getEntity().level;
+        if (!world.isClientSide)
+        {
+            LivingEntity livingEntity = event.getEntityLiving();
+
+            //takes no damage if near MJDS
+            BlockPos[] posDeltaList = {
+                    BlockPos.ZERO.east(),
+                    BlockPos.ZERO.west(),
+                    BlockPos.ZERO.south(),
+                    BlockPos.ZERO.north(),
+                    BlockPos.ZERO.east().north(),
+                    BlockPos.ZERO.east().south(),
+                    BlockPos.ZERO.west().north(),
+                    BlockPos.ZERO.west().south(),
+            };
+
+            for (BlockPos pos: posDeltaList) {
+                if (DesignUtil.isWithOffsetMJDS(world, pos, livingEntity))
+                {
+                    event.setDamageMultiplier(0f);
+                    return;
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void onJump(LivingEvent.LivingJumpEvent event)
     {
         World world = event.getEntity().level;
-        if (world.isClientSide)//todo. which side should it be??
+        if (world.isClientSide)//Yep. Client for players
         {
             LivingEntity livingEntity = event.getEntityLiving();
             if (!livingEntity.isOnGround())
@@ -68,15 +99,15 @@ public class EventsJumpHelper {
         }
     }
 
+    //copied from net.minecraft.entity.Entity
+    public static BlockPos getBlockPosBelowThatAffectsMyMovement(Entity entity) {
+        return new BlockPos(entity.position().x, entity.getBoundingBox().minY - 0.5000001D, entity.position().z);
+    }
+
     static float getFactor(World world, BlockPos pos, Entity entity)
     {
         float f = world.getBlockState(entity.blockPosition().offset(pos)).getBlock().getJumpFactor();
         float f1 = world.getBlockState(getBlockPosBelowThatAffectsMyMovement(entity).offset(pos)).getBlock().getJumpFactor();
         return f > f1 ? f : f1;
-    }
-
-    //copied from net.minecraft.entity.Entity
-    public static BlockPos getBlockPosBelowThatAffectsMyMovement(Entity entity) {
-        return new BlockPos(entity.position().x, entity.getBoundingBox().minY - 0.5000001D, entity.position().z);
     }
 }

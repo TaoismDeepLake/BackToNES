@@ -79,7 +79,15 @@ end
 --GenItem("armor", "obsidian_boots");
 --GenBlock("test_block");
 
-GenBlock("castle_pegasus");
+--GenBlock("trade_mongo_sword");
+--GenBlock("castle_bg_r");
+--GenBlock("athena_body");
+--GenBlock("athena_head");
+--GenBlock("old_body");
+--GenBlock("old_head");
+--GenBlock("forest_floor");
+
+--GenItem("misc", "quiver");
 --GenBlock("castle_bg");
 --GenBlock("castle_floor");
 

@@ -15,7 +15,7 @@ import java.util.Random;
 
 import static com.deeplake.backtones.util.CommonDef.JUMP_FACTOR_MJDS;
 
-public class LadderBlockMJDS extends LadderBlock {
+public class LadderBlockMJDS extends LadderBlock implements IBlockMJDS{
 
     public LadderBlockMJDS(Properties p_i48440_1_) {
             super(p_i48440_1_

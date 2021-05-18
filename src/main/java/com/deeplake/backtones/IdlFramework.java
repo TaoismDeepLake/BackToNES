@@ -1,5 +1,6 @@
 package com.deeplake.backtones;
 
+import com.deeplake.backtones.blocks.INeedInit;
 import com.deeplake.backtones.registry.BlockRegistry;
 import com.deeplake.backtones.registry.RegistryManager;
 import com.deeplake.backtones.worldgen.infra.InitWorldGen;
@@ -21,6 +22,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,10 +38,20 @@ public class IdlFramework {
 
     public IdlFramework(){
         RegistryManager.RegisterAll();
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, InitWorldGen::onBiomeLoading);
         MinecraftForge.EVENT_BUS.register(this);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+    }
+
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        // some preinit code
+        logger.info("HELLO FROM PREINIT");
+        for (INeedInit elem : RegistryManager.NEED_LIST) {
+            elem.init();
+        }
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

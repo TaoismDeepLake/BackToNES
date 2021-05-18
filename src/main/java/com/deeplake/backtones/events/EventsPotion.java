@@ -1,15 +1,20 @@
 package com.deeplake.backtones.events;
 
+import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EffectRegistry;
 import com.deeplake.backtones.util.EntityUtil;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
 import static com.deeplake.backtones.util.StringDef.TAG_BOSS_STR;
 
+@Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)
 public class EventsPotion {
+    @SubscribeEvent
     public static void onHurt(LivingHurtEvent event)
     {
         LivingEntity hurtOne = event.getEntityLiving();
