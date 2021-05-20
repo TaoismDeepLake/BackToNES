@@ -29,6 +29,13 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PURE_WATER = ITEMS.register("pure_water", () ->new BaseItemFood(BaseItemFood.F_PURE_WATER));
     public static final RegistryObject<Item> MANTLE = ITEMS.register("mantle", () ->new BaseItemFood(BaseItemFood.F_MANTLE));
 
+    public static final RegistryObject<Item> RED_BOW = ITEMS.register("red_bow", BaseItemIDF::new);
+    public static final RegistryObject<Item> CERAMIC_BOW = ITEMS.register("ceramic_bow", BaseItemIDF::new);
+
+    public static final RegistryObject<Item> ALTER_EGO = ITEMS.register("alter_ego", BaseItemIDF::new);
+
+
+
     public static final RegistryObject<Item> TRADE_MONGO_SWORD = ITEMS.register("trade_mongo_sword",
             () ->new BlockItem(BlockRegistry.TRADE_MONGO_SWORD.get(), new Item.Properties().tab(TabList.MISC_GROUP)));
 //    public static final RegistryObject<Item> obsidianHelmet = ITEMS.register("obsidian_helmet", () -> new ArmorItem(TEST, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
