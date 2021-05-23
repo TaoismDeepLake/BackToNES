@@ -14,8 +14,7 @@ import net.minecraft.world.World;
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
 import static com.deeplake.backtones.util.MJDSDefine.ARTEMIS;
 import static com.deeplake.backtones.util.MJDSDefine.POPLON;
-import static com.deeplake.backtones.util.NBTString.MJDS_EGO;
-import static com.deeplake.backtones.util.NBTString.STATE;
+import static com.deeplake.backtones.util.IDLNBTDef.MJDS_EGO;
 
 public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
     //todo: animation or swap item

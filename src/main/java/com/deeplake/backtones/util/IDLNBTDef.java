@@ -244,11 +244,9 @@ public class IDLNBTDef {
 	public static final String VINDICATOR_STRING = "{RequiredPlayerRange:8,SpawnRange:8,SpawnCount:1,MaxNearbyEntities:5,SpawnData:{CustomName:\"V\",CanPickUpLoot:1b,HandItems:[{id:\"minecraft:diamond_axe\",Count:1b,Damage:0s,tag:{ench:[{id:32,lvl:3}]}},{id:\"minecraft:shield\",Count:1b,Damage:0s,tag:{BlockEntityTag:{Base:7,Patterns:[{Pattern:bri,Color:13},{Pattern:sku,Color:15},{Pattern:bts,Color:1},{Pattern:tts,Color:1}]}}}],ArmorItems:[{id:\"minecraft:leather_boots\",Count:1b,Damage:0s,tag:{Unbreakable:1,display:{color:13369530}}},{},{},{}],id:\"minecraft:vindication_illager\"},SpawnPotentials:[{Weight:1,Entity:{CustomName:\"V\",CanPickUpLoot:1b,HandItems:[{id:\"minecraft:diamond_axe\",Count:1b,Damage:0s,tag:{ench:[{id:32,lvl:3}]}},{id:\"minecraft:shield\",Count:1b,Damage:0s,tag:{BlockEntityTag:{Base:7,Patterns:[{Pattern:bri,Color:13},{Pattern:sku,Color:15},{Pattern:bts,Color:1},{Pattern:tts,Color:1}]}}}],ArmorItems:[{id:\"minecraft:leather_boots\",Count:1b,Damage:0s,tag:{Unbreakable:1,display:{color:13369530}}},{},{},{}],id:\"minecraft:vindication_illager\"}}]}";
 	public static final String BABY_ZOMBIE_STR = "{RequiredPlayerRange:8,SpawnRange:8,SpawnCount:1,MaxNearbyEntities:5,SpawnData:{IsBaby:1b,id:\"minecraft:zombie\"},SpawnPotentials:[{Weight:1,Entity:{IsBaby:1b,id:\"minecraft:zombie\"}}]}";
 
-	public enum SPAWNER_TYPE{
-		NONE,
-		ZOMBIE_BABY,
-		VINDICATOR,
-		ILLUSIONER,
-		NORMAL
-	}
+    public static final String BLOCK_ENTITY_TAG = "BlockEntityTag";
+    public static final String BASE = "Base";
+    public static final String MJDS_EGO = "mjds_ego";
+
+    public static final String DEAL_DESC = "backtones.desc.deal";
 }

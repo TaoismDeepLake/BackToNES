@@ -1,7 +1,12 @@
 package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
+import com.deeplake.backtones.blocks.BlockTrader;
 import com.deeplake.backtones.items.INeedLogNBT;
+import com.deeplake.backtones.util.IDLNBTDef;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -17,9 +22,27 @@ public class EventsItemDesc {
     public static void onDesc(ItemTooltipEvent event)
     {
         ItemStack stack = event.getItemStack();
-        if (event.getItemStack().getItem() instanceof INeedLogNBT)
+        Item itemType = stack.getItem();
+        if (itemType instanceof INeedLogNBT)
         {
             event.getToolTip().add(new StringTextComponent(event.getItemStack().getOrCreateTag().toString()));
         }
+
+        if (itemType instanceof BlockItem)
+        {
+            Block block = ((BlockItem) itemType).getBlock();
+            if (block instanceof BlockTrader)
+            {
+                BlockTrader blockTrader = (BlockTrader) block;
+                event.getToolTip().add(new TranslationTextComponent(
+                        IDLNBTDef.DEAL_DESC,
+                        blockTrader.costCount,
+                        blockTrader.costItem.getDescription(),
+                        blockTrader.sellCount,
+                        blockTrader.sellItem.getDescription()
+                ));
+            }
+        }
+
     }
 }

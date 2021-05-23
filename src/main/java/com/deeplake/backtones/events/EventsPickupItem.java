@@ -13,7 +13,7 @@ import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import static com.deeplake.backtones.util.NBTString.MJDS_EGO;
+import static com.deeplake.backtones.util.IDLNBTDef.MJDS_EGO;
 
 @Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)
 public class EventsPickupItem {

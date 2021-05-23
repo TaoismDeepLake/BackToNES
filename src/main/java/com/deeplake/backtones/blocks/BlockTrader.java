@@ -72,7 +72,6 @@ public class BlockTrader extends BlockIndestructible implements INeedInit {
         }
     }
 
-
     public Item getCostItem() {
         return costItem;
     }

@@ -2,7 +2,7 @@ package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.util.DesignUtil;
-import com.deeplake.backtones.util.NBTString;
+import com.deeplake.backtones.util.IDLNBTDef;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.item.*;
@@ -18,10 +18,10 @@ public class EventsBirthHelper {
 
     public static ItemStack makeBannerShield(ItemStack shieldStack, ItemStack bannerStack)
     {
-        CompoundNBT compoundnbt = bannerStack.getTagElement(NBTString.BLOCK_ENTITY_TAG);
+        CompoundNBT compoundnbt = bannerStack.getTagElement(IDLNBTDef.BLOCK_ENTITY_TAG);
         CompoundNBT compoundnbt1 = compoundnbt == null ? new CompoundNBT() : compoundnbt.copy();
-        compoundnbt1.putInt(NBTString.BASE, ((BannerItem)bannerStack.getItem()).getColor().getId());
-        shieldStack.addTagElement(NBTString.BLOCK_ENTITY_TAG, compoundnbt1);
+        compoundnbt1.putInt(IDLNBTDef.BASE, ((BannerItem)bannerStack.getItem()).getColor().getId());
+        shieldStack.addTagElement(IDLNBTDef.BLOCK_ENTITY_TAG, compoundnbt1);
         return shieldStack;
     }
 
