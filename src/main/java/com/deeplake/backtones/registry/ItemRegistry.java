@@ -34,14 +34,17 @@ public class ItemRegistry {
     public static final RegistryObject<Item> TRADE_MONGO_SWORD = ITEMS.register("trade_mongo_sword",
             () ->new BlockItem(BlockRegistry.TRADE_MONGO_SWORD.get(), new Item.Properties().tab(TabList.MISC_GROUP)));
 
-    public static final RegistryObject<Item> POPOLON_HELMET = ITEMS.register("popolon_armor_1", () -> new ArmorItem(POPOLON, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-    public static final RegistryObject<Item> POPOLON_CHESTPLATE = ITEMS.register("popolon_armor_2", () -> new ArmorItem(POPOLON, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-    public static final RegistryObject<Item> POPOLON_LEGGINGS = ITEMS.register("popolon_armor_3", () -> new ArmorItem(POPOLON, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-    public static final RegistryObject<Item> POPOLON_BOOTS = ITEMS.register("popolon_armor_4", () -> new ArmorItem(POPOLON, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_HELMET = ITEMS.register("popolon_armor_1", () -> new EgoArmor(POPOLON, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_CHESTPLATE = ITEMS.register("popolon_armor_2", () -> new EgoArmor(POPOLON, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_LEGGINGS = ITEMS.register("popolon_armor_3", () -> new EgoArmor(POPOLON, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_BOOTS = ITEMS.register("popolon_armor_4", () -> new EgoArmor(POPOLON, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
 
-    public static final RegistryObject<Item> APHRODITE_HELMET = ITEMS.register("aphrodite_armor_1", () -> new ArmorItem(APHRODITE, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-    public static final RegistryObject<Item> APHRODITE_CHESTPLATE = ITEMS.register("aphrodite_armor_2", () -> new ArmorItem(APHRODITE, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-    public static final RegistryObject<Item> APHRODITE_LEGGINGS = ITEMS.register("aphrodite_armor_3", () -> new ArmorItem(APHRODITE, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-    public static final RegistryObject<Item> APHRODITE_BOOTS = ITEMS.register("aphrodite_armor_4", () -> new ArmorItem(APHRODITE, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item>[] POPOLON_ARMOR = new RegistryObject[]{POPOLON_HELMET,POPOLON_CHESTPLATE, POPOLON_LEGGINGS,POPOLON_BOOTS};
 
+    public static final RegistryObject<Item> APHRODITE_HELMET = ITEMS.register("aphrodite_armor_1", () -> new EgoArmor(APHRODITE, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> APHRODITE_CHESTPLATE = ITEMS.register("aphrodite_armor_2", () -> new EgoArmor(APHRODITE, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> APHRODITE_LEGGINGS = ITEMS.register("aphrodite_armor_3", () -> new EgoArmor(APHRODITE, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> APHRODITE_BOOTS = ITEMS.register("aphrodite_armor_4", () -> new EgoArmor(APHRODITE, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+
+    public static final RegistryObject<Item>[] APHRODITE_ARMOR = new RegistryObject[]{APHRODITE_HELMET,APHRODITE_CHESTPLATE, APHRODITE_LEGGINGS,APHRODITE_BOOTS};
 }

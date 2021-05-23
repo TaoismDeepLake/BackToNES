@@ -1,5 +1,6 @@
 package com.deeplake.backtones.items;
 
+import com.deeplake.backtones.registry.ItemRegistry;
 import com.deeplake.backtones.util.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -65,7 +66,7 @@ public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
     {
         for (EquipmentSlotType slot :
                 EquipmentSlotType.values()) {
-            if (isReplacable(playerEntity.getItemBySlot(slot))){
+            if (slot.getType() == EquipmentSlotType.Group.ARMOR && isReplacable(playerEntity.getItemBySlot(slot))){
                 playerEntity.setItemSlot(slot, new ItemStack(getItemForEgoAndStack(slot, state)));
             }
         }
@@ -73,13 +74,16 @@ public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
 
     public Item getItemForEgoAndStack(EquipmentSlotType slot, int state)
     {
-        if (state == APHRODITE)
+        final int slotIndex = slot.getIndex();
+        if (slotIndex >= ItemRegistry.APHRODITE_ARMOR.length || slotIndex < 0)
         {
-            //todo: switch
             return Items.AIR;
+        }
+        //inverted order in EquipmentSlotType
+        if (state == APHRODITE){
+            return ItemRegistry.APHRODITE_ARMOR[3 - slotIndex].get();
         } else {
-            //todo: switch
-            return Items.AIR;
+            return ItemRegistry.POPOLON_ARMOR[3 - slotIndex].get();
         }
     }
 
