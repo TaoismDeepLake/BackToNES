@@ -12,7 +12,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
-import static com.deeplake.backtones.util.MJDSDefine.ARTEMIS;
+import static com.deeplake.backtones.util.MJDSDefine.APHRODITE;
 import static com.deeplake.backtones.util.MJDSDefine.POPLON;
 import static com.deeplake.backtones.util.IDLNBTDef.MJDS_EGO;
 
@@ -32,9 +32,9 @@ public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
             int otherState;
             if (state == POPLON)
             {
-                otherState = ARTEMIS;
+                otherState = APHRODITE;
             }
-            else {//ARTEMIS OR NONE
+            else {//APHRODITE OR NONE
                 otherState = POPLON;
             }
 
@@ -73,7 +73,7 @@ public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
 
     public Item getItemForEgoAndStack(EquipmentSlotType slot, int state)
     {
-        if (state == ARTEMIS)
+        if (state == APHRODITE)
         {
             //todo: switch
             return Items.AIR;

@@ -3,6 +3,7 @@ package com.deeplake.backtones.items.infra;
 import com.deeplake.backtones.registry.ItemRegistry;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
@@ -34,6 +35,12 @@ public enum BaseArmorTier implements IArmorMaterial {
 //    });
 
     TEST("armor_mor_sniper", 40, new int[]{5, 8, 10, 5}, 20, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
+        return Ingredient.of(ItemRegistry.COIN.get());
+    }),
+    POPOLON("popolon_armor", 60, new int[]{0,0,0,0}, 5, SoundEvents.ARMOR_EQUIP_IRON, 0f, 0f, () -> {
+        return Ingredient.of(ItemRegistry.COIN.get());
+    }),
+    APHRODITE("aphrodite_armor", 60, new int[]{0,0,0,0}, 10, SoundEvents.ARMOR_EQUIP_IRON, 0f, 0f, () -> {
         return Ingredient.of(ItemRegistry.COIN.get());
     });
 

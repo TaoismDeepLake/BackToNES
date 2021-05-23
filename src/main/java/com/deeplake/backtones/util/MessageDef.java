@@ -1,8 +1,6 @@
 package com.deeplake.backtones.util;
 
 import static com.deeplake.backtones.IdlFramework.MOD_ID;
-import static com.deeplake.backtones.util.MJDSDefine.ARTEMIS;
-import static com.deeplake.backtones.util.MJDSDefine.POPLON;
 
 public class MessageDef {
     public static String DEAL_SUCCESS = MOD_ID + ".msg.deal.success";

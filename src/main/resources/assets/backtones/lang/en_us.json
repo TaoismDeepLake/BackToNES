@@ -13,5 +13,5 @@
   "backtones.msg.deal.success": "Bought %sx %s(s) for %sx %s(s)",
   "backtones.msg.deal.fail": "I sell %sx %s(s) for %sx %s(s)",
   "backtones.msg.ego.swap.1": "Switched to Popolon",
-  "backtones.msg.ego.swap.2": "Switched to Artemis"
+  "backtones.msg.ego.swap.2": "Switched to Aphrodite"
 }

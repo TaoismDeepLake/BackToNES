@@ -1,10 +1,12 @@
 package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
+import com.deeplake.backtones.items.EgoArmor;
 import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -24,6 +26,11 @@ public class EventsJumpHelper {
         if (!world.isClientSide)
         {
             LivingEntity livingEntity = event.getEntityLiving();
+
+            if (livingEntity.getItemBySlot(EquipmentSlotType.FEET).getItem() instanceof EgoArmor)
+            {
+                //Popolon and Artemis boots prevents fall damage.
+            }
 
             //takes no damage if near MJDS
             BlockPos[] posDeltaList = {

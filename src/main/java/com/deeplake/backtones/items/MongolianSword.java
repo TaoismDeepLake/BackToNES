@@ -1,13 +1,17 @@
 package com.deeplake.backtones.items;
 
 import com.deeplake.backtones.registry.BlockRegistry;
+import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.World;
+
+import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
 
 public class MongolianSword extends BaseItemSword {
 //    public boolean isCorrectToolForDrops(BlockState p_150897_1_) {
@@ -23,9 +27,15 @@ public class MongolianSword extends BaseItemSword {
     }
 
     @Override
-    public void inventoryTick(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) {
-        super.inventoryTick(p_77663_1_, p_77663_2_, p_77663_3_, p_77663_4_, p_77663_5_);
-        
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int i, boolean p_77663_5_) {
+        super.inventoryTick(stack, world, entity, i, p_77663_5_);
+        //auto full repair each second in MJ
+        if (!world.isClientSide && world.getGameTime() % TICK_PER_SECOND == 0) {
+            if (stack.isDamaged() && DesignUtil.isInMJDS(entity))
+            {
+                stack.setDamageValue(0);
+            }
+        }
     }
 
     //    public float getDestroySpeed(ItemStack p_150893_1_, BlockState p_150893_2_) {

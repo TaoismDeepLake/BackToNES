@@ -13,7 +13,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static com.deeplake.backtones.items.infra.BaseArmorTier.TEST;
+import static com.deeplake.backtones.items.infra.BaseArmorTier.*;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IdlFramework.MOD_ID);
@@ -33,8 +33,15 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> TRADE_MONGO_SWORD = ITEMS.register("trade_mongo_sword",
             () ->new BlockItem(BlockRegistry.TRADE_MONGO_SWORD.get(), new Item.Properties().tab(TabList.MISC_GROUP)));
-//    public static final RegistryObject<Item> obsidianHelmet = ITEMS.register("obsidian_helmet", () -> new ArmorItem(TEST, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-//    public static final RegistryObject<Item> obsidianChestplate = ITEMS.register("obsidian_chestplate", () -> new ArmorItem(TEST, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-//    public static final RegistryObject<Item> obsidianLeggings = ITEMS.register("obsidian_leggings", () -> new ArmorItem(TEST, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
-//    public static final RegistryObject<Item> obsidianBoots = ITEMS.register("obsidian_boots", () -> new ArmorItem(TEST, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+
+    public static final RegistryObject<Item> POPOLON_HELMET = ITEMS.register("popolon_armor_1", () -> new ArmorItem(POPOLON, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_CHESTPLATE = ITEMS.register("popolon_armor_2", () -> new ArmorItem(POPOLON, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_LEGGINGS = ITEMS.register("popolon_armor_3", () -> new ArmorItem(POPOLON, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> POPOLON_BOOTS = ITEMS.register("popolon_armor_4", () -> new ArmorItem(POPOLON, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+
+    public static final RegistryObject<Item> APHRODITE_HELMET = ITEMS.register("aphrodite_armor_1", () -> new ArmorItem(APHRODITE, EquipmentSlotType.HEAD, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> APHRODITE_CHESTPLATE = ITEMS.register("aphrodite_armor_2", () -> new ArmorItem(APHRODITE, EquipmentSlotType.CHEST, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> APHRODITE_LEGGINGS = ITEMS.register("aphrodite_armor_3", () -> new ArmorItem(APHRODITE, EquipmentSlotType.LEGS, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+    public static final RegistryObject<Item> APHRODITE_BOOTS = ITEMS.register("aphrodite_armor_4", () -> new ArmorItem(APHRODITE, EquipmentSlotType.FEET, (new Item.Properties()).tab(TabList.MISC_GROUP)));
+
 }
