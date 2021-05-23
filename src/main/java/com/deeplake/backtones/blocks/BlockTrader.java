@@ -65,7 +65,7 @@ public class BlockTrader extends BlockIndestructible implements INeedInit {
             }
             else {
                 //Nah. Insufficient funds.
-                CommonFunctions.SafeSendMsgToPlayer(TextFormatting.GREEN, playerEntity, MessageDef.DEAL_FAIL,
+                CommonFunctions.SafeSendMsgToPlayer(TextFormatting.YELLOW, playerEntity, MessageDef.DEAL_FAIL,
                         sellCount, sellItem.getDescription(), costCount, costItem.getDescription());
                 return ActionResultType.FAIL;
             }

@@ -152,7 +152,7 @@ public class CommonFunctions {
         if (player instanceof PlayerEntity)
         {
             TranslationTextComponent translationTextComponent = new TranslationTextComponent(key, args);
-            translationTextComponent.getStyle().applyFormat(style);
+            translationTextComponent.withStyle(style);
             player.sendMessage(translationTextComponent, Util.NIL_UUID);
         }
     }
@@ -165,7 +165,7 @@ public class CommonFunctions {
     public static void SendMsgToPlayerStyled(PlayerEntity playerMP, String key, TextFormatting style, Object... args)
     {
         TranslationTextComponent TranslationTextComponent = new TranslationTextComponent(key, args);
-        TranslationTextComponent.getStyle().applyFormat(style);
+        TranslationTextComponent.withStyle(style);
         playerMP.sendMessage(TranslationTextComponent, Util.NIL_UUID);
     }
 

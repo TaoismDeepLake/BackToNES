@@ -67,7 +67,8 @@ local function GenTCG(_rarity, _itemName)
 	outFile:close();
 end
 
---GenItem("misc", "coin");
+GenItem("misc", "quiver");
+--GenItem("misc", "alterego_2");
 --GenItem("tool", "mongo_sword");
 --GenItem("tool", "murasama");
 --GenItem("food", "pure_water");

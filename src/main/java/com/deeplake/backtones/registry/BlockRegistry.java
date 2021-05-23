@@ -65,7 +65,4 @@ public class BlockRegistry {
 
     public static final RegistryObject<Block> TRADE_MONGO_SWORD = BLOCKS.register("trade_mongo_sword",
             () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
-
-//    public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
-//            () ->new BlockTrader(ItemRegistry.COIN.get(), 20, ItemRegistry.MONGO_SWORD.get(), 1));
 }

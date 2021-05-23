@@ -1,10 +1,7 @@
 package com.deeplake.backtones.registry;
 
 import com.deeplake.backtones.IdlFramework;
-import com.deeplake.backtones.items.BaseItemFood;
-import com.deeplake.backtones.items.BaseItemIDF;
-import com.deeplake.backtones.items.BaseItemSword;
-import com.deeplake.backtones.items.MongolianSword;
+import com.deeplake.backtones.items.*;
 import com.deeplake.backtones.items.tabs.TabList;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -32,7 +29,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> RED_BOW = ITEMS.register("red_bow", BaseItemIDF::new);
     public static final RegistryObject<Item> CERAMIC_BOW = ITEMS.register("ceramic_bow", BaseItemIDF::new);
 
-    public static final RegistryObject<Item> ALTER_EGO = ITEMS.register("alterego", BaseItemIDF::new);
+    public static final RegistryObject<Item> ALTER_EGO = ITEMS.register("alterego", ItemAlterEgo::new);
 
     public static final RegistryObject<Item> TRADE_MONGO_SWORD = ITEMS.register("trade_mongo_sword",
             () ->new BlockItem(BlockRegistry.TRADE_MONGO_SWORD.get(), new Item.Properties().tab(TabList.MISC_GROUP)));

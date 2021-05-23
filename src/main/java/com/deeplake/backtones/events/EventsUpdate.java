@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)
 public class EventsUpdate {
 
-
     //todo: creatures in MJDS will jump around
     @SubscribeEvent
     public static void onUpdate(LivingEvent.LivingUpdateEvent event)

@@ -1,1 +1,15 @@
-{"parent": "item/handheld","textures": {"layer0":"backtones:item/misc/alterego"}}
+{"parent": "item/handheld","textures": {"layer0":"backtones:item/misc/alterego"},
+  "overrides": [
+    {
+      "predicate": {
+        "backtones:state": 1
+      },
+      "model": "backtones:item/alterego_1"
+    },{
+      "predicate": {
+        "backtones:state": 2
+      },
+      "model": "backtones:item/alterego_2"
+    }
+  ]
+}

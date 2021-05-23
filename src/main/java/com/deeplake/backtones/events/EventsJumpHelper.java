@@ -83,10 +83,10 @@ public class EventsJumpHelper {
 
             //jumpFactorMax -= jumpFactorMaxInit;
 
-            if (livingEntity instanceof PlayerEntity)
-            {
-                IdlFramework.Log("d-jumpFactorMax = %s", jumpFactorMax);
-            }
+//            if (livingEntity instanceof PlayerEntity)
+//            {
+//                IdlFramework.Log("d-jumpFactorMax = %s", jumpFactorMax);
+//            }
 
             jumpFactorMax *= 0.42f;//const
 
