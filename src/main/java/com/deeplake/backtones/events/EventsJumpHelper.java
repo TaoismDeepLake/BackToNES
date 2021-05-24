@@ -29,7 +29,9 @@ public class EventsJumpHelper {
 
             if (livingEntity.getItemBySlot(EquipmentSlotType.FEET).getItem() instanceof EgoArmor)
             {
-                //Popolon and Artemis boots prevents fall damage.
+                //Popolon and Artemis boots prevents fall damage, even outside of MJDS
+                event.setDamageMultiplier(0f);
+                return;
             }
 
             //takes no damage if near MJDS

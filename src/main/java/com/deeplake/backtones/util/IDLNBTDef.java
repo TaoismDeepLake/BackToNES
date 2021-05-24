@@ -248,8 +248,12 @@ public class IDLNBTDef {
     public static final String BASE = "Base";
     public static final String MJDS_EGO = "mjds_ego";
 
+    public static final String EGO_HP = "ego_hp";
+
     public static final String DEAL_DESC = "backtones.desc.deal";
+
     public static final String DESC_EGO_NONE = "backtones.desc.ego.0";
     public static final String DESC_EGO_POPLON = "backtones.desc.ego.1";
     public static final String DESC_EGO_ARTEMIS = "backtones.desc.ego.2";
+	public static final String HP_DESC = "backtones.desc.ego.hp";
 }

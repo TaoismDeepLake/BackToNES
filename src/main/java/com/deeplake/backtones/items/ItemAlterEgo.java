@@ -13,6 +13,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
+import static com.deeplake.backtones.util.IDLNBTDef.EGO_HP;
 import static com.deeplake.backtones.util.MJDSDefine.APHRODITE;
 import static com.deeplake.backtones.util.MJDSDefine.POPLON;
 import static com.deeplake.backtones.util.IDLNBTDef.MJDS_EGO;
@@ -40,6 +41,11 @@ public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
             }
 
             //play sound here?
+
+            //swap HP
+            double otherHP = IDLNBTUtil.GetDouble(stack, EGO_HP, playerEntity.getMaxHealth());
+            IDLNBTUtil.SetDouble(stack, EGO_HP, playerEntity.getHealth());
+            playerEntity.setHealth((float) otherHP);
 
             //set armor
             giveArmor(playerEntity, otherState);
