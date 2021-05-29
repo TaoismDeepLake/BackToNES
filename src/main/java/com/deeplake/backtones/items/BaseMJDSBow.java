@@ -8,9 +8,11 @@ import com.deeplake.backtones.util.IDLNBT;
 import com.deeplake.backtones.util.IDLNBTDef;
 import com.deeplake.backtones.util.IDLNBTUtil;
 import com.deeplake.backtones.util.MJDSDefine;
+import com.sun.jna.platform.win32.WinDef;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.IVanishable;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
@@ -63,9 +65,7 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
 
             boolean freeOfCost = instabuild || (ammoStack.getItem() instanceof ArrowItem && ((ArrowItem)ammoStack.getItem()).isInfinite(ammoStack, stack, playerEntity));
             if (!world.isClientSide) {
-                ArrowItem arrowitem = (ArrowItem)(ammoStack.getItem() instanceof ArrowItem ? ammoStack.getItem() : Items.ARROW);
-                AbstractArrowEntity abstractarrowentity = new EntityRedArrow(EntityRegistry.RED_ARROW.get(), world);
-                abstractarrowentity = customArrow(abstractarrowentity);
+                AbstractArrowEntity abstractarrowentity = customArrow(world, playerEntity);
                 abstractarrowentity.shootFromRotation(playerEntity, playerEntity.xRot, playerEntity.yRot,
                         0.0F, getShootPower(stack, playerEntity), getShootError(stack, playerEntity));
 
@@ -162,7 +162,13 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
         return 15;
     }
 
-    public AbstractArrowEntity customArrow(AbstractArrowEntity arrow) {
+    public AbstractArrowEntity newArrow(World world, LivingEntity shooter)
+    {
+        return new EntityRedArrow(EntityRegistry.RED_ARROW.get(), world, shooter);
+    }
+
+    public AbstractArrowEntity customArrow(World world, LivingEntity shooter) {
+        AbstractArrowEntity arrow = newArrow(world, shooter);
         arrow.pickup = AbstractArrowEntity.PickupStatus.DISALLOWED;
         arrow.setNoGravity(true);
         arrow.setBaseDamage(8f);

@@ -3,6 +3,8 @@ package com.deeplake.backtones.registry;
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.items.*;
 import com.deeplake.backtones.items.tabs.TabList;
+import com.deeplake.backtones.items.weapons.ItemCeraBow;
+import com.deeplake.backtones.items.weapons.ItemRedBow;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.Effects;
@@ -27,8 +29,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PURE_WATER = ITEMS.register("pure_water", () ->new BaseItemFood(BaseItemFood.F_PURE_WATER, Rarity.RARE));
     public static final RegistryObject<Item> MANTLE = ITEMS.register("mantle", () ->new BaseItemFood(BaseItemFood.F_MANTLE, Rarity.RARE));
 
-    public static final RegistryObject<Item> RED_BOW = ITEMS.register("red_bow", () -> new BaseMJDSBow(new Item.Properties().durability(512).rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CERAMIC_BOW = ITEMS.register("ceramic_bow", () -> new BaseMJDSBow(new Item.Properties().durability(1024).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> RED_BOW = ITEMS.register("red_bow", () -> new ItemRedBow(new Item.Properties().durability(512).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CERAMIC_BOW = ITEMS.register("ceramic_bow", () -> new ItemCeraBow(new Item.Properties().durability(1024).rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item> ALTER_EGO = ITEMS.register("alterego", ItemAlterEgo::new);
 

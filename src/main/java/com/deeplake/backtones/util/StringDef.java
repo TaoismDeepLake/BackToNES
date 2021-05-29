@@ -5,4 +5,5 @@ public class StringDef {
     public static String ITEMBLOCK_STR = "itemtile.";//only [a-z0-9/._-] characters!
 
     public static String ENTITY_NAME_RED_ARR = "en_red_arrow";
+    public static String ENTITY_NAME_CERA_ARR = "en_cera_arrow";
 }
