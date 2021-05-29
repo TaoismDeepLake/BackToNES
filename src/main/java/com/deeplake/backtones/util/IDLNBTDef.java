@@ -250,6 +250,8 @@ public class IDLNBTDef {
 
     public static final String EGO_HP = "ego_hp";
 
+    public static final String MJDS_ARROW = "mjds_arrow";
+
     public static final String DEAL_DESC = "backtones.desc.deal";
 
     public static final String DESC_EGO_NONE = "backtones.desc.ego.0";

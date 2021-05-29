@@ -4,6 +4,7 @@ import com.deeplake.backtones.items.tabs.TabList;
 import com.deeplake.backtones.registry.EffectRegistry;
 import net.minecraft.item.Food;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 
@@ -32,6 +33,10 @@ public class BaseItemFood extends BaseItemIDF {
 
     public BaseItemFood(Food food) {
         super(new Properties().tab(TabList.MISC_GROUP).food(food));
+    }
+
+    public BaseItemFood(Food food, Rarity rarity) {
+        super(new Properties().tab(TabList.MISC_GROUP).food(food).rarity(rarity));
     }
 
     public BaseItemFood() {

@@ -6,10 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import static com.deeplake.backtones.util.IDLNBTDef.IDEALLAND;
 
 public class IDLNBT {
-	public int pearlCount;
-	public boolean isEarth;
-	public boolean isSky;
-
+	//Handle those which need to be stored into players permanently
 	//PlayerData
 	//--PERSISTED_NBT_TAG
 	//  --IDEALLAND

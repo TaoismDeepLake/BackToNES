@@ -15,36 +15,36 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class VillagerRegistry {
-//    public static final Effect B_MANTLE = new BaseEffect(EffectType.BENEFICIAL, 0x777733);
+//WIP
+
+//    public static final VillagerProfession PROF_SELL_MONGO = new VillagerProfession("sell_mongo",
+//            PointOfInterestType.WEAPONSMITH,
+//            ImmutableSet.of(), ImmutableSet.of(),
+//            SoundEvents.VILLAGER_WORK_WEAPONSMITH);
 //
-
-    public static final VillagerProfession PROF_SELL_MONGO = new VillagerProfession("sell_mongo",
-            PointOfInterestType.WEAPONSMITH,
-            ImmutableSet.of(), ImmutableSet.of(),
-            SoundEvents.VILLAGER_WORK_WEAPONSMITH);
-
-    //see VillagerTradingManager
-
-    //public static final VillagerTrades
-
-    private static Int2ObjectMap<VillagerTrades.ITrade[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ITrade[]> p_221238_0_) {
-        return new Int2ObjectOpenHashMap<>(p_221238_0_);
-    }
-
-    //damn. hopefully will work. Work please! goodnight
-    public static void registerAll(RegistryEvent.Register<VillagerProfession> event)
-    {
-        IForgeRegistry<VillagerProfession> registry = event.getRegistry();
-        VillagerTrades.TRADES.put(PROF_SELL_MONGO, toIntMap(ImmutableMap.of(1,
-                new VillagerTrades.ITrade[]{
-                new VTradeItemToItem(new ItemStack(ItemRegistry.COIN.get()), new PriceInfo(16,20),
-                        new ItemStack(ItemRegistry.MONGO_SWORD.get()), VTradeItemToItem.PRICE_ONE)
-            }
-        )));
-
-        RegistryManager.register(registry, "mongo_sell", PROF_SELL_MONGO);
-        //return Registry.register(Registry.VILLAGER_PROFESSION, new ResourceLocation(p_226557_0_), new VillagerProfession(p_226557_0_, p_226557_1_, p_226557_2_, p_226557_3_, p_226557_4_));
-//        RegistryManager.register(registry, "pure_water", B_PURE_WATER);
-//        RegistryManager.register(registry, "mantle", B_MANTLE);
-    }
+//    //see VillagerTradingManager
+//
+//    //public static final VillagerTrades
+//
+//    private static Int2ObjectMap<VillagerTrades.ITrade[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ITrade[]> p_221238_0_) {
+//        return new Int2ObjectOpenHashMap<>(p_221238_0_);
+//    }
+//
+//    //damn. hopefully will work. Work please! goodnight
+    //Nope. It didn't work. I have no idea how villagers operate in 1.16
+//    public static void registerAll(RegistryEvent.Register<VillagerProfession> event)
+//    {
+//        IForgeRegistry<VillagerProfession> registry = event.getRegistry();
+//        VillagerTrades.TRADES.put(PROF_SELL_MONGO, toIntMap(ImmutableMap.of(1,
+//                new VillagerTrades.ITrade[]{
+//                new VTradeItemToItem(new ItemStack(ItemRegistry.COIN.get()), new PriceInfo(16,20),
+//                        new ItemStack(ItemRegistry.MONGO_SWORD.get()), VTradeItemToItem.PRICE_ONE)
+//            }
+//        )));
+//
+//        RegistryManager.register(registry, "mongo_sell", PROF_SELL_MONGO);
+//        //return Registry.register(Registry.VILLAGER_PROFESSION, new ResourceLocation(p_226557_0_), new VillagerProfession(p_226557_0_, p_226557_1_, p_226557_2_, p_226557_3_, p_226557_4_));
+////        RegistryManager.register(registry, "pure_water", B_PURE_WATER);
+////        RegistryManager.register(registry, "mantle", B_MANTLE);
+//    }
 }

@@ -67,12 +67,12 @@ local function GenTCG(_rarity, _itemName)
 	outFile:close();
 end
 
-for i = 1, 4 do
-  GenItem("armor", "popolon_armor_"..i);
-  GenItem("armor", "aphrodite_armor_"..i);
-end
+--for i = 1, 4 do
+--  GenItem("armor", "popolon_armor_"..i);
+--  GenItem("armor", "aphrodite_armor_"..i);
+--end
 --GenItem("misc", "alterego_2");
---GenItem("tool", "mongo_sword");
+GenItem("tool", "ceramic_bow");
 --GenItem("tool", "murasama");
 --GenItem("food", "pure_water");
 --GenItem("food", "mantle");
