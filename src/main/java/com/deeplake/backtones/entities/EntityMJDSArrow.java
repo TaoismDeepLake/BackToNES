@@ -31,17 +31,12 @@ public class EntityMJDSArrow extends ArrowEntity {
 
     public EntityMJDSArrow(EntityType<? extends ArrowEntity> entityType, World p_i50172_2_) {
         super(entityType, p_i50172_2_);
-        IdlFramework.Log("Spawned");
     }
 
     public EntityMJDSArrow(EntityType<? extends ArrowEntity> entityType, World world, LivingEntity shooter) {
         super(entityType, world);
         setPos(shooter.getX(), shooter.getEyeY() - (double)0.1F, shooter.getZ());
         this.setOwner(shooter);
-
-        IdlFramework.Log("Spawned B");
-
-        //cannot call grand parent constructor. consider revising
     }
 
     @Override
@@ -68,11 +63,9 @@ public class EntityMJDSArrow extends ArrowEntity {
         if (appreanceOnly)
         {
             //you need to manual set appreanceOnly
-            IdlFramework.Log("appr only");
             return;
         }
         else {
-            IdlFramework.Log("hit entity effect");
             super.onHitEntity(rayTraceResult);
         }
     }

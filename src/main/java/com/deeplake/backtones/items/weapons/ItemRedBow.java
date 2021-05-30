@@ -14,6 +14,7 @@ public class ItemRedBow extends BaseMJDSBow {
 
     public AbstractArrowEntity newArrow(World world, LivingEntity shooter)
     {
+        //does not work. TODO: check why
         return new EntityRedArrow(EntityRegistry.RED_ARROW.get(), world);
     }
 }

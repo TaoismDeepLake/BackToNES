@@ -7,8 +7,8 @@ public class MessageDef {
     public static String DEAL_FAIL = MOD_ID + ".msg.deal.fail";
 
     public static String SWAP_EGO = MOD_ID + ".msg.ego.swap.";
-    public static String getSwapEgoMsgKey(int resultEgo)
+    public static String getSwapEgoMsgKey(MJDSDefine.EnumEgo resultEgo)
     {
-        return SWAP_EGO.concat(String.valueOf(resultEgo));
+        return SWAP_EGO.concat(String.valueOf(resultEgo.value));
     }
 }

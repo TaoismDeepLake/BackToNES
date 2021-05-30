@@ -4,8 +4,11 @@
   "item.backtones.coin": "Coin",
   "item.backtones.pure_water": "Pure Water",
   "item.backtones.mantle": "Mantle",
+  "item.backtones.alterego": "Reflection of Alter Ego",
   "block.backtones.breakable_wall": "Albaster Wall",
+  "block.backtones.covered_wall": "Albaster Wall",
   "block.backtones.castle_bg": "Castle Wall",
+  "block.backtones.castle_floor_fake": "Castle Floor",
   "block.backtones.castle_floor": "Castle Floor",
   "itemGroup.group1": "Back To NES",
   "nes.mjds": "Majou Densetsu 2 - Daimashikyou Galious",
@@ -13,5 +16,11 @@
   "backtones.msg.deal.success": "Bought %sx %s(s) for %sx %s(s)",
   "backtones.msg.deal.fail": "I sell %sx %s(s) for %sx %s(s)",
   "backtones.msg.ego.swap.1": "Switched to Popolon",
-  "backtones.msg.ego.swap.2": "Switched to Aphrodite"
+  "backtones.msg.ego.swap.2": "Switched to Aphrodite",
+  "backtones.desc.ego.0": "Right click to begin your journey of Majou Dentsu 2: Damoushikyou Galious",
+  "backtones.desc.ego.1": "Right click to switch to Aphrodite",
+  "backtones.desc.ego.2": "Right click to switch to Popolon",
+  "backtones.desc.ego.3": "Happily Ever After",
+  "backtones.desc.ego.4": "GAME OVER",
+  "backtones.desc.ego.hp": "Health of Alter Ego: %d%%"
 }

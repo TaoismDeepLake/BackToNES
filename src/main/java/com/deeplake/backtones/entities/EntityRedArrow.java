@@ -1,5 +1,6 @@
 package com.deeplake.backtones.entities;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,7 +25,8 @@ public class EntityRedArrow extends EntityMJDSArrow {
 
     protected void onHitEntity(EntityRayTraceResult rayTraceResult) {
         super.onHitEntity(rayTraceResult);
-        if (rayTraceResult.getEntity() instanceof LivingEntity)
+        Entity hit = rayTraceResult.getEntity();
+        if (hit instanceof LivingEntity && hit != getOwner())
             appreanceOnly = true;
     }
 }

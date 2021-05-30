@@ -1,5 +1,6 @@
 package com.deeplake.backtones.entities;
 
+import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.blocks.BlockBreakable;
 import com.deeplake.backtones.blocks.BlockCovered;
 import net.minecraft.block.Block;
@@ -39,6 +40,7 @@ public class EntityCeraArrow extends EntityMJDSArrow {
     protected void onHitBlock(BlockRayTraceResult blockRayTraceResult) {
         super.onHitBlock(blockRayTraceResult);
         BlockState state = this.level.getBlockState(blockRayTraceResult.getBlockPos());
+        IdlFramework.Log("Hit %s@%s", state.getBlock().getRegistryName(), blockRayTraceResult.getBlockPos());
         if (isBreakable(state.getBlock()))
         {
             //todo: not working

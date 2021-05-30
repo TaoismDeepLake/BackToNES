@@ -1,10 +1,7 @@
 package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
-import com.deeplake.backtones.util.DesignUtil;
-import com.deeplake.backtones.util.IDLNBT;
-import com.deeplake.backtones.util.IDLNBTDef;
-import com.deeplake.backtones.util.MJDSDefine;
+import com.deeplake.backtones.util.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -46,14 +43,14 @@ public class EventsUpdate {
             if (player.isAlive()) {
                 if (player.isEyeInFluid(FluidTags.WATER) && !player.level.getBlockState(new BlockPos(player.getX(), player.getEyeY(), player.getZ())).is(Blocks.BUBBLE_COLUMN)) {
                     if (!player.canBreatheUnderwater() && !EffectUtils.hasWaterBreathing(player) && !flag1) {
-                        int ego = IDLNBT.getPlayerIdeallandIntSafe((PlayerEntity) player, IDLNBTDef.MJDS_EGO);
-                        if (ego == MJDSDefine.POPLON)
+                        MJDSDefine.EnumEgo ego = EgoUtil.getEgo((PlayerEntity) player);
+                        if (ego == MJDSDefine.EnumEgo.POPLON)
                         {
                             for (int i = 1; i <= POPLON_DRAIN_FACTOR; i++)
                             {
                                 player.setAirSupply(decreaseAirSupply(player, player.getAirSupply()));
                             }
-                        }else if (ego == MJDSDefine.APHRODITE)
+                        }else if (ego == MJDSDefine.EnumEgo.APHRODITE)
                         {
                             if (player.getRandom().nextBoolean())
                             {

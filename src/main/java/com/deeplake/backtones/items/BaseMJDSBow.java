@@ -4,10 +4,7 @@ import com.deeplake.backtones.entities.EntityRedArrow;
 import com.deeplake.backtones.items.tabs.TabList;
 import com.deeplake.backtones.registry.EntityRegistry;
 import com.deeplake.backtones.registry.ItemRegistry;
-import com.deeplake.backtones.util.IDLNBT;
-import com.deeplake.backtones.util.IDLNBTDef;
-import com.deeplake.backtones.util.IDLNBTUtil;
-import com.deeplake.backtones.util.MJDSDefine;
+import com.deeplake.backtones.util.*;
 import com.sun.jna.platform.win32.WinDef;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -131,14 +128,14 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
 
     public int getMaxShoot(ItemStack stack, PlayerEntity playerEntity)
     {
-        int ego = IDLNBT.getPlayerIdeallandIntSafe(playerEntity, IDLNBTDef.MJDS_EGO);
+        MJDSDefine.EnumEgo ego = EgoUtil.getEgo(playerEntity);
 
         switch (ego)
         {
-            case MJDSDefine.POPLON:
+            case POPLON:
                 return 2;
 
-            case MJDSDefine.APHRODITE:
+            case APHRODITE:
                 return 3;
 
             default:

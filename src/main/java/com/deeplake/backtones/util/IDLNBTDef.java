@@ -213,19 +213,6 @@ public class IDLNBTDef {
 
 	public static final String ARTIFACT_KEY = "idealland.item.artifact.desc";
 
-	//socket
-	public static final String JADE_SOCKET_KEY = "idealland.item.jade_socket.desc";
-	public static final String JADE_SOCKET_KEY_2 = "idealland.item.jade_socket.desc.2";
-	public static final String JADE_SOCKET_KEY_4 = "idealland.item.jade_socket.desc.4";
-
-	public static final String CYCLE_SOCKET_KEY = "idealland.item.cycle_socket.desc";
-	public static final String CYCLE_SOCKET_KEY_2 = CYCLE_SOCKET_KEY+".2";
-	public static final String CYCLE_SOCKET_KEY_4 = CYCLE_SOCKET_KEY+".4";
-
-	public static final String FLESH_SOCKET_KEY = "idealland.item.flesh_socket.desc";
-	public static final String FLESH_SOCKET_KEY_2 = FLESH_SOCKET_KEY+".2";
-	public static final String FLESH_SOCKET_KEY_4 = FLESH_SOCKET_KEY+".4";
-
 	//Egypt
 	public static final String EGYPT_KEY = "idealand.egypt.curse";
 	public static final String UNKNOWN = "idealland.shared.unknown_desc";
@@ -254,8 +241,6 @@ public class IDLNBTDef {
 
     public static final String DEAL_DESC = "backtones.desc.deal";
 
-    public static final String DESC_EGO_NONE = "backtones.desc.ego.0";
-    public static final String DESC_EGO_POPLON = "backtones.desc.ego.1";
-    public static final String DESC_EGO_ARTEMIS = "backtones.desc.ego.2";
+    public static final String DESC_EGO_BASE = "backtones.desc.ego.";
 	public static final String HP_DESC = "backtones.desc.ego.hp";
 }
