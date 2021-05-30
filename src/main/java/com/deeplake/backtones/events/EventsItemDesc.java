@@ -4,10 +4,7 @@ import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.blocks.BlockTrader;
 import com.deeplake.backtones.items.INeedLogNBT;
 import com.deeplake.backtones.items.ItemAlterEgo;
-import com.deeplake.backtones.util.EgoUtil;
-import com.deeplake.backtones.util.IDLNBT;
-import com.deeplake.backtones.util.IDLNBTDef;
-import com.deeplake.backtones.util.MJDSDefine;
+import com.deeplake.backtones.util.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
@@ -39,13 +36,15 @@ public class EventsItemDesc {
         if (itemType instanceof ItemAlterEgo)
         {
             //please note that player tags will not sync from client side.
-            int state = playerEntity != null ? EgoUtil.getEgo(playerEntity).getValue() : MJDSDefine.EnumEgo.NONE.getValue();
+            //int state = playerEntity != null ? EgoUtil.getEgo(playerEntity).getValue() : MJDSDefine.EnumEgo.NONE.getValue();
+            int state = IDLNBTUtil.GetInt(stack, STATE);
             event.getToolTip().add(new TranslationTextComponent(DESC_EGO_BASE.concat(String.valueOf(state))));
 
             //the second judgement is redundant. Just to suppress a warning.
             if (MJDSDefine.EnumEgo.isNormalEgo(state) && playerEntity != null)
             {
-                double hp = IDLNBT.getPlayerIdeallandIntSafe(playerEntity, EGO_HP);
+                //double hp = IDLNBT.getPlayerIdeallandIntSafe(playerEntity, EGO_HP);
+                double hp = IDLNBTUtil.GetDouble(stack, EGO_HP, playerEntity.getMaxHealth());
                 event.getToolTip().add(new TranslationTextComponent(HP_DESC, (int)(hp * 100 / playerEntity.getMaxHealth())));
             }
         }

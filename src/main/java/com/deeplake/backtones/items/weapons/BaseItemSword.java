@@ -1,4 +1,4 @@
-package com.deeplake.backtones.items;
+package com.deeplake.backtones.items.weapons;
 
 import com.deeplake.backtones.items.infra.BaseItemTier;
 import com.deeplake.backtones.items.tabs.TabList;

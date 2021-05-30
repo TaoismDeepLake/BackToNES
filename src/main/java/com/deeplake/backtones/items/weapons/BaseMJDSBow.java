@@ -1,4 +1,4 @@
-package com.deeplake.backtones.items;
+package com.deeplake.backtones.items.weapons;
 
 import com.deeplake.backtones.entities.EntityRedArrow;
 import com.deeplake.backtones.items.tabs.TabList;
@@ -9,7 +9,9 @@ import com.sun.jna.platform.win32.WinDef;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.IVanishable;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
@@ -28,6 +30,7 @@ import net.minecraft.world.World;
 import java.util.function.Predicate;
 
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
+import static com.deeplake.backtones.util.IDLNBTDef.COOLDOWN_COUNTER;
 import static net.minecraft.item.BowItem.getPowerForTime;
 
 public class BaseMJDSBow extends ShootableItem implements IVanishable {
@@ -42,6 +45,23 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
     };
 
     float sound_volume = 1.0f;
+
+    public int RESET_VOLLEY_TICK = TICK_PER_SECOND;
+
+    @Override
+    public void inventoryTick(ItemStack stack, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) {
+        super.inventoryTick(stack, p_77663_2_, p_77663_3_, p_77663_4_, p_77663_5_);
+        int cd = IDLNBTUtil.GetInt(stack, COOLDOWN_COUNTER);
+        if (cd > 0)
+        {
+            IDLNBTUtil.SetInt(stack, COOLDOWN_COUNTER, --cd);
+            if (cd == 0)
+            {
+                //reset volley counter
+                IDLNBTUtil.SetInt(stack, IDLNBTDef.STATE, 0);
+            }
+        }
+    }
 
     //Massively copied from BowItem
     @Override
@@ -85,6 +105,7 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
 
             playerEntity.awardStat(Stats.ITEM_USED.get(this));
             activateCooldown(stack, playerEntity);
+            IDLNBTUtil.SetInt(stack, COOLDOWN_COUNTER, RESET_VOLLEY_TICK);
         }
 
         return super.use(world, playerEntity, hand);

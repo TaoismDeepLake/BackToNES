@@ -5,6 +5,7 @@ import com.deeplake.backtones.blocks.BlockBreakable;
 import com.deeplake.backtones.blocks.BlockCovered;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
@@ -43,9 +44,8 @@ public class EntityCeraArrow extends EntityMJDSArrow {
         IdlFramework.Log("Hit %s@%s", state.getBlock().getRegistryName(), blockRayTraceResult.getBlockPos());
         if (isBreakable(state.getBlock()))
         {
-            //todo: not working
-            //probably better if can be divided into stages
-            state.getBlock().destroy(this.level, blockRayTraceResult.getBlockPos(), state);
+            //probably better if can be divided into 3 stages
+            level.destroyBlock(blockRayTraceResult.getBlockPos(), true);
         }
     }
 }

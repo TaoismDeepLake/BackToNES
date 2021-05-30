@@ -1,8 +1,6 @@
 package com.deeplake.backtones.items.weapons;
 
 import com.deeplake.backtones.entities.EntityCeraArrow;
-import com.deeplake.backtones.entities.EntityRedArrow;
-import com.deeplake.backtones.items.BaseMJDSBow;
 import com.deeplake.backtones.registry.EntityRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;

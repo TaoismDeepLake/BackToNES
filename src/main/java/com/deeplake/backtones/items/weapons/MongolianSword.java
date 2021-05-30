@@ -1,14 +1,10 @@
-package com.deeplake.backtones.items;
+package com.deeplake.backtones.items.weapons;
 
 import com.deeplake.backtones.registry.BlockRegistry;
 import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;

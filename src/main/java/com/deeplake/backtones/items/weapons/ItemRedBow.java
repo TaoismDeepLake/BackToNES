@@ -1,7 +1,6 @@
 package com.deeplake.backtones.items.weapons;
 
 import com.deeplake.backtones.entities.EntityRedArrow;
-import com.deeplake.backtones.items.BaseMJDSBow;
 import com.deeplake.backtones.registry.EntityRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -14,7 +13,6 @@ public class ItemRedBow extends BaseMJDSBow {
 
     public AbstractArrowEntity newArrow(World world, LivingEntity shooter)
     {
-        //does not work. TODO: check why
-        return new EntityRedArrow(EntityRegistry.RED_ARROW.get(), world);
+        return new EntityRedArrow(EntityRegistry.RED_ARROW.get(), world, shooter);
     }
 }

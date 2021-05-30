@@ -235,6 +235,8 @@ public class IDLNBTDef {
     public static final String BASE = "Base";
     public static final String MJDS_EGO = "mjds_ego";
 
+    public static final String COOLDOWN_COUNTER = "cd_cnt";
+
     public static final String EGO_HP = "ego_hp";
 
     public static final String MJDS_ARROW = "mjds_arrow";

@@ -11,9 +11,14 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
+import static com.deeplake.backtones.util.IDLNBTDef.EGO_HP;
 import static com.deeplake.backtones.util.IDLNBTDef.MJDS_EGO;
 
-public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
+public class ItemAlterEgo extends BaseItemIDF{
+
+    public ItemAlterEgo(Properties p_i48487_1_) {
+        super(p_i48487_1_);
+    }
 
     @Override
     public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
@@ -25,6 +30,7 @@ public class ItemAlterEgo extends BaseItemIDF implements INeedLogNBT {
         else {
             EgoUtil.trySwapEgo(playerEntity);
             IDLNBTUtil.SetInt(stack, IDLNBTDef.STATE, IDLNBT.getPlayerIdeallandIntSafe(playerEntity, MJDS_EGO));
+            IDLNBTUtil.SetDouble(stack, IDLNBTDef.EGO_HP, IDLNBT.getPlayerIdeallandDoubleSafe(playerEntity, EGO_HP));
             //prevent multi-click
             playerEntity.getCooldowns().addCooldown(this, TICK_PER_SECOND / 2);
 

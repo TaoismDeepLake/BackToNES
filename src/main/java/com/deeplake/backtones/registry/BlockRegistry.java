@@ -63,6 +63,6 @@ public class BlockRegistry {
     public static final RegistryObject<Block> OLD_BODY = registerWithItem("old_body", BlockIndestructible::new);
     public static final RegistryObject<Block> OLD_HEAD = registerWithItem("old_head", BlockIndestructible::new);
 
-    public static final RegistryObject<Block> TRADE_MONGO_SWORD = BLOCKS.register("trade_mongo_sword",
+    public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
             () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
 }
