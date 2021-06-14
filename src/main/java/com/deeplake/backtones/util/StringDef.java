@@ -6,4 +6,5 @@ public class StringDef {
 
     public static String ENTITY_NAME_RED_ARR = "en_red_arrow";
     public static String ENTITY_NAME_CERA_ARR = "en_cera_arrow";
+    public static String ENTITY_NAME_DAMP_SPHERE = "en_damp_sphere";
 }

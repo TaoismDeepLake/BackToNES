@@ -6,8 +6,10 @@ public class IDLNBTDef {
 	//GENERAL:
 	public static final String IDEALLAND = "idealland_nbt";
 
-	//Seal
-	public static final String SEAL = "seal_claimed";
+	//Damp
+	public static final String CHANGE_RECORD = "change_rec";
+	public static final String BLOCK_STATE = "blstate";
+	public static final String BLOCK_POS = "blpos";
 
 	//zombie
 	public static final String IS_BABY = "IsBaby";

@@ -1,6 +1,7 @@
 package com.deeplake.backtones.util;
 
 import com.deeplake.backtones.IdlFramework;
+import com.sun.javafx.geom.Vec3d;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
@@ -13,7 +14,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -25,6 +28,7 @@ import net.minecraftforge.common.MinecraftForge;
 import javax.annotation.Nullable;
 import java.util.Random;
 
+import static com.deeplake.backtones.util.CommonDef.MAX_BUILD_HEIGHT;
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
 
 public class CommonFunctions {
@@ -386,5 +390,22 @@ public class CommonFunctions {
     public static ResourceLocation getResLoc(String key)
     {
         return new ResourceLocation(IdlFramework.MOD_ID, key);
+    }
+
+    public static AxisAlignedBB ServerAABB(Vector3d from, Vector3d to)
+    {
+        return new AxisAlignedBB(from.x, from.y, from.z, to.x, to.y, to.z);
+    }
+
+    public static AxisAlignedBB ServerAABB(Vector3d origin, float range)
+    {
+        return new AxisAlignedBB(origin.x - range, origin.y - range, origin.z - range,
+                origin.x + range, origin.y + range, origin.z + range);
+    }
+
+    public static AxisAlignedBB ServerAABBignoreY(Vector3d origin, float range)
+    {
+        return new AxisAlignedBB(origin.x - range, origin.y - MAX_BUILD_HEIGHT, origin.z - range,
+                origin.x + range, origin.y + MAX_BUILD_HEIGHT, origin.z + range);
     }
 }
