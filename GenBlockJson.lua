@@ -72,7 +72,7 @@ end
 --  GenItem("armor", "aphrodite_armor_"..i);
 --end
 --GenItem("misc", "alterego_2");
-GenItem("tool", "ceramic_bow");
+--GenItem("tool", "ceramic_bow");
 --GenItem("tool", "murasama");
 --GenItem("food", "pure_water");
 --GenItem("food", "mantle");
@@ -82,6 +82,7 @@ GenItem("tool", "ceramic_bow");
 --GenItem("armor", "obsidian_leggings");
 --GenItem("armor", "obsidian_boots");
 --GenBlock("test_block");
+GenBlock("castle_bg_transp");
 
 --GenBlock("trade_mongo_sword");
 --GenBlock("castle_bg_r");

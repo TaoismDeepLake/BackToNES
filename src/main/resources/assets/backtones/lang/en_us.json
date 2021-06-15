@@ -17,6 +17,7 @@
   "backtones.msg.deal.fail": "I sell %sx %s(s) for %sx %s(s)",
   "backtones.msg.ego.swap.1": "Switched to Popolon",
   "backtones.msg.ego.swap.2": "Switched to Aphrodite",
+  "backtones.msg.ego.req.popolon": "Popolon Required",
   "backtones.desc.ego.0": "Right click to begin your journey of Majou Dentsu 2: Damoushikyou Galious",
   "backtones.desc.ego.1": "§dRight click to switch to Aphrodite",
   "backtones.desc.ego.2": "§3Right click to switch to Popolon",
