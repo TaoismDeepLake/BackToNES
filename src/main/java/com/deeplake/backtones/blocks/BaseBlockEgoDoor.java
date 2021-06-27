@@ -35,7 +35,9 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
     public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
         if (playerEntity.distanceToSqr(pos.getX() + 0.5f, pos.getY(), pos.getZ() + 0.5f) >= maxDistSqr)
         {
-            //todo: msg "stand_closer"
+            if (!world.isClientSide) {
+                CommonFunctions.SafeSendMsgToPlayer(TextFormatting.RED, playerEntity, MessageDef.EGO_DOOR_CLOSER);
+            }
             return ActionResultType.FAIL;
         }
 

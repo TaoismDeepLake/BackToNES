@@ -18,6 +18,8 @@
   "backtones.msg.ego.swap.1": "Switched to Popolon",
   "backtones.msg.ego.swap.2": "Switched to Aphrodite",
   "backtones.msg.ego.req.popolon": "Popolon Required",
+  "backtones.msg.ego.req.aphrodite": "Aphrodite Required",
+  "backtones.msg.ego.req.ego_door_closer": "Move closer to push the door.",
   "backtones.desc.ego.0": "Right click to begin your journey of Majou Dentsu 2: Damoushikyou Galious",
   "backtones.desc.ego.1": "§dRight click to switch to Aphrodite",
   "backtones.desc.ego.2": "§3Right click to switch to Popolon",

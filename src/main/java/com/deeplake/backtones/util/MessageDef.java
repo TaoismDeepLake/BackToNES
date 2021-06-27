@@ -9,6 +9,8 @@ public class MessageDef {
     public static String REQ_POPOLON = MOD_ID + ".msg.ego.req.popolon";
     public static String REQ_APHRODITE = MOD_ID + ".msg.ego.req.aphrodite";
 
+    public static String EGO_DOOR_CLOSER = MOD_ID + ".msg.ego.req.ego_door_closer";
+
     public static String SWAP_EGO = MOD_ID + ".msg.ego.swap.";
     public static String getSwapEgoMsgKey(MJDSDefine.EnumEgo resultEgo)
     {
