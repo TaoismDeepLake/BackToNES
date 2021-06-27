@@ -82,7 +82,8 @@ end
 --GenItem("armor", "obsidian_leggings");
 --GenItem("armor", "obsidian_boots");
 --GenBlock("test_block");
-GenBlock("castle_bg_transp");
+GenBlock("popolon_door");
+GenBlock("aphrodite_door");
 
 --GenBlock("trade_mongo_sword");
 --GenBlock("castle_bg_r");

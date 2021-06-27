@@ -10,6 +10,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
@@ -26,27 +28,38 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
         return axis+axis-val;
     }
 
+    float maxDistSqr = 2f*2f;
+    float disturbanceY = 0.3f;//make the player fall, so they feel the teleport
+
     //(onBlockActivated)
     public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
+        if (playerEntity.distanceToSqr(pos.getX() + 0.5f, pos.getY(), pos.getZ() + 0.5f) >= maxDistSqr)
+        {
+            //todo: msg "stand_closer"
+            return ActionResultType.FAIL;
+        }
+
         if (EgoUtil.getEgo(playerEntity) == egoReq)
         {
-            if (world.isClientSide)
-            {
-
-            }
-            else {
+            if (!world.isClientSide) {
                 Vec3d thisPos = new Vec3d(pos.getX()+0.5f, pos.getY(), pos.getZ()+0.5f);
                 playerEntity.teleportTo(symmteric(playerEntity.getX(), thisPos.x),
-                        playerEntity.getY(),
+                        playerEntity.getY()+disturbanceY,
                         symmteric(playerEntity.getZ(), thisPos.z));
 
             }
             return ActionResultType.SUCCESS;
         }
         else {
-            if (world.isClientSide)
+            if (!world.isClientSide)
             {
-                CommonFunctions.SafeSendMsgToPlayer(TextFormatting.RED, playerEntity, MessageDef.REQ_POPOLON);
+                if (egoReq == MJDSDefine.EnumEgo.POPLON)
+                {
+                    CommonFunctions.SafeSendMsgToPlayer(TextFormatting.RED, playerEntity, MessageDef.REQ_POPOLON);
+                }
+                else {
+                    CommonFunctions.SafeSendMsgToPlayer(TextFormatting.RED, playerEntity, MessageDef.REQ_APHRODITE);
+                }
             }
             return ActionResultType.FAIL;
         }
