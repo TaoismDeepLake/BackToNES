@@ -1,17 +1,16 @@
 package com.deeplake.backtones.blocks;
 
-import com.deeplake.backtones.items.BaseItemIDF;
-import com.deeplake.backtones.util.*;
-import com.sun.javafx.geom.Vec3d;
+import com.deeplake.backtones.util.CommonFunctions;
+import com.deeplake.backtones.util.EgoUtil;
+import com.deeplake.backtones.util.MJDSDefine;
+import com.deeplake.backtones.util.MessageDef;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
@@ -44,7 +43,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
         if (EgoUtil.getEgo(playerEntity) == egoReq)
         {
             if (!world.isClientSide) {
-                Vec3d thisPos = new Vec3d(pos.getX()+0.5f, pos.getY(), pos.getZ()+0.5f);
+                Vector3d thisPos = new Vector3d(pos.getX()+0.5f, pos.getY(), pos.getZ()+0.5f);
                 playerEntity.teleportTo(symmteric(playerEntity.getX(), thisPos.x),
                         playerEntity.getY()+disturbanceY,
                         symmteric(playerEntity.getZ(), thisPos.z));

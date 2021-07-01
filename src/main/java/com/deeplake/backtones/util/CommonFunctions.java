@@ -1,7 +1,6 @@
 package com.deeplake.backtones.util;
 
 import com.deeplake.backtones.IdlFramework;
-import com.sun.javafx.geom.Vec3d;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
