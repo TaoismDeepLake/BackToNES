@@ -27,7 +27,7 @@ displayName="Back To NES" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+logoFile="logo.png" #optional
 # A text field displayed in the mod UI
 credits="Thanks for Boson tutorial. This framework is based on that." #optional
 # A text field displayed in the mod UI
@@ -36,7 +36,7 @@ authors="Taoism Deeplake" #optional
 description='''
 I played an NES game when I was young, it was called "Majou Densetsu II - Daimashikyou Galious".
 I couldn't read the Japanese in it, but I was still mystified by that game.
-Now, as a Novice 1.16 god, I think I could carry some nuggets of it into Minecraft world, plus something from other games.
+Now, as a Novice 1.16 god, I think I could carry some nuggets of it into the Minecraft world, plus something from other games.
 This mod is written for the TeaCon 2021 Chinese modding competition, whose topic are "fictional gadgets".
 I hope the mongolian sword fits.
 '''

@@ -69,4 +69,6 @@ public class CommonDef {
         public static int FORCE_RENDER = 8;
         public static int IGNORE_OB = 16;
     }
+
+    public static int CHUNK_MASK = 15;
 }

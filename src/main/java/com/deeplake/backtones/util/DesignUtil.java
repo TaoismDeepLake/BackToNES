@@ -19,7 +19,9 @@ import net.minecraft.world.World;
 import static com.deeplake.backtones.events.EventsJumpHelper.getBlockPosBelowThatAffectsMyMovement;
 
 public class DesignUtil {
-    public static boolean isInMJDS(LivingEntity entity)
+
+
+    public static boolean isInMJDS(Entity entity)
     {
         Block block = entity.level.getBlockState(getBlockPosBelowThatAffectsMyMovement(entity)).getBlock();
         return block instanceof BaseBlockMJDS || block instanceof LadderBlockMJDS || block instanceof BlockWallGlass;

@@ -28,8 +28,9 @@ public class RegistryManager {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         BlockRegistry.BLOCKS.register(eventBus);
         ItemRegistry.ITEMS.register(eventBus);
+        EntityRegistry.ENTITY_TYPES.register(eventBus);
 
-        eventBus.addGenericListener(VillagerProfession.class, VillagerRegistry::registerAll);
+        //eventBus.addGenericListener(VillagerProfession.class, VillagerRegistry::registerAll);
         eventBus.addGenericListener(Effect.class, EffectRegistry::registerAllPotion);
         //eventBus.addListener(EventPriority.NORMAL, EventsPotion::onHurt);
         //eventBus.addListener(EventPriority.NORMAL, EventsJumpHelper::onJump);
