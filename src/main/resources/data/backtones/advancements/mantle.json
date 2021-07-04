@@ -1,19 +1,19 @@
 {
 		"display": {
 				"icon": {
-						"item": "backtones:breakable_wall"
+						"item": "backtones:mantle"
 				},
 				"title": {
-						"translate": "backtones.advancements.breakable_wall.title"
+						"translate": "backtones.advancements.mantle.title"
 				},
 				"description": {
-						"translate": "backtones.advancements.breakable_wall.description"
+						"translate": "backtones.advancements.mantle.description"
 				},
 				"show_toast": true,
 				"announce_to_chat": true,
-				"frame": "goal"
+				"frame": "task"
 		},
-		"parent": "backtones:mongo_sword",
+		"parent": "backtones:root",
 		"criteria": {
 				"impossible": {
 						"trigger": "minecraft:impossible"

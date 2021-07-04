@@ -1,9 +1,6 @@
 package com.deeplake.backtones.items;
 
-import com.deeplake.backtones.util.EgoUtil;
-import com.deeplake.backtones.util.IDLNBT;
-import com.deeplake.backtones.util.IDLNBTDef;
-import com.deeplake.backtones.util.IDLNBTUtil;
+import com.deeplake.backtones.util.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -30,12 +27,19 @@ public class ItemAlterEgo extends BaseItemIDF{
         }
         else {
             EgoUtil.trySwapEgo(playerEntity);
+            int state = IDLNBT.getPlayerIdeallandIntSafe(playerEntity, MJDS_EGO);
             IDLNBTUtil.SetInt(stack, IDLNBTDef.STATE, IDLNBT.getPlayerIdeallandIntSafe(playerEntity, MJDS_EGO));
             IDLNBTUtil.SetDouble(stack, IDLNBTDef.EGO_HP, IDLNBT.getPlayerIdeallandDoubleSafe(playerEntity, EGO_HP));
             //prevent multi-click
             playerEntity.getCooldowns().addCooldown(this, TICK_PER_SECOND / 2);
 
             giveAdvancement(playerEntity, "alterego_used");
+            if (EgoUtil.getEgo(playerEntity) == MJDSDefine.EnumEgo.POPLON)
+            {
+                giveAdvancement(playerEntity, "alterego_aphrodite");
+            }else {
+                giveAdvancement(playerEntity, "alterego_popolon");
+            }
 
             return ActionResult.success(playerEntity.getItemInHand(hand));
         }

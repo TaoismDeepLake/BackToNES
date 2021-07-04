@@ -1,7 +1,7 @@
 {
 		"display": {
 				"icon": {
-						"item": "backtones:alterego"
+						"item": "backtones:aphrodite_armor_1"
 				},
 				"title": {
 						"translate": "backtones.advancements.alterego_aphrodite.title"
@@ -13,7 +13,7 @@
 				"announce_to_chat": true,
 				"frame": "task"
 		},
-		"parent": "backtones:alterego",
+		"parent": "backtones:alterego_used",
 		"criteria": {
 				"impossible": {
 						"trigger": "minecraft:impossible"

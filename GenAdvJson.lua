@@ -18,8 +18,9 @@ local function GenAdvItem(iconName, advName, parentPath, isChall)
 	outFile:close();
 end
 
-GenAdvItem("backtones:alterego", "alterego_popolon", "alterego", false);
-GenAdvItem("backtones:alterego", "alterego_aphrodite", "alterego", false);
+GenAdvItem("backtones:pure_water", "pure_water", "root", false);
+GenAdvItem("backtones:mantle", "mantle", "root", false);
+
 
 
 --GenItem("misc", "hell_coin_base");
