@@ -1,0 +1,22 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:alterego"
+				},
+				"title": {
+						"translate": "backtones.advancements.alterego_aphrodite.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.alterego_aphrodite.description"
+				},
+				"show_toast": true,
+				"announce_to_chat": true,
+				"frame": "task"
+		},
+		"parent": "backtones:alterego",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}
