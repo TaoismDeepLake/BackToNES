@@ -1,6 +1,7 @@
 package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
+import com.deeplake.backtones.util.AdvancementUtil;
 import com.deeplake.backtones.util.DesignUtil;
 import com.deeplake.backtones.util.IDLNBTDef;
 import net.minecraft.entity.LivingEntity;
@@ -10,6 +11,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -45,7 +47,10 @@ public class EventsBirthHelper {
                 livingEntity.setItemInHand(Hand.OFF_HAND, makeBannerShield(new ItemStack(Items.SHIELD), new ItemStack(Items.WHITE_BANNER)));
             }
         }
+    }
 
-
+    @SubscribeEvent
+    public static void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        AdvancementUtil.giveAdvancement(event.getPlayer(), "root");
     }
 }

@@ -2,10 +2,12 @@ package com.deeplake.backtones.registry;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.items.*;
+import com.deeplake.backtones.items.infra.SpawnEggItemModded;
 import com.deeplake.backtones.items.tabs.TabList;
 import com.deeplake.backtones.items.weapons.ItemCeraBow;
 import com.deeplake.backtones.items.weapons.ItemRedBow;
 import com.deeplake.backtones.items.weapons.MongolianSword;
+import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
@@ -13,6 +15,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.deeplake.backtones.items.infra.BaseArmorTier.*;
+import static com.deeplake.backtones.registry.EntityRegistry.MJDS_SKELETON;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IdlFramework.MOD_ID);
@@ -47,4 +50,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> APHRODITE_BOOTS = ITEMS.register("aphrodite_armor_4", () -> new EgoArmor(APHRODITE, EquipmentSlotType.FEET, (RARE_PROP)));
 
     public static final RegistryObject<Item>[] APHRODITE_ARMOR = new RegistryObject[]{APHRODITE_HELMET,APHRODITE_CHESTPLATE, APHRODITE_LEGGINGS,APHRODITE_BOOTS};
+
+    public static final RegistryObject<Item> SP_EGG = ITEMS.register("spawner_egg_skeleton",
+            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_SKELETON, 0xffffff, 0xcccccc, UNCOMMON_PROP));
 }

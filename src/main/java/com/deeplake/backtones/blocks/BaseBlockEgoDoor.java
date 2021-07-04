@@ -8,6 +8,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -47,7 +49,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
                 playerEntity.teleportTo(symmteric(playerEntity.getX(), thisPos.x),
                         playerEntity.getY()+disturbanceY,
                         symmteric(playerEntity.getZ(), thisPos.z));
-
+                playerEntity.playSound(SoundEvents.WOODEN_DOOR_OPEN, 1f, 0.5f);
             }
             return ActionResultType.SUCCESS;
         }

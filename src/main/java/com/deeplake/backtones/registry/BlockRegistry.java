@@ -42,8 +42,7 @@ public class BlockRegistry {
 //        return block;
 //    }
 
-    //public static final RegistryObject<Block> obsidianBlock = registerWithItem("test_block", BaseBlockIDF::new);
-    //public static final RegistryObject<Block> CASTLE_BG = registerWithItem("castle_bg", BlockIndestructible::new);//vy'= (vy- g) * 0.98
+    //public static final RegistryObject<Block> CASTLE_BG = registerWithItem("castle_bg", BlockIndestructible::new);//vy'= (vy- g) * 0.98 //not transparent ver
     public static final RegistryObject<Block> CASTLE_BG = registerWithItem("castle_bg", BlockWallGlass::new);//vy'= (vy- g) * 0.98
     //public static final RegistryObject<Block> CASTLE_BG_TRANSPARENT = registerWithItem("castle_bg_transp", BlockWallGlass::new);//vy'= (vy- g) * 0.98
     public static final RegistryObject<Block> CASTLE_BG_G = registerWithItem("castle_bg_g", BlockIndestructible::new);//vy'= (vy- g) * 0.98

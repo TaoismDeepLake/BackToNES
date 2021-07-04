@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "backtones:alterego"
+        },
+        "title": {
+            "translate": "backtones.advancements.alterego.title"
+        },
+        "description": {
+            "translate": "backtones.advancements.alterego.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "backtones:root",
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

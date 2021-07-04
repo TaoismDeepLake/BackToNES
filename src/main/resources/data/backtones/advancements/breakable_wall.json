@@ -1,0 +1,22 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:breakable_wall"
+				},
+				"title": {
+						"translate": "backtones.advancements.breakable_wall.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.breakable_wall.description"
+				},
+				"show_toast": true,
+				"announce_to_chat": true,
+				"frame": "challenge"
+		},
+		"parent": "backtones:mongo_sword",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

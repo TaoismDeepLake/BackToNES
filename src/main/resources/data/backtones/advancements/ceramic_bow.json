@@ -1,0 +1,22 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:ceramic_bow"
+				},
+				"title": {
+						"translate": "backtones.advancements.ceramic_bow.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.ceramic_bow.description"
+				},
+				"show_toast": true,
+				"announce_to_chat": true,
+				"frame": "challenge"
+		},
+		"parent": "backtones:red_bow",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

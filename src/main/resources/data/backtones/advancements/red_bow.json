@@ -1,0 +1,22 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:red_bow"
+				},
+				"title": {
+						"translate": "backtones.advancements.red_bow.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.red_bow.description"
+				},
+				"show_toast": true,
+				"announce_to_chat": true,
+				"frame": "task"
+		},
+		"parent": "backtones:root",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

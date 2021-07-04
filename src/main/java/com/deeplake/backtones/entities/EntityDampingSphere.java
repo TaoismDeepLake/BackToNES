@@ -8,6 +8,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.ListNBT;
@@ -94,7 +96,7 @@ public class EntityDampingSphere extends Entity {
             {
                 if (EntityUtil.getEntitiesWithinAABBignoreY(level,
                         EntityType.PLAYER,
-                        getPosition(0),
+                        getEyePosition(0),
                         CHUNK_SIZE,
                         ALL).size() == 0)
                 {
