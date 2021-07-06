@@ -1,0 +1,23 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:castle_bg"
+				},
+				"title": {
+						"translate": "backtones.advancements.watch_your_step.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.watch_your_step.description"
+				},
+				"show_toast": true,
+				"announce_to_chat": true,
+				"hidden": true,
+				"frame": "challenge"
+		},
+		"parent": "backtones:root",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

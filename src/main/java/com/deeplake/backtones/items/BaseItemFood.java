@@ -2,11 +2,16 @@ package com.deeplake.backtones.items;
 
 import com.deeplake.backtones.items.tabs.TabList;
 import com.deeplake.backtones.registry.EffectRegistry;
+import com.deeplake.backtones.util.AdvancementUtil;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Food;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.CommonDef.SECOND_PER_TURN;
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
@@ -41,5 +46,23 @@ public class BaseItemFood extends BaseItemIDF {
 
     public BaseItemFood() {
         super(new Properties().tab(ItemGroup.TAB_FOOD).food(defaultFood));
+    }
+
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity livingEntity) {
+        if (livingEntity instanceof PlayerEntity && !world.isClientSide)
+        {
+            Food food = stack.getItem().getFoodProperties();
+            PlayerEntity playerEntity = (PlayerEntity) livingEntity;
+            if (food == F_MANTLE)
+            {
+                AdvancementUtil.giveAdvancement(playerEntity, AdvancementUtil.ACHV_MANTLE);
+            }else if (food == F_PURE_WATER)
+            {
+                AdvancementUtil.giveAdvancement(playerEntity, AdvancementUtil.ACHV_PURE_WATER);
+            }
+        }
+
+        return super.finishUsingItem(stack, world, livingEntity);
     }
 }
