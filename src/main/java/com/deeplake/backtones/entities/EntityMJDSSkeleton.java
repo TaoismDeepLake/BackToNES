@@ -2,7 +2,6 @@ package com.deeplake.backtones.entities;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
-import com.sun.javafx.geom.Vec3d;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.inventory.EquipmentSlotType;
