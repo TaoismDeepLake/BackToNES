@@ -35,29 +35,34 @@ public class EntityRevivalMist extends Entity {
     {
         entityType = livingEntity.getType();
         livingEntity.saveWithoutId(entityNBT);
-        IdlFramework.Log("Rememebered: %s\n%s",entityType.toString(), entityNBT.toString());
+        IdlFramework.Log("Rememebered: %s@%s\n%s",entityType.toString(), getEyePosition(0), entityNBT.toString());
     }
 
     @Override
     public void tick() {
         super.tick();
-        if (!level.isClientSide)
+        if (!level.isClientSide && isAlive())
         {
-            if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  16, EntityUtil.ALL).size() == 0)
+            //It will revive if it's outside the screen...
+            if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  32, EntityUtil.ALL).size() == 0)
             {
-                Entity entity = entityType.create(level);
-                if (entity instanceof LivingEntity)
+                //But will not revive when it's too far from players. Minecraft will despawn it, and thus keep cycling.
+                if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  90, EntityUtil.ALL).size() != 0)
                 {
-                    entity.load(entityNBT);
-                    entity.copyPosition(this);
-                    entity.setUUID(UUID.randomUUID());
-                    ((LivingEntity) entity).deathTime = 0;
-                    //entity.revive();only player can call this
-                    ((LivingEntity) entity).setHealth(((LivingEntity) entity).getMaxHealth());
-                    level.addFreshEntity(entity);
+                    Entity entity = entityType.create(level);
+                    if (entity instanceof LivingEntity)
+                    {
+                        entity.load(entityNBT);
+                        entity.copyPosition(this);
+                        entity.setUUID(UUID.randomUUID());
+                        ((LivingEntity) entity).deathTime = 0;
+                        entity.revive();
+                        ((LivingEntity) entity).setHealth(((LivingEntity) entity).getMaxHealth());
+                        level.addFreshEntity(entity);
+                    }
+                    IdlFramework.Log("...And with strange aeons even death may die. Recovered: %s@%s", entityType.toString(), getEyePosition(0));
+                    remove();
                 }
-                IdlFramework.Log("...And with strange aeons even death may die.");
-                remove();
             }
         }
         else {

@@ -72,6 +72,7 @@ public class EventsJumpHelper {
             float jumpFactorMaxInit = jumpFactorMax;
 
             BlockPos[] posDeltaList = {
+                    BlockPos.ZERO,
                     BlockPos.ZERO.east(),
                     BlockPos.ZERO.west(),
                     BlockPos.ZERO.south(),
