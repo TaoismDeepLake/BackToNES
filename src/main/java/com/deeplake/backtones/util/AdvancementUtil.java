@@ -15,6 +15,14 @@ public class AdvancementUtil {
     public static final String ACHV_MANTLE = "mantle";
     public static final String ACHV_PURE_WATER = "pure_water";
 
+    public static final String ACHV_ALTEREGO_APHRODITE = "alterego_aphrodite";
+    public static final String ACHV_ALTEREGO_POPOLON = "alterego_popolon";
+    public static final String ACHV_ALTEREGO_USED = "alterego_used";
+    public static final String ACHV_CERAMIC_BOW = "ceramic_bow";
+    public static final String ACHV_RED_BOW = "red_bow";
+    public static final String ACHV_ROOT = "root";
+
+
     public static boolean giveAdvancement(PlayerEntity player, String id)
     {
         if (player.level.isClientSide)
