@@ -36,9 +36,9 @@ public class ItemAlterEgo extends BaseItemIDF{
             giveAdvancement(playerEntity, "alterego_used");
             if (EgoUtil.getEgo(playerEntity) == MJDSDefine.EnumEgo.POPLON)
             {
-                giveAdvancement(playerEntity, "alterego_aphrodite");
-            }else {
                 giveAdvancement(playerEntity, "alterego_popolon");
+            }else {
+                giveAdvancement(playerEntity, "alterego_aphrodite");
             }
 
             return ActionResult.success(playerEntity.getItemInHand(hand));

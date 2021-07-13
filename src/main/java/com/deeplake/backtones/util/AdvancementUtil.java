@@ -10,6 +10,11 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 
 public class AdvancementUtil {
+    public static final String ACHV_BREAKABLE_WALL = "breakable_wall";
+    public static final String ACHV_WATCH_YOUR_STEP = "watch_your_step";
+    public static final String ACHV_MANTLE = "mantle";
+    public static final String ACHV_PURE_WATER = "pure_water";
+
     public static boolean giveAdvancement(PlayerEntity player, String id)
     {
         if (player.level.isClientSide)
