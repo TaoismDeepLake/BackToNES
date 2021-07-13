@@ -13,7 +13,7 @@ public class SurfaceGen {
     {
         //if (event.getCategory().equals(Biome.Category.FOREST))
         {
-            generate(event.getGeneration(), testFeature);
+            //generate(event.getGeneration(), testFeature);
         }
     }
 
