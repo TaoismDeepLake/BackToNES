@@ -20,6 +20,9 @@ public class AdvancementUtil {
     public static final String ACHV_ALTEREGO_USED = "alterego_used";
     public static final String ACHV_CERAMIC_BOW = "ceramic_bow";
     public static final String ACHV_RED_BOW = "red_bow";
+
+    public static final String ACHV_MONGO_SWORD = "mongo_sword";
+
     public static final String ACHV_ROOT = "root";
 
 
@@ -65,6 +68,17 @@ public class AdvancementUtil {
         }
     }
 
+    public static boolean hasAdvancement(ServerPlayerEntity p_192552_2_, String id)
+    {
+        Advancement adv = findAdvancement(p_192552_2_.server, id);
+        if (adv == null)
+        {
+            return false;
+        }
+        else {
+            return hasAdvancement(p_192552_2_, adv);
+        }
+    }
     public static boolean hasAdvancement(ServerPlayerEntity p_192552_2_, Advancement p_192552_3_)
     {
         AdvancementProgress advancementprogress = p_192552_2_.getAdvancements().getOrStartProgress(p_192552_3_);
