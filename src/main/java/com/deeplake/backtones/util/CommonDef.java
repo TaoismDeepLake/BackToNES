@@ -12,6 +12,7 @@ public class CommonDef {
     //public static final ITag.INamedTag<EntityType<?>> BOSSES = bind("bosses");
 
     public static final String EMPTY = "";
+    public static final String NEWLINE = "\n";
     public static final String MINECRAFT = "minecraft";
 
     public static final int INT_AS_FLOAT = 10000;

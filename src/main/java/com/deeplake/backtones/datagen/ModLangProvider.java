@@ -33,6 +33,11 @@ public class ModLangProvider extends LanguageProvider {
         addAdv(AdvancementUtil.ACHV_WATCH_YOUR_STEP);
     }
 
+    public void addMsg(String key)
+    {
+        add(key, "MSG");
+    }
+
     public void addAdv(String key)
     {
         add(String.format("%s.advancements.%s.title", IdlFramework.MOD_ID, key), "ADV");

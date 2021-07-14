@@ -11,6 +11,13 @@ public class IDLNBTDef {
 	public static final String BLOCK_STATE = "blstate";
 	public static final String BLOCK_POS = "blpos";
 
+	//Map
+	public static final String ORI_POS = "ori_pos";
+	public static final String MAP_MARK_PLAYER = IdlFramework.MOD_ID + ".map.player";
+	public static final String MAP_MARK_BLANK = IdlFramework.MOD_ID + ".map.blank";
+	public static final String MAP_MARK_PASS = IdlFramework.MOD_ID + ".map.pass";
+	public static final String MAP_MARK_BOSS = IdlFramework.MOD_ID + ".map.boss";
+
 	//zombie
 	public static final String IS_BABY = "IsBaby";
 
