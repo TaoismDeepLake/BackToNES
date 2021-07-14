@@ -67,10 +67,10 @@ public class BlockRegistry {
 
     public static final RegistryObject<Block> BOX_1 = registerWithItem("box_1", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MONGO_SWORD));
     public static final RegistryObject<Block> BOX_2 = registerWithItem("box_2", () ->new BlockAchvBox(ItemRegistry.CERAMIC_BOW, AdvancementUtil.ACHV_CERAMIC_BOW));
-//    public static final RegistryObject<Block> BOX_3 = registerWithItem("box_3", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_4 = registerWithItem("box_4", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_5 = registerWithItem("box_5", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_6 = registerWithItem("box_6", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
+    public static final RegistryObject<Block> BOX_3 = registerWithItem("box_3", () ->new BlockAchvBox(ItemRegistry.RED_BOW, AdvancementUtil.ACHV_RED_BOW));
+    public static final RegistryObject<Block> BOX_4 = registerWithItem("box_4", () ->new BlockAchvBox(ItemRegistry.PURE_WATER, AdvancementUtil.ACHV_PURE_WATER));
+    public static final RegistryObject<Block> BOX_5 = registerWithItem("box_5", () ->new BlockAchvBox(ItemRegistry.MANTLE, AdvancementUtil.ACHV_MANTLE));
+    public static final RegistryObject<Block> BOX_6 = registerWithItem("box_6", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_7 = registerWithItem("box_7", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_8 = registerWithItem("box_8", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_9 = registerWithItem("box_9", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));

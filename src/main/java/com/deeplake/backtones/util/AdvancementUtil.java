@@ -20,6 +20,7 @@ public class AdvancementUtil {
     public static final String ACHV_ALTEREGO_USED = "alterego_used";
     public static final String ACHV_CERAMIC_BOW = "ceramic_bow";
     public static final String ACHV_RED_BOW = "red_bow";
+    public static final String ACHV_MAP = "map";
 
     public static final String ACHV_MONGO_SWORD = "mongo_sword";
 

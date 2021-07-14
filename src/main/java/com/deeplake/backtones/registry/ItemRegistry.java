@@ -36,6 +36,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CERAMIC_BOW = ITEMS.register("ceramic_bow", () -> new ItemCeraBow(new Item.Properties().durability(1024).rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item> ALTER_EGO = ITEMS.register("alterego", () -> new ItemAlterEgo(EPIC_PROP));
+    public static final RegistryObject<Item> MAP = ITEMS.register("map", () -> new ItemMapMJDS());
 
     public static final RegistryObject<Item> POPOLON_HELMET = ITEMS.register("popolon_armor_1", () -> new EgoArmor(POPOLON, EquipmentSlotType.HEAD, (RARE_PROP)));
     public static final RegistryObject<Item> POPOLON_CHESTPLATE = ITEMS.register("popolon_armor_2", () -> new EgoArmor(POPOLON, EquipmentSlotType.CHEST, (RARE_PROP)));
