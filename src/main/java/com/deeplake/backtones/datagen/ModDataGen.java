@@ -19,8 +19,10 @@ public class ModDataGen {
         //if (event.includeClient()) {
             IdlFramework.LogWarning("CLIENT DATAGEN"); ;
             generator.addProvider(new ModLangProvider(generator, IdlFramework.MOD_ID, "zh_cn"));
+            //generator.addProvider(new ModModelProvider(generator, IdlFramework.MOD_ID, "models/block"));
         //}
 
+        //generator.addProvider();
 
         //event.getGenerator().addProvider();
     }

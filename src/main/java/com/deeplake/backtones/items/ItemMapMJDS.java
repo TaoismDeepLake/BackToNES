@@ -16,10 +16,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import static com.deeplake.backtones.util.CommonDef.NEWLINE;
+import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
 import static com.deeplake.backtones.util.IDLNBTDef.ORI_POS;
 
 @Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)
-public class ItemMapMJDS extends BaseItemIDF {
+public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
 
     public static final int BLANK = 0;
     public static final int PASS_ = 1;
@@ -52,15 +53,22 @@ public class ItemMapMJDS extends BaseItemIDF {
         return new BlockPos(pos.getZ() >> 4, pos.getY() >> 4, (pos.getY() % 16) >> 2 + 1);
     }
 
+    public static void setOriginToStack(ItemStack stack, BlockPos pos)
+    {
+        CompoundNBT nbt = stack.getOrCreateTag();
+        nbt.put(ORI_POS, NBTUtil.writeBlockPos(pos));
+        stack.setTag(nbt);
+    }
+
     public static BlockPos readOriginFromStack(ItemStack stack)
     {
-        if (stack.getTag() == null)
-        {
-            CompoundNBT nbt = new CompoundNBT();
-            nbt.put(ORI_POS, NBTUtil.writeBlockPos(BlockPos.ZERO));
-            stack.setTag(new CompoundNBT());
-        }
-        return NBTUtil.readBlockPos(stack.getTag().getCompound(ORI_POS));
+//        if (stack.getTag() == null)
+//        {
+//            CompoundNBT nbt = new CompoundNBT();
+//            nbt.put(ORI_POS, NBTUtil.writeBlockPos(BlockPos.ZERO));
+//            stack.setTag(new CompoundNBT());
+//        }
+        return NBTUtil.readBlockPos(stack.getOrCreateTag().getCompound(ORI_POS));
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -85,11 +93,13 @@ public class ItemMapMJDS extends BaseItemIDF {
 
             boolean hasLamp = false;
 
+            int tickCount = event.getPlayer().tickCount % TICK_PER_SECOND;
+
             int curY = 0;
             for (int[] row: CASTLE_MAP) {
                 int curX = 0;
                 for (int grid: row) {
-                    if (playerAtY == curY && playerAtX == curX)
+                    if (playerAtY == curY && playerAtX == curX && (tickCount >= 10))
                     {
                         stringBuilder.append(player);
                     }
