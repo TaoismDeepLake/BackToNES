@@ -41,6 +41,6 @@ public class ModLangProvider extends LanguageProvider {
     public void addAdv(String key)
     {
         add(String.format("%s.advancements.%s.title", IdlFramework.MOD_ID, key), "ADV");
-        add(String.format("%s.advancements.%s.desc", IdlFramework.MOD_ID, key), "DESC");
+        add(String.format("%s.advancements.%s.description", IdlFramework.MOD_ID, key), "DESC");
     }
 }

@@ -2,8 +2,10 @@ package com.deeplake.backtones.items;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.util.CommonFunctions;
+import com.deeplake.backtones.util.EgoUtil;
 import com.deeplake.backtones.util.IDLNBTDef;
-import net.minecraft.client.Minecraft;
+import com.deeplake.backtones.util.MJDSDefine;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
@@ -75,33 +77,47 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
     @SubscribeEvent
     public static void addSpecialDesc(ItemTooltipEvent event)
     {
-        if (event.getItemStack().getItem() instanceof ItemMapMJDS)
+        PlayerEntity playerEntity = event.getPlayer();
+
+        if (playerEntity != null && event.getItemStack().getItem() instanceof ItemMapMJDS)
         {
             StringBuilder stringBuilder = new StringBuilder();
 
             ItemStack stack = event.getItemStack();
-            BlockPos pinPoint = getShrinkPosFromRealPos(event.getPlayer().blockPosition());
+            BlockPos pinPoint = getShrinkPosFromRealPos(playerEntity.blockPosition());
             BlockPos origin = readOriginFromStack(stack);
 
             int playerAtX = pinPoint.getX()-origin.getX();
             int playerAtY = pinPoint.getY()-origin.getY();
 
-            String player = CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER);
+            //Client does not know nbt, hence ego
+//            String playerStr = EgoUtil.getEgo(playerEntity).equals(MJDSDefine.EnumEgo.APHRODITE) ?
+//                    CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_APHRODITE) :
+//                    CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_POPOLON);
+
+            int tickCount = playerEntity.tickCount % TICK_PER_SECOND;
+
+            String playerStr = tickCount >= 10 ?
+            CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_APHRODITE) :
+            CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_POPOLON);
+
             String pass = CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PASS);
             String blank = CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_BLANK);
             String boss = CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_BOSS);
 
-            boolean hasLamp = false;
+//            IdlFramework.Log("Translation:%s->%s, playerText = %s",
+//                    IDLNBTDef.MAP_MARK_PLAYER_APHRODITE,
+//                    CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_APHRODITE), playerStr);
 
-            int tickCount = event.getPlayer().tickCount % TICK_PER_SECOND;
+            boolean hasLamp = false;
 
             int curY = 0;
             for (int[] row: CASTLE_MAP) {
                 int curX = 0;
                 for (int grid: row) {
-                    if (playerAtY == curY && playerAtX == curX && (tickCount >= 10))
+                    if (playerAtY == curY && playerAtX == curX)
                     {
-                        stringBuilder.append(player);
+                        stringBuilder.append(playerStr);
                     }
                     else {
                         switch (grid)

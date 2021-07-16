@@ -13,7 +13,8 @@ public class IDLNBTDef {
 
 	//Map
 	public static final String ORI_POS = "ori_pos";
-	public static final String MAP_MARK_PLAYER = IdlFramework.MOD_ID + ".map.player";
+	public static final String MAP_MARK_PLAYER_APHRODITE = IdlFramework.MOD_ID + ".map.player.aphrodite";
+	public static final String MAP_MARK_PLAYER_POPOLON = IdlFramework.MOD_ID + ".map.player.popolon";
 	public static final String MAP_MARK_BLANK = IdlFramework.MOD_ID + ".map.blank";
 	public static final String MAP_MARK_PASS = IdlFramework.MOD_ID + ".map.pass";
 	public static final String MAP_MARK_BOSS = IdlFramework.MOD_ID + ".map.boss";

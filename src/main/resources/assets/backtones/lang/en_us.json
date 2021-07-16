@@ -26,8 +26,9 @@
   "backtones.desc.ego.3": "Happily Ever After",
   "backtones.desc.ego.4": "GAME OVER",
   "backtones.desc.ego.hp": "Health of Alter Ego: %d%%",
-  "backtones.map.player": "#",
-  "backtones.map.blank": "X",
-  "backtones.map.pass": "_",
-  "backtones.map.boss": "!"
+  "backtones.map.player.aphrodite": "§dA",
+  "backtones.map.player.popolon": "§bP",
+  "backtones.map.blank": "§0X",
+  "backtones.map.pass": "§f_",
+  "backtones.map.boss": "§7!"
 }

@@ -91,9 +91,13 @@ local function GenSP(index)
 	outFile:close();
 end
 
-for i = 1, 50 do
-	GenSP(i);
-end
+--for i = 1, 50 do
+--	GenSP(i);
+--end
+
+--GenBlock("castle_spawn");
+--GenItem("misc", "spawner_egg_skeleton");
+--GenItem("misc", "map");
 
 --for i = 1, 4 do
 --  GenItem("armor", "popolon_armor_"..i);
