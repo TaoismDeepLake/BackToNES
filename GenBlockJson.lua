@@ -67,6 +67,34 @@ local function GenTCG(_rarity, _itemName)
 	outFile:close();
 end
 
+local function GenSP(index)
+	print("Creating:SP_"..index)
+
+	local regName_prefix = "box_"
+
+	--item
+	local path = string.format("src\\main\\resources\\assets\\%s\\models\\item\\%s.json", modName, regName_prefix..index);
+	outFile = io.open(path,"w");
+
+	local content = string.format('{"parent": "backtones:block/mjds_box"}');
+	outFile:write(content);
+
+	outFile:close();
+
+	--block
+	path = string.format("src\\main\\resources\\assets\\%s\\blockstates\\%s.json", modName, regName_prefix..index);
+	outFile = io.open(path,"w");
+
+	content = string.format('{\n		"variants": {\n		"": { "model": "backtones:block/mjds_box" }\n	}\n	}');
+	outFile:write(content);
+
+	outFile:close();
+end
+
+for i = 1, 50 do
+	GenSP(i);
+end
+
 --for i = 1, 4 do
 --  GenItem("armor", "popolon_armor_"..i);
 --  GenItem("armor", "aphrodite_armor_"..i);
@@ -82,8 +110,8 @@ end
 --GenItem("armor", "obsidian_leggings");
 --GenItem("armor", "obsidian_boots");
 --GenBlock("test_block");
-GenBlock("popolon_door");
-GenBlock("aphrodite_door");
+--GenBlock("popolon_door");
+--GenBlock("aphrodite_door");
 
 --GenBlock("trade_mongo_sword");
 --GenBlock("castle_bg_r");
