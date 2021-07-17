@@ -3,42 +3,46 @@ package com.deeplake.backtones.entities;
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.monster.SkeletonEntity;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.monster.SlimeEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
 
-import java.util.Optional;
+import javax.annotation.Nullable;
 
 import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
-import static com.deeplake.backtones.util.IDLNBTDef.*;
+import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 
-public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
+public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
     public BlockPos spawnPoint;
 
-    public EntityMJDSSkeleton(EntityType<? extends SkeletonEntity> p_i50194_1_, World p_i50194_2_) {
-        super(p_i50194_1_, p_i50194_2_);
+    public EntityMJDSSlime(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
+        super(p_i48552_1_, p_i48552_2_);
     }
 
-    //do not burn under sun
     @Override
-    protected boolean isSunBurnTick() {
+    public boolean isTiny() {
         return false;
     }
 
-    protected void populateDefaultEquipmentSlots(DifficultyInstance p_180481_1_) {
-        super.populateDefaultEquipmentSlots(p_180481_1_);
-        this.setItemSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.IRON_SWORD));
-        this.setItemSlot(EquipmentSlotType.OFFHAND, makeBannerShield(new ItemStack(Items.SHIELD), new ItemStack(Items.WHITE_BANNER)));
+    @Nullable
+    public ILivingEntityData finalizeSpawn(IServerWorld p_213386_1_, DifficultyInstance p_213386_2_, SpawnReason p_213386_3_, @Nullable ILivingEntityData p_213386_4_, @Nullable CompoundNBT p_213386_5_) {
+        p_213386_4_ = super.finalizeSpawn(p_213386_1_, p_213386_2_, p_213386_3_, p_213386_4_, p_213386_5_);
 
         spawnPoint = blockPosition();
+
+        getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0f);
+
+        return p_213386_4_;
     }
 
     @Override
@@ -53,11 +57,6 @@ public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
             level.addFreshEntity(mist);
         }
     }
-
-//    @Override
-//    public void die(DamageSource p_70645_1_) {
-//        super.die(p_70645_1_);
-//    }
 
     @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {

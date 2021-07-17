@@ -96,7 +96,8 @@ end
 --end
 
 --GenBlock("castle_spawn");
---GenItem("misc", "spawner_egg_skeleton");
+GenItem("misc", "spawner_egg_bat");
+GenItem("misc", "spawner_egg_slime");
 --GenItem("misc", "map");
 
 --for i = 1, 4 do

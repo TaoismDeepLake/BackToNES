@@ -9,4 +9,6 @@ public class StringDef {
     public static String ENTITY_NAME_DAMP_SPHERE = "en_damp_sphere";
     public static String ENTITY_NAME_REVIVE_MIST = "en_revival_mist";
     public static String ENTITY_NAME_MJDS_SKELETON = "en_mjds_skeleton";
+    public static String ENTITY_NAME_MJDS_SLIME = "en_mjds_slime";
+    public static String ENTITY_NAME_MJDS_BAT = "en_mjds_bat";
 }

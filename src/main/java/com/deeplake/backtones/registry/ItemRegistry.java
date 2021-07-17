@@ -15,7 +15,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.deeplake.backtones.items.infra.BaseArmorTier.*;
-import static com.deeplake.backtones.registry.EntityRegistry.MJDS_SKELETON;
+import static com.deeplake.backtones.registry.EntityRegistry.*;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IdlFramework.MOD_ID);
@@ -52,6 +52,10 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item>[] APHRODITE_ARMOR = new RegistryObject[]{APHRODITE_HELMET,APHRODITE_CHESTPLATE, APHRODITE_LEGGINGS,APHRODITE_BOOTS};
 
-    public static final RegistryObject<Item> SP_EGG = ITEMS.register("spawner_egg_skeleton",
+    public static final RegistryObject<Item> SP_EGG_SKELETON = ITEMS.register("spawner_egg_skeleton",
             () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_SKELETON, 0xffffff, 0xcccccc, UNCOMMON_PROP));
+    public static final RegistryObject<Item> SP_EGG_SLIME = ITEMS.register("spawner_egg_slime",
+            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_SLIME, 0xff0000, 0xffffff, UNCOMMON_PROP));
+    public static final RegistryObject<Item> SP_EGG_BAT = ITEMS.register("spawner_egg_bat",
+            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_BAT, 0x000000, 0xcccccc, UNCOMMON_PROP));
 }

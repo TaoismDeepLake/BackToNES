@@ -42,7 +42,13 @@ public class EntityRegistry {
             () -> EntityType.Builder.of(EntityMJDSSkeleton::new, EntityClassification.MONSTER)
                     .sized(0.6F, 1.99F).clientTrackingRange(8).build(ENTITY_NAME_MJDS_SKELETON));
 
+    public static final RegistryObject<EntityType<EntityMJDSSlime>> MJDS_SLIME = ENTITY_TYPES.register(ENTITY_NAME_MJDS_SLIME,
+            () -> EntityType.Builder.of(EntityMJDSSlime::new, EntityClassification.MONSTER)
+                    .sized(1.0F, 1.0F).clientTrackingRange(8).build(ENTITY_NAME_MJDS_SLIME));
 
+    public static final RegistryObject<EntityType<EntityMJDSBat>> MJDS_BAT = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BAT,
+            () -> EntityType.Builder.of(EntityMJDSBat::new, EntityClassification.MONSTER)
+                    .sized(0.5F, 0.9F).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
 //    private static Item spawnEgg(EntityType<?> type, int color, int color2) {
 //        ResourceLocation eggId = new ResourceLocation(type.getRegistryName().getNamespace(), type.getRegistryName().getPath() + "_spawn_egg");
 //        return new SpawnEggItem(type, color, color2, ItemRegistry.UNCOMMON_PROP).setRegistryName(eggId);

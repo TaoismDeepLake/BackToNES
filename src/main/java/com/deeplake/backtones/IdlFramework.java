@@ -2,6 +2,7 @@ package com.deeplake.backtones;
 
 import com.deeplake.backtones.blocks.INeedInit;
 import com.deeplake.backtones.entities.EntityMJDSSkeleton;
+import com.deeplake.backtones.entities.EntityMJDSSlime;
 import com.deeplake.backtones.registry.BlockRegistry;
 import com.deeplake.backtones.registry.EntityRegistry;
 import com.deeplake.backtones.registry.RegistryManager;
@@ -18,7 +19,9 @@ import net.minecraft.data.BlockModelDefinition;
 import net.minecraft.data.BlockModelFields;
 import net.minecraft.data.FinishedVariantBlockState;
 import net.minecraft.data.ModelsResourceUtil;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -59,6 +62,8 @@ public class IdlFramework {
         event.enqueueWork(() ->
         {
             GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_SKELETON.get(), EntityMJDSSkeleton.createAttributes().build());
+            GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_SLIME.get(), MonsterEntity.createMonsterAttributes().build());
+            GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_BAT.get(), MonsterEntity.createMonsterAttributes().build());
         });
     }
 

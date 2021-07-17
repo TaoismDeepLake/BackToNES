@@ -1,10 +1,7 @@
 package com.deeplake.backtones.registry;
 
 import com.deeplake.backtones.entities.renderer.VoidRenderer;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.SkeletonRenderer;
-import net.minecraft.client.renderer.entity.TippedArrowRenderer;
+import net.minecraft.client.renderer.entity.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -20,5 +17,7 @@ public class ClientRegistry {
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.DAMP_SPHERE.get(), VoidRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.REVIVE_MIST.get(), VoidRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.MJDS_SKELETON.get(), SkeletonRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.MJDS_SLIME.get(), SlimeRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.MJDS_BAT.get(), BatRenderer::new);
     }
 }
