@@ -52,7 +52,9 @@
   "item.backtones.pure_water": "圣水·可食用",
   "item.backtones.quiver": "弓箭",
   "item.backtones.red_bow": "赤弓",
-  "item.backtones.spawner_egg_skeleton": "放置·地牢骷髅",
+  "item.backtones.spawner_egg_skeleton": "布置·地牢骷髅",
+  "item.backtones.spawner_egg_slime": "布置·地牢史莱姆",
+  "item.backtones.spawner_egg_bat": "布置·地牢蝙蝠",
   "itemGroup.group1": "神代回归1",
   "nes.mjds": "魔城传说2：大魔司教加里欧斯"
 }
