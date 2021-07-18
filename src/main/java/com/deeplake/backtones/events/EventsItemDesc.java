@@ -1,9 +1,12 @@
 package com.deeplake.backtones.events;
 
 import com.deeplake.backtones.IdlFramework;
+import com.deeplake.backtones.blocks.BlockAchvBox;
+import com.deeplake.backtones.blocks.BlockCovered;
 import com.deeplake.backtones.blocks.BlockTrader;
 import com.deeplake.backtones.items.INeedLogNBT;
 import com.deeplake.backtones.items.ItemAlterEgo;
+import com.deeplake.backtones.registry.BlockRegistry;
 import com.deeplake.backtones.util.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,6 +14,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -61,7 +65,22 @@ public class EventsItemDesc {
                         blockTrader.costItem.getDescription(),
                         blockTrader.sellCount,
                         blockTrader.sellItem.getDescription()
-                ));
+                ).withStyle(TextFormatting.ITALIC));
+            } else if (block instanceof BlockCovered)
+            {
+                event.getToolTip().add(new TranslationTextComponent(((BlockCovered) block).aftermath.get().getDescriptionId()).withStyle(TextFormatting.ITALIC));
+            } else if (block instanceof BlockAchvBox)
+            {
+                BlockAchvBox blockAchvBox = (BlockAchvBox) block;
+                if (blockAchvBox.hasAchv())
+                {
+                    event.getToolTip().add(new TranslationTextComponent(blockAchvBox.getAchvName()).withStyle(TextFormatting.ITALIC));
+                }
+
+                if (blockAchvBox.hasItem())
+                {
+                    event.getToolTip().add(new TranslationTextComponent(blockAchvBox.getStackName()).withStyle(TextFormatting.ITALIC));
+                }
             }
         }
     }

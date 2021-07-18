@@ -4,10 +4,13 @@ import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
 import com.deeplake.backtones.util.CommonFunctions;
 import com.deeplake.backtones.util.EntityUtil;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.particles.ParticleTypes;
@@ -84,7 +87,19 @@ public class EntityRevivalMist extends Entity {
         if (entityType.isPresent())
         {
             this.entityType = entityType.get();
-            this.entityNBT = (CompoundNBT) nbt.get(SPAWNER_NBT);
+
+            INBT rawNBT = nbt.get(SPAWNER_NBT);
+            if (rawNBT != null)
+            {
+                try {
+                    this.entityNBT = JsonToNBT.parseTag(rawNBT.getAsString());
+                }  catch (CommandSyntaxException e) {
+                    e.printStackTrace();
+                    this.entityNBT = new CompoundNBT();
+                }
+            }else {
+                this.entityNBT = new CompoundNBT();
+            }
         }
         else {
             remove();

@@ -56,5 +56,53 @@
   "item.backtones.spawner_egg_slime": "布置·地牢史莱姆",
   "item.backtones.spawner_egg_bat": "布置·地牢蝙蝠",
   "itemGroup.group1": "神代回归1",
-  "nes.mjds": "魔城传说2：大魔司教加里欧斯"
+  "nes.mjds": "魔城传说2：大魔司教加里欧斯",
+  "backtones.desc.deal": "用%sx %s 购买 %sx %s",
+  "backtones.msg.deal.success": "已购买： %sx %s，支付了 %sx %s",
+  "backtones.msg.deal.fail": "“欢迎光顾。这里出售%s个%s， 价格为%s个%s”",
+  "backtones.msg.ego.swap.1": "切换为波波隆",
+  "backtones.msg.ego.swap.2": "切换为阿芙洛狄特",
+  "backtones.msg.ego.req.popolon": "需要波波隆",
+  "backtones.msg.ego.req.aphrodite": "需要阿芙洛狄特",
+  "backtones.msg.ego.req.ego_door_closer": "再靠近点才能推开",
+  "backtones.desc.ego.0": "右键开启你的《魔城传说2：大魔司教加里欧斯》之旅",
+  "backtones.desc.ego.1": "§d右键切换到阿芙洛狄特",
+  "backtones.desc.ego.2": "§3右键切换到波波隆",
+  "backtones.desc.ego.3": "圆满结局",
+  "backtones.desc.ego.4": "游戏结束",
+  "backtones.desc.ego.hp": "另一半的生命值: %d%%",
+
+  "item.backtones.murasame": "村正",
+  "block.backtones.covered_wall": "软泥墙",
+  "backtones.map.player.aphrodite": "§d阿",
+  "backtones.map.player.popolon": "§b波",
+  "backtones.map.blank": "§0墙",
+  "backtones.map.pass": "§f囗",
+  "backtones.map.boss": "§7门",
+
+  "block.backtones.box_1": "宝箱",
+  "block.backtones.box_2": "宝箱",
+  "block.backtones.box_3": "宝箱",
+  "block.backtones.box_4": "宝箱",
+  "block.backtones.box_5": "宝箱",
+  "block.backtones.box_6": "宝箱",
+
+  "block.backtones.castle_spawn": "出生点方块",
+  "item.backtones.map": "魔城地图",
+
+  "block.backtones.box_7": "宝箱",
+  "block.backtones.box_8": "宝箱",
+
+  "block.backtones.covered_floor_forest": "软泥墙",
+
+  "item.backtones.great_key_1": "大钥匙",
+
+  "backtones.advancements.great_key_1.description": "取得一号大钥匙，才能进入森林关",
+  "backtones.advancements.great_key_1.title": "一号大钥匙",
+
+  "backtones.advancements.map.description": "别吐槽了，你看看原作的地图吧。",
+  "backtones.advancements.map.title": "地图，永远的神",
+  "backtones.advancements.mongo_sword.description": "可以切开软泥墙。这个游戏没有镐子。",
+  "backtones.advancements.mongo_sword.title": "蒙古剑"
+
 }

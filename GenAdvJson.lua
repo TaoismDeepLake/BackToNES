@@ -18,4 +18,4 @@ local function GenAdvItem(iconName, advName, parentPath, isChall)
 	outFile:close();
 end
 
---GenAdvItem("backtones:castle_bg", "watch_your_step", "root", true);
+GenAdvItem("backtones:map", "map", "root", false);

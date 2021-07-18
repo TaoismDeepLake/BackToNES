@@ -95,9 +95,9 @@ end
 --	GenSP(i);
 --end
 
---GenBlock("castle_spawn");
-GenItem("misc", "spawner_egg_bat");
-GenItem("misc", "spawner_egg_slime");
+--GenBlock("covered_floor_forest");
+--GenItem("misc", "great_key_1");
+--GenItem("misc", "spawner_egg_slime");
 --GenItem("misc", "map");
 
 --for i = 1, 4 do

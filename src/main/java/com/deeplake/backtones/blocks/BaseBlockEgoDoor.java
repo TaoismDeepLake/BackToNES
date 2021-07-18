@@ -49,7 +49,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
                 playerEntity.teleportTo(symmteric(playerEntity.getX(), thisPos.x),
                         playerEntity.getY()+disturbanceY,
                         symmteric(playerEntity.getZ(), thisPos.z));
-                playerEntity.playSound(SoundEvents.WOODEN_DOOR_OPEN, 1f, 0.5f);
+                playerEntity.level.levelEvent(playerEntity, 1013, pos, 0);
             }
             return ActionResultType.SUCCESS;
         }

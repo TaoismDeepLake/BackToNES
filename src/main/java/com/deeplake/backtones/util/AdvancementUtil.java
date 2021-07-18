@@ -23,6 +23,7 @@ public class AdvancementUtil {
     public static final String ACHV_MAP = "map";
 
     public static final String ACHV_MONGO_SWORD = "mongo_sword";
+    public static final String GREAT_KEY_1 = "great_key_1";
 
     public static final String ACHV_ROOT = "root";
 

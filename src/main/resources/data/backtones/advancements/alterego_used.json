@@ -4,10 +4,10 @@
             "item": "backtones:alterego"
         },
         "title": {
-            "translate": "backtones.advancements.alterego.title"
+            "translate": "backtones.advancements.alterego_used.title"
         },
         "description": {
-            "translate": "backtones.advancements.alterego.description"
+            "translate": "backtones.advancements.alterego_used.description"
         },
         "show_toast": true,
         "announce_to_chat": true,

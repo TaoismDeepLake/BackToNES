@@ -5,6 +5,7 @@ import com.deeplake.backtones.registry.EntityRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.monster.SlimeEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -19,6 +20,8 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
+import java.util.Objects;
+
 import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
 import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 
@@ -27,6 +30,7 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
 
     public EntityMJDSSlime(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
         super(p_i48552_1_, p_i48552_2_);
+
     }
 
     @Override
@@ -40,7 +44,8 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
 
         spawnPoint = blockPosition();
 
-        getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0f);
+        Objects.requireNonNull(getAttribute(Attributes.MOVEMENT_SPEED)).setBaseValue(0f);
+        Objects.requireNonNull(getAttribute(Attributes.KNOCKBACK_RESISTANCE)).setBaseValue(1);
 
         return p_213386_4_;
     }
@@ -56,6 +61,11 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
             mist.setPos(spawnPoint.getX()+0.5f, spawnPoint.getY()+1f, spawnPoint.getZ()+0.5f);
             level.addFreshEntity(mist);
         }
+    }
+
+    @Override
+    public int getSize() {
+        return 1;
     }
 
     @Override

@@ -31,6 +31,9 @@ public class ModLangProvider extends LanguageProvider {
         addAdv(AdvancementUtil.ACHV_RED_BOW);
         addAdv(AdvancementUtil.ACHV_ROOT);
         addAdv(AdvancementUtil.ACHV_WATCH_YOUR_STEP);
+        addAdv(AdvancementUtil.ACHV_MONGO_SWORD);
+        addAdv(AdvancementUtil.ACHV_MAP);
+        addAdv(AdvancementUtil.GREAT_KEY_1);
     }
 
     public void addMsg(String key)

@@ -17,7 +17,7 @@ public class ModDataGen {
         ExistingFileHelper helper = event.getExistingFileHelper();
 
         //if (event.includeClient()) {
-            IdlFramework.LogWarning("CLIENT DATAGEN"); ;
+            IdlFramework.LogWarning("CLIENT DATAGEN");
             generator.addProvider(new ModLangProvider(generator, IdlFramework.MOD_ID, "zh_cn"));
             //generator.addProvider(new ModModelProvider(generator, IdlFramework.MOD_ID, "models/block"));
         //}

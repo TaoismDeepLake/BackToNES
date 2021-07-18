@@ -54,6 +54,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> SP_GLASS = registerWithItem("sp_glass", BlockWallGlass::new);
     public static final RegistryObject<Block> BREAKABLE_WALL = registerWithItem("breakable_wall", BlockBreakable::new);
     public static final RegistryObject<Block> COVERED_WALL = registerWithItem("covered_floor", BlockCovered::new);
+    public static final RegistryObject<Block> COVERED_WALL_FOREST = registerWithItem("covered_floor_forest", () -> new BlockCovered(FOREST_FLOOR));
     public static final RegistryObject<Block> LADDER = registerWithItem("castle_ladder", LadderBlockMJDS::new);
     public static final RegistryObject<Block> ATHENA_BODY = registerWithItem("athena_body", BlockIndestructible::new);
     public static final RegistryObject<Block> ATHENA_HEAD = registerWithItem("athena_head", BlockIndestructible::new);
@@ -73,6 +74,8 @@ public class BlockRegistry {
     public static final RegistryObject<Block> BOX_4 = registerWithItem("box_4", () ->new BlockAchvBox(ItemRegistry.PURE_WATER, AdvancementUtil.ACHV_PURE_WATER));
     public static final RegistryObject<Block> BOX_5 = registerWithItem("box_5", () ->new BlockAchvBox(ItemRegistry.MANTLE, AdvancementUtil.ACHV_MANTLE));
     public static final RegistryObject<Block> BOX_6 = registerWithItem("box_6", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
+    public static final RegistryObject<Block> BOX_7 = registerWithItem("box_7", () ->new BlockAchvBoxMap(ItemRegistry.MAP, AdvancementUtil.ACHV_MAP));
+    public static final RegistryObject<Block> BOX_8 = registerWithItem("box_8", () ->new BlockAchvBox(ItemRegistry.GREAT_KEY_1, AdvancementUtil.GREAT_KEY_1));
 //    public static final RegistryObject<Block> BOX_7 = registerWithItem("box_7", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_8 = registerWithItem("box_8", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_9 = registerWithItem("box_9", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
