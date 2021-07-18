@@ -1,16 +1,17 @@
 package com.deeplake.backtones.items;
 
 import com.deeplake.backtones.IdlFramework;
-import com.deeplake.backtones.util.CommonFunctions;
-import com.deeplake.backtones.util.EgoUtil;
-import com.deeplake.backtones.util.IDLNBTDef;
-import com.deeplake.backtones.util.MJDSDefine;
+import com.deeplake.backtones.util.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -19,6 +20,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import static com.deeplake.backtones.util.CommonDef.NEWLINE;
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
+import static com.deeplake.backtones.util.IDLNBTDef.LAMP_MARK;
 import static com.deeplake.backtones.util.IDLNBTDef.ORI_POS;
 
 @Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)
@@ -47,6 +49,26 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
         super(p_i48487_1_);
 
         //CommonFunctions.addToEventBus(this);
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int p_77663_4_, boolean p_77663_5_) {
+        if (world.isClientSide)
+        {
+            return;
+        }
+
+        if (entity instanceof ServerPlayerEntity)
+        {
+            if (IDLNBTUtil.GetInt(stack, LAMP_MARK) == 0)
+            {
+                if (AdvancementUtil.hasAdvancement((ServerPlayerEntity) entity, AdvancementUtil.ACHV_LAMP)){
+                    IDLNBTUtil.SetInt(stack, LAMP_MARK, 1);
+                }
+            }
+        }
+
+        super.inventoryTick(stack, world, entity, p_77663_4_, p_77663_5_);
     }
 
     //return (ChunkZ, ChunkY, Floor in Z (as 1,2,3,4))
@@ -109,7 +131,7 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
 //                    IDLNBTDef.MAP_MARK_PLAYER_APHRODITE,
 //                    CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_APHRODITE), playerStr);
 
-            boolean hasLamp = false;
+            boolean hasLamp = IDLNBTUtil.GetInt(stack, LAMP_MARK) > 0;
 
             int curY = 0;
             for (int[] row: CASTLE_MAP) {

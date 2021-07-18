@@ -14,6 +14,8 @@ public class IDLNBTDef {
 
 	public static final String DESC_FAKE = IdlFramework.MOD_ID + ".desc.fake";
 
+	public static final String LAMP_MARK = "lamp_lit";
+
 	//Map
 	public static final String ORI_POS = "ori_pos";
 	public static final String MAP_MARK_PLAYER_APHRODITE = IdlFramework.MOD_ID + ".map.player.aphrodite";
