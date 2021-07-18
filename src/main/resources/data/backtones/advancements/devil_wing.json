@@ -1,0 +1,23 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:devil_wing"
+				},
+				"title": {
+						"translate": "backtones.advancements.devil_wing.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.devil_wing.description"
+				},
+				"hidden": false,
+				"show_toast": true,
+				"announce_to_chat": true,
+				"frame": "task"
+		},
+		"parent": "backtones:breakable_wall",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

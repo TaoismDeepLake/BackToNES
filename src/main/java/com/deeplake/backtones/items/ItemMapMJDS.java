@@ -52,7 +52,7 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
     //return (ChunkZ, ChunkY, Floor in Z (as 1,2,3,4))
     public static BlockPos getShrinkPosFromRealPos(BlockPos pos)
     {
-        return new BlockPos(pos.getZ() >> 4, pos.getY() >> 4, (pos.getY() % 16) >> 2 + 1);
+        return new BlockPos(pos.getX() >> 4, pos.getY() >> 4, (pos.getY() % 16) >> 2 + 1);
     }
 
     public static void setOriginToStack(ItemStack stack, BlockPos pos)
@@ -88,7 +88,7 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
             BlockPos origin = readOriginFromStack(stack);
 
             int playerAtX = pinPoint.getX()-origin.getX();
-            int playerAtY = pinPoint.getY()-origin.getY();
+            int playerAtY = origin.getY()-pinPoint.getY();
 
             //Client does not know nbt, hence ego
 //            String playerStr = EgoUtil.getEgo(playerEntity).equals(MJDSDefine.EnumEgo.APHRODITE) ?

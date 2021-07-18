@@ -2,10 +2,12 @@ package com.deeplake.backtones.blocks;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.util.AdvancementUtil;
+import com.deeplake.backtones.util.CommonDef;
 import com.deeplake.backtones.util.CommonFunctions;
 import com.deeplake.backtones.util.MessageDef;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
@@ -27,14 +29,17 @@ public class BlockAchvBox extends BaseBlockMJDS {
     Supplier<Item> sellItemSupp;
     String achvName;
 
+    String ACHV_FORMAT ="%s.advancements.%s.title";
+
     public BlockAchvBox(Supplier<Item> sellItemSupp, String achvName) {
+        super(Properties.of(Material.GLASS).noOcclusion().isViewBlocking(BaseBlockMJDS::neverDo));
         this.sellItemSupp = sellItemSupp;
         this.achvName = achvName;
     }
 
     public boolean hasItem()
     {
-        return sellItemSupp.get().getItem() != Items.AIR;
+        return sellItemSupp != null;
     }
 
     public boolean hasAchv()
@@ -44,16 +49,16 @@ public class BlockAchvBox extends BaseBlockMJDS {
 
     public String getStackName()
     {
-        return sellItemSupp.get().getDescriptionId();
+        return hasItem() ? sellItemSupp.get().getDescriptionId() : CommonDef.EMPTY;
     }
 
     public String getAchvName()
     {
-        return String.format("%s.advancements.%s.title", IdlFramework.MOD_ID, achvName);
+        return String.format(ACHV_FORMAT, IdlFramework.MOD_ID, achvName);
     }
 
     public ItemStack getAwardStack(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
-        return new ItemStack(sellItemSupp.get(), 1);
+        return hasItem() ? new ItemStack(sellItemSupp.get(), 1) : ItemStack.EMPTY;
     }
 
     @Override
@@ -89,4 +94,6 @@ public class BlockAchvBox extends BaseBlockMJDS {
             }
         }
     }
+
+
 }

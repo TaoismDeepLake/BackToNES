@@ -2,7 +2,9 @@ package com.deeplake.backtones.entities;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -11,15 +13,21 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.ProjectileImpactEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.Optional;
 
 import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
 import static com.deeplake.backtones.util.IDLNBTDef.*;
 
+@Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)
 public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
     public BlockPos spawnPoint;
 
@@ -70,4 +78,30 @@ public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
         super.addAdditionalSaveData(nbt);
         nbt.put(SPAWN_POINT,  NBTUtil.writeBlockPos(spawnPoint));
     }
+
+    //Deflect arrows from the front
+    @SubscribeEvent
+    public static void onProjectileImpact(ProjectileImpactEvent event)
+    {
+        Entity bullet = event.getEntity();
+        RayTraceResult rayTraceResult = event.getRayTraceResult();
+        if (rayTraceResult.getType().equals(RayTraceResult.Type.ENTITY) && !bullet.level.isClientSide)
+        {
+            EntityRayTraceResult result = (EntityRayTraceResult) rayTraceResult;
+            Entity hurtOne = result.getEntity();
+
+            if (hurtOne instanceof EntityMJDSSkeleton)
+            {
+                //face on
+                if (hurtOne.getViewVector(0f).dot(bullet.getViewVector(0)) < 0)
+                {
+                    event.setCanceled(true);
+                    bullet.setDeltaMovement(bullet.getDeltaMovement().scale(-1));
+                }
+            }
+        }
+
+
+    }
+
 }

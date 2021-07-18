@@ -13,6 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ArrowItem;
@@ -40,9 +41,7 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
         super(p_i50040_1_.tab(TabList.MISC_GROUP));
     }
     
-    public static final Predicate<ItemStack> MJDS_AMMO = (p_220002_0_) -> {
-        return p_220002_0_.getItem().is(ItemTags.ARROWS) || p_220002_0_.getItem() == ItemRegistry.QUIVER.get();
-    };
+    public static final Predicate<ItemStack> MJDS_AMMO = (p_220002_0_) -> p_220002_0_.getItem().is(ItemTags.ARROWS) || p_220002_0_.getItem() == ItemRegistry.QUIVER.get();
 
     float sound_volume = 1.0f;
 
@@ -70,6 +69,11 @@ public class BaseMJDSBow extends ShootableItem implements IVanishable {
 
         final boolean instabuild = playerEntity.abilities.instabuild;
         boolean flag = instabuild || EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) > 0;
+        if (!world.isClientSide)
+        {
+            flag = flag || (AdvancementUtil.hasAdvancement((ServerPlayerEntity) playerEntity, AdvancementUtil.ACHV_MAGICAL_ROD) && DesignUtil.isNearBoss(playerEntity));
+        }
+
         ItemStack ammoStack = playerEntity.getProjectile(stack);
 
         if (net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, world, playerEntity, 999, !ammoStack.isEmpty() || flag) < 0)

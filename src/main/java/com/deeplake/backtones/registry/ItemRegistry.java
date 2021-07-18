@@ -38,6 +38,15 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ALTER_EGO = ITEMS.register("alterego", () -> new ItemAlterEgo(EPIC_PROP));
     public static final RegistryObject<Item> MAP = ITEMS.register("map", () -> new ItemMapMJDS(EPIC_PROP));
     public static final RegistryObject<Item> GREAT_KEY_1 = ITEMS.register("great_key_1", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> ANGEL_RING = ITEMS.register("angel_ring", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> DEVIL_WING = ITEMS.register("devil_wing", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> LAMP = ITEMS.register("lamp", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> SALT = ITEMS.register("salt", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> BOOTS = ITEMS.register("boots", () -> new BaseItemIDF(EPIC_PROP));
+    //public static final RegistryObject<Item> ASUROT_SHIELD = ITEMS.register("asurot_shield", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> SABRE = ITEMS.register("sabre", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> JAR = ITEMS.register("jar", () -> new BaseItemIDF(EPIC_PROP));
+    public static final RegistryObject<Item> MAGICAL_ROD = ITEMS.register("magical_rod", () -> new BaseItemIDF(EPIC_PROP));
 
     public static final RegistryObject<Item> POPOLON_HELMET = ITEMS.register("popolon_armor_1", () -> new EgoArmor(POPOLON, EquipmentSlotType.HEAD, (RARE_PROP)));
     public static final RegistryObject<Item> POPOLON_CHESTPLATE = ITEMS.register("popolon_armor_2", () -> new EgoArmor(POPOLON, EquipmentSlotType.CHEST, (RARE_PROP)));

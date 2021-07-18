@@ -13,7 +13,7 @@
   "backtones.advancements.mantle.title": "披风",
   "backtones.advancements.pure_water.description": "饮下圣水，大战BOSS",
   "backtones.advancements.pure_water.title": "圣水",
-  "backtones.advancements.red_bow.description": "于宝箱里获得红弓",
+  "backtones.advancements.red_bow.description": "赤弓，基础的服务器。需要消耗弹药",
   "backtones.advancements.red_bow.title": "血之矢",
   "backtones.advancements.root.description": "恶魔主教道家深湖抢走了你的一件宝贵的东西，还夺走了你的记忆……究竟丢失的是什么来着？",
   "backtones.advancements.root.title": "欢迎体验《大魔司教2：加里欧斯》",
@@ -50,16 +50,16 @@
   "item.backtones.popolon_armor_3": "护腿·波波隆",
   "item.backtones.popolon_armor_4": "靴子·波波隆",
   "item.backtones.pure_water": "圣水·可食用",
-  "item.backtones.quiver": "弓箭",
+  "item.backtones.quiver": "弹药",
   "item.backtones.red_bow": "赤弓",
   "item.backtones.spawner_egg_skeleton": "布置·地牢骷髅",
   "item.backtones.spawner_egg_slime": "布置·地牢史莱姆",
   "item.backtones.spawner_egg_bat": "布置·地牢蝙蝠",
   "itemGroup.group1": "神代回归1",
   "nes.mjds": "魔城传说2：大魔司教加里欧斯",
-  "backtones.desc.deal": "用%sx %s 购买 %sx %s",
+  "backtones.desc.deal": "用 %sx %s 购买 %sx %s",
   "backtones.msg.deal.success": "已购买： %sx %s，支付了 %sx %s",
-  "backtones.msg.deal.fail": "“欢迎光顾。这里出售%s个%s， 价格为%s个%s”",
+  "backtones.msg.deal.fail": "“欢迎光临。老身小店打包出售%s个%s， 只收你%s个%s”",
   "backtones.msg.ego.swap.1": "切换为波波隆",
   "backtones.msg.ego.swap.2": "切换为阿芙洛狄特",
   "backtones.msg.ego.req.popolon": "需要波波隆",
@@ -103,6 +103,49 @@
   "backtones.advancements.map.description": "别吐槽了，你看看原作的地图吧。",
   "backtones.advancements.map.title": "地图，永远的神",
   "backtones.advancements.mongo_sword.description": "可以切开软泥墙。这个游戏没有镐子。",
-  "backtones.advancements.mongo_sword.title": "蒙古剑"
+  "backtones.advancements.mongo_sword.title": "蒙古剑",
+  "backtones.desc.fake": "【假的】",
+
+  "item.backtones.angel_ring": "天使指环",
+
+  "item.backtones.boots": "耐高温靴子",
+
+  "item.backtones.devil_wing": "魔鬼之翼",
+
+  "item.backtones.jar": "知识魔罐",
+  "item.backtones.lamp": "指路明灯",
+
+  "item.backtones.sabre": "克邪佩刀",
+  "item.backtones.salt": "盐",
+  "item.backtones.magical_rod": "魔杖",
+
+  "backtones.advancements.angel_ring.description": "DESC",
+  "backtones.advancements.angel_ring.title": "ADV",
+  "backtones.advancements.boots.description": "DESC",
+  "backtones.advancements.boots.title": "ADV",
+
+  "backtones.advancements.devil_wing.description": "DESC",
+  "backtones.advancements.devil_wing.title": "ADV",
+
+  "backtones.advancements.jar.description": "DESC",
+  "backtones.advancements.jar.title": "ADV",
+  "backtones.advancements.lamp.description": "DESC",
+  "backtones.advancements.lamp.title": "ADV",
+  "backtones.advancements.magical_rod.description": "DESC",
+  "backtones.advancements.magical_rod.title": "ADV",
+
+  "backtones.advancements.sabre.description": "DESC",
+  "backtones.advancements.sabre.title": "ADV",
+  "backtones.advancements.salt.description": "DESC",
+  "backtones.advancements.salt.title": "ADV",
+
+  "block.backtones.box_10": "Item Name",
+  "block.backtones.box_11": "Item Name",
+  "block.backtones.box_12": "Item Name",
+  "block.backtones.box_13": "Item Name",
+  "block.backtones.box_14": "Item Name",
+  "block.backtones.box_15": "Item Name",
+  "block.backtones.box_16": "Item Name",
+  "block.backtones.box_9": "Item Name",
 
 }

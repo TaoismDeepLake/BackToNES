@@ -1,0 +1,23 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:boots"
+				},
+				"title": {
+						"translate": "backtones.advancements.boots.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.boots.description"
+				},
+				"hidden": false,
+				"show_toast": true,
+				"announce_to_chat": true,
+				"frame": "task"
+		},
+		"parent": "backtones:root",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

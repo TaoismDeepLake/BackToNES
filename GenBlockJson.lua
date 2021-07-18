@@ -96,6 +96,13 @@ end
 --end
 
 --GenBlock("covered_floor_forest");
+GenItem("misc", "magical_rod");
+--GenItem("misc", "boots");
+--GenItem("misc", "devil_wing");
+--GenItem("misc", "jar");
+--GenItem("misc", "lamp");
+--GenItem("misc", "sabre");
+--GenItem("misc", "salt");
 --GenItem("misc", "great_key_1");
 --GenItem("misc", "spawner_egg_slime");
 --GenItem("misc", "map");

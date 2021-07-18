@@ -1,0 +1,23 @@
+{
+		"display": {
+				"icon": {
+						"item": "backtones:quiver"
+				},
+				"title": {
+						"translate": "backtones.advancements.treasure_c_10.title"
+				},
+				"description": {
+						"translate": "backtones.advancements.treasure_c_10.description"
+				},
+				"hidden": true,
+				"show_toast": false,
+				"announce_to_chat": false,
+				"frame": "task"
+		},
+		"parent": "backtones:treasure_c_9",
+		"criteria": {
+				"impossible": {
+						"trigger": "minecraft:impossible"
+				}
+		}
+}

@@ -7,7 +7,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
 
 public class ModLangProvider extends LanguageProvider {
     public ModLangProvider(DataGenerator gen, String modid, String locale) {
@@ -33,7 +32,15 @@ public class ModLangProvider extends LanguageProvider {
         addAdv(AdvancementUtil.ACHV_WATCH_YOUR_STEP);
         addAdv(AdvancementUtil.ACHV_MONGO_SWORD);
         addAdv(AdvancementUtil.ACHV_MAP);
-        addAdv(AdvancementUtil.GREAT_KEY_1);
+        addAdv(AdvancementUtil.ACHV_GREAT_KEY_1);
+        addAdv(AdvancementUtil.ACHV_ANGEL_RING);
+        addAdv(AdvancementUtil.ACHV_DEVIL_WING);
+        addAdv(AdvancementUtil.ACHV_LAMP);
+        addAdv(AdvancementUtil.ACHV_SALT);
+        addAdv(AdvancementUtil.ACHV_BOOTS);
+        addAdv(AdvancementUtil.ACHV_SABRE);
+        addAdv(AdvancementUtil.ACHV_JAR);
+        addAdv(AdvancementUtil.ACHV_MAGICAL_ROD);
     }
 
     public void addMsg(String key)

@@ -23,7 +23,16 @@ public class AdvancementUtil {
     public static final String ACHV_MAP = "map";
 
     public static final String ACHV_MONGO_SWORD = "mongo_sword";
-    public static final String GREAT_KEY_1 = "great_key_1";
+    public static final String ACHV_GREAT_KEY_1 = "great_key_1";
+
+    public static final String ACHV_ANGEL_RING = "angel_ring";
+    public static final String ACHV_DEVIL_WING = "devil_wing";
+    public static final String ACHV_LAMP = "lamp";
+    public static final String ACHV_SALT = "salt";
+    public static final String ACHV_BOOTS = "boots";
+    public static final String ACHV_SABRE = "sabre";
+    public static final String ACHV_JAR = "jar";
+    public static final String ACHV_MAGICAL_ROD = "magical_rod";
 
     public static final String ACHV_ROOT = "root";
 

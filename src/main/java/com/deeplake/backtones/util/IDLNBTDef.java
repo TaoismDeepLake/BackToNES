@@ -1,6 +1,7 @@
 package com.deeplake.backtones.util;
 
 import com.deeplake.backtones.IdlFramework;
+import jdk.nashorn.internal.ir.IfNode;
 
 public class IDLNBTDef {
 	//GENERAL:
@@ -10,6 +11,8 @@ public class IDLNBTDef {
 	public static final String CHANGE_RECORD = "change_rec";
 	public static final String BLOCK_STATE = "blstate";
 	public static final String BLOCK_POS = "blpos";
+
+	public static final String DESC_FAKE = IdlFramework.MOD_ID + ".desc.fake";
 
 	//Map
 	public static final String ORI_POS = "ori_pos";
