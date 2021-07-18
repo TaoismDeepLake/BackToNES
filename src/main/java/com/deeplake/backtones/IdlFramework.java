@@ -54,7 +54,6 @@ public class IdlFramework {
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
-        logger.info("HELLO FROM PREINIT");
         for (INeedInit elem : RegistryManager.NEED_LIST) {
             elem.init();
         }

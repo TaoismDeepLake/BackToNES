@@ -63,7 +63,9 @@ public class BlockRegistry {
     public static final RegistryObject<Block> POPOLON_DOOR = registerWithItem("popolon_door", () -> new BaseBlockEgoDoor(MJDSDefine.EnumEgo.POPLON));
     public static final RegistryObject<Block> APHRO_DOOR = registerWithItem("aphrodite_door", () -> new BaseBlockEgoDoor(MJDSDefine.EnumEgo.APHRODITE));
 
-    public static final RegistryObject<Block> CASTLE_SPAWN = registerWithItem("castle_spawn", () -> new BlockSpawnPoint());
+    public static final RegistryObject<Block> CASTLE_SPAWN = registerWithItem("castle_spawn", BlockSpawnPoint::new);
+
+    public static final RegistryObject<Block> BLOCK_MOTOR = registerWithItem("motor_vertical", BaseBlockMotor::new);
 
     public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
             () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));

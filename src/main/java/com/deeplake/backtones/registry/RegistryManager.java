@@ -29,13 +29,9 @@ public class RegistryManager {
         BlockRegistry.BLOCKS.register(eventBus);
         ItemRegistry.ITEMS.register(eventBus);
         EntityRegistry.ENTITY_TYPES.register(eventBus);
+        TileEntityRegistry.TILE_ENTITIES.register(eventBus);
 
-        //eventBus.addGenericListener(VillagerProfession.class, VillagerRegistry::registerAll);
         eventBus.addGenericListener(Effect.class, EffectRegistry::registerAllPotion);
-        //eventBus.addListener(EventPriority.NORMAL, EventsPotion::onHurt);
-        //eventBus.addListener(EventPriority.NORMAL, EventsJumpHelper::onJump);
-
-        //BlockTagsProvider.tag(BlockTags.CLIMBABLE).add(BlockRegistry.LADDER.get());
     }
 
     public static <T extends IForgeRegistryEntry<T>> void register(IForgeRegistry<T> forgeRegistry, ResourceLocation resourceLocation, IForgeRegistryEntry<T> entry) {

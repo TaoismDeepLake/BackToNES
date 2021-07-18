@@ -42,6 +42,12 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
             return ActionResultType.FAIL;
         }
 
+        //if (world.isRemote && flag) {
+        //  PlayerEntity player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
+        //  this.world.playSound(player, pos, SoundEvents.ENTITY_ZOMBIE_AMBIENT, SoundCategory.AMBIENT, 1.0f, 1.0f);
+        //  flag = false;
+        //}
+
         if (EgoUtil.getEgo(playerEntity) == egoReq)
         {
             if (!world.isClientSide) {
