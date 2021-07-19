@@ -1,5 +1,6 @@
 package com.deeplake.backtones.blocks.tileentity;
 
+import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.TileEntityRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -26,13 +27,16 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                 (level.getGameTime() % TICK_PER_MOVE == 0)) {
             //detect
             boolean isFree = true;
+            BlockPos posPointer = getBlockPos();
             for (int i = 1; i <= MAX_DETECT; i++)
             {
-                if (level.getBlockState(getBlockPos().offset(getOffset())).isAir())
+                posPointer= posPointer.offset(getOffset());
+                if (level.getBlockState(posPointer).isAir())
                 {
                     continue;
                 }
                 else {
+                    IdlFramework.Log("@%s, is @s", posPointer, level.getBlockState(posPointer));
                     isFree = false;
                     break;
                 }
@@ -49,9 +53,11 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                     ((MotorTileEntityVertical) te).isPositiveDirection = isPositiveDirection;
                 }
                 level.setBlockAndUpdate(getBlockPos(), Blocks.AIR.defaultBlockState());
+                setRemoved();
                 //find entities
             }
             else {
+
                 isPositiveDirection = !isPositiveDirection;
             }
         }
