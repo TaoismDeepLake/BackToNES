@@ -95,8 +95,9 @@ end
 --	GenSP(i);
 --end
 
---GenBlock("covered_floor_forest");
-GenItem("misc", "magical_rod");
+GenBlock("motor_vertical");
+GenBlock("motor_horizontal");
+--GenItem("misc", "magical_rod");
 --GenItem("misc", "boots");
 --GenItem("misc", "devil_wing");
 --GenItem("misc", "jar");

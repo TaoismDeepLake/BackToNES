@@ -1,0 +1,5 @@
+{
+	"variants": {
+		"": { "model": "backtones:block/motor_vertical" }
+	}
+}
