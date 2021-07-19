@@ -15,7 +15,6 @@ import javax.annotation.Nullable;
 
 public class BaseBlockMotor extends BaseBlockMJDS {
 
-
     @Override
     public boolean hasTileEntity(BlockState state) {
         return true;
