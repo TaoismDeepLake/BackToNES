@@ -2,12 +2,21 @@ package com.deeplake.backtones.blocks.tileentity;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.TileEntityRegistry;
+import com.deeplake.backtones.util.EntityUtil;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
+
+import java.util.List;
 
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
 
@@ -16,7 +25,7 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
         super(p_i48289_1_);
     }
 
-    static final int MAX_DETECT = 2;
+    static final int MAX_DETECT = 3;
     static final int TICK_PER_MOVE = TICK_PER_SECOND;//todo: need check speed
 
     public boolean isPositiveDirection = true;
@@ -36,11 +45,13 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                     continue;
                 }
                 else {
-                    IdlFramework.Log("@%s, is @s", posPointer, level.getBlockState(posPointer));
+                    IdlFramework.Log("Failed : @%s, is %s", posPointer, level.getBlockState(posPointer));
                     isFree = false;
                     break;
                 }
             }
+
+            IdlFramework.Log("@%s, isFree = %s", getBlockPos(), isFree);
 
             //move
             if (isFree)
@@ -48,16 +59,35 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                 BlockPos newPos = getBlockPos().offset(getOffset());
                 level.setBlockAndUpdate(newPos, getBlockState());
                 TileEntity te = level.getBlockEntity(newPos);
-                if (te instanceof MotorTileEntityVertical)
+                if (te instanceof MotorTileEntityBase)
                 {
-                    ((MotorTileEntityVertical) te).isPositiveDirection = isPositiveDirection;
+                    ((MotorTileEntityBase) te).isPositiveDirection = isPositiveDirection;
                 }
                 level.setBlockAndUpdate(getBlockPos(), Blocks.AIR.defaultBlockState());
+                List<LivingEntity> livingEntities = EntityUtil.getEntitiesWithinAABB(level,
+                        null,
+                        new Vector3d(getBlockPos().getX() + 0.5f,
+                                getBlockPos().getY() + 1f,
+                                getBlockPos().getZ() + 0.5f), 0.5f, EntityUtil.ALL);
+
+                for (LivingEntity living:
+                     livingEntities) {
+
+                    living.teleportTo(living.getPosition(0).x + getOffset().getX(),
+                            living.getPosition(0).y + getOffset().getY(),
+                            living.getPosition(0).z + getOffset().getZ());
+
+                }
                 setRemoved();
                 //find entities
             }
             else {
-
+                level.playSound(null, getBlockPos().getX() + 0.5,
+                        getBlockPos().getY() + 0.5,
+                        getBlockPos().getZ() + 0.5,
+                        SoundEvents.PISTON_CONTRACT,
+                        SoundCategory.BLOCKS,
+                        1f, 1f);
                 isPositiveDirection = !isPositiveDirection;
             }
         }
