@@ -119,22 +119,22 @@
   "item.backtones.salt": "盐",
   "item.backtones.magical_rod": "无尽魔杖",
 
-  "backtones.advancements.angel_ring.description": "天使之戒",
+  "backtones.advancements.angel_ring.description": "（WIP）传送回魔城起点",
   "backtones.advancements.angel_ring.title": "天使之戒",
-  "backtones.advancements.boots.description": "（WIP）",
+  "backtones.advancements.boots.description": "热地板不再烫脚",
   "backtones.advancements.boots.title": "耐高温靴子",
 
-  "backtones.advancements.devil_wing.description": "（WIP）",
+  "backtones.advancements.devil_wing.description": "（WIP）在各个关卡入口之间传送。",
   "backtones.advancements.devil_wing.title": "魔鬼之翼",
 
-  "backtones.advancements.jar.description": "（WIP）",
+  "backtones.advancements.jar.description": "获得的经验双倍",
   "backtones.advancements.jar.title": "知识魔罐",
-  "backtones.advancements.lamp.description": "（WIP）",
+  "backtones.advancements.lamp.description": "显示地图的Boss房",
   "backtones.advancements.lamp.title": "指路明灯",
-  "backtones.advancements.magical_rod.description": "（WIP）",
+  "backtones.advancements.magical_rod.description": "（WIP）BOSS战中，魔城的远程武器不消耗弹药。",
   "backtones.advancements.magical_rod.title": "无尽魔杖",
 
-  "backtones.advancements.sabre.description": "双倍你的伤害（WIP）",
+  "backtones.advancements.sabre.description": "双倍你造成的伤害",
   "backtones.advancements.sabre.title": "克邪佩刀",
   "backtones.advancements.salt.description": "暂时没有效果。原作中用以进入复活房。",
   "backtones.advancements.salt.title": "盐",
@@ -146,6 +146,9 @@
   "block.backtones.box_14": "宝箱",
   "block.backtones.box_15": "宝箱",
   "block.backtones.box_16": "宝箱",
-  "block.backtones.box_9": "宝箱"
+  "block.backtones.box_9": "宝箱",
+
+  "block.backtones.motor_vertical": "天马行空（垂直）",
+  "block.backtones.motor_horizontal": "天马行空（X）"
 
 }

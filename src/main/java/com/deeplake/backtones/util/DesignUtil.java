@@ -4,6 +4,8 @@ import com.deeplake.backtones.blocks.BaseBlockMJDS;
 import com.deeplake.backtones.blocks.BlockWallGlass;
 import com.deeplake.backtones.blocks.IBlockMJDS;
 import com.deeplake.backtones.blocks.LadderBlockMJDS;
+import com.deeplake.backtones.entities.EntityMJDSBat;
+import com.deeplake.backtones.entities.EntityMJDSSlime;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -34,7 +36,7 @@ public class DesignUtil {
 //            for (CustomServerBossInfo info: collection
 //                 ) {
 //                if (info.shouldPlayBossMusic())
-//            } player list is private
+//            } player list is private, darn
 
             return  !collection.isEmpty();
         }
@@ -54,7 +56,7 @@ public class DesignUtil {
             return entity.getMainHandItem().getItem() instanceof SwordItem
                     || entity.getOffhandItem().getItem() instanceof ShieldItem;
         }
-        else return entity instanceof SlimeEntity || entity instanceof BatEntity || entity instanceof WitchEntity;
+        else return entity instanceof EntityMJDSSlime || entity instanceof EntityMJDSBat || entity instanceof WitchEntity;
     }
 
     public static boolean isWithOffsetMJDS(World world, BlockPos pos, Entity entity)
