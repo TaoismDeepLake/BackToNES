@@ -2,6 +2,9 @@ package com.deeplake.backtones.util;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.math.BlockPos;
 
 import static com.deeplake.backtones.util.IDLNBTDef.IDEALLAND;
 
@@ -50,6 +53,14 @@ public class IDLNBT {
 	}
 	public static String getPlayerIdeallandStrSafe(PlayerEntity player, String key) {
 		return getPlyrIdlTagSafe(player).getString(key);
+	}
+	public static BlockPos getPlayerIdeallandBlockPosSafe(PlayerEntity player, String key) {
+		INBT inbt = getPlyrIdlTagSafe(player).get(key);
+		if (inbt instanceof CompoundNBT)
+		{
+			return NBTUtil.readBlockPos((CompoundNBT) inbt);
+		}
+		return BlockPos.ZERO;
 	}
 
 	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, int value) {
@@ -102,6 +113,17 @@ public class IDLNBT {
 		CompoundNBT idl_data = getPlyrIdlTagSafe(player);
 
 		idl_data.putString(key, value);
+
+		data.put(IDEALLAND, idl_data);
+		playerData.put(PlayerEntity.PERSISTED_NBT_TAG, data);
+	}
+
+	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, BlockPos value) {
+		CompoundNBT playerData = player.getPersistentData();
+		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
+		CompoundNBT idl_data = getPlyrIdlTagSafe(player);
+
+		idl_data.put(key, NBTUtil.writeBlockPos(value));
 
 		data.put(IDEALLAND, idl_data);
 		playerData.put(PlayerEntity.PERSISTED_NBT_TAG, data);

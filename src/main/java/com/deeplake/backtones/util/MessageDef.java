@@ -7,6 +7,8 @@ public class MessageDef {
     public static String DEAL_FAIL = MOD_ID + ".msg.deal.fail";
     public static String BOX_FAIL = MOD_ID + ".msg.box.already_get";
 
+    public static String NO_SPAWN = MOD_ID + ".msg.teleport.no_spawn";
+
     public static String REQ_POPOLON = MOD_ID + ".msg.ego.req.popolon";
     public static String REQ_APHRODITE = MOD_ID + ".msg.ego.req.aphrodite";
 

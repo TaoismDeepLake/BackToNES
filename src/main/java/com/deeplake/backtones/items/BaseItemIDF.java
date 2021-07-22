@@ -20,4 +20,9 @@ public class BaseItemIDF extends Item {
         super(p_i48487_1_);
         properties = p_i48487_1_;
     }
+
+    public void activateCooldown(ItemStack stack, PlayerEntity playerEntity)
+    {
+        playerEntity.getCooldowns().addCooldown(stack.getItem(), 5);
+    }
 }

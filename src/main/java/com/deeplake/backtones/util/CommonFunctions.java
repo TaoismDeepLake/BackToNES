@@ -16,6 +16,7 @@ import net.minecraft.util.Util;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -41,6 +42,12 @@ public class CommonFunctions {
 //    {
 //        return hand == EntityEquipmentSlot.OFFHAND ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND;
 //    }
+
+    public static Vector3i fromBlockPos(BlockPos pos)
+    {
+        return new Vector3i(pos.getX(), pos.getY(), pos.getZ());
+    }
+
 
     public static ItemStack copyAndSetCount(@Nullable ItemStack stack, int count)
     {

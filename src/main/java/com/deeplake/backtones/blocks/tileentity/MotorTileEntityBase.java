@@ -18,6 +18,7 @@ import net.minecraft.util.math.vector.Vector3i;
 
 import java.util.List;
 
+import static com.deeplake.backtones.util.CommonDef.MAX_BUILD_HEIGHT;
 import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
 
 public class MotorTileEntityBase extends TileEntity implements ITickableTileEntity {
@@ -30,6 +31,11 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
 
     public boolean isPositiveDirection = true;
 
+    public boolean isMovable(BlockPos pos)
+    {
+        return pos.getY() < MAX_BUILD_HEIGHT && pos.getY() >= 0 && level.getBlockState(pos).isAir();
+    }
+
     @Override
     public void tick() {
         if (level != null && !level.isClientSide &&
@@ -40,7 +46,7 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
             for (int i = 1; i <= MAX_DETECT; i++)
             {
                 posPointer= posPointer.offset(getOffset());
-                if (level.getBlockState(posPointer).isAir())
+                if (isMovable(posPointer))
                 {
                     continue;
                 }
