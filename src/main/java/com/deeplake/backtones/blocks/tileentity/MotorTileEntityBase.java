@@ -79,9 +79,9 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                 for (LivingEntity living:
                      livingEntities) {
 
-                    living.teleportTo(living.getPosition(0).x + getOffset().getX(),
-                            living.getPosition(0).y + getOffset().getY(),
-                            living.getPosition(0).z + getOffset().getZ());
+                    living.teleportTo(living.getX() + getOffset().getX(),
+                            living.getY() + getOffset().getY(),
+                            living.getZ() + getOffset().getZ());
 
                 }
                 setRemoved();
