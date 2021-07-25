@@ -67,6 +67,9 @@ public class BlockRegistry {
 
     public static final RegistryObject<Block> BLOCK_MOTOR_Y = registerWithItem("motor_vertical", BlockMotorY::new);
     public static final RegistryObject<Block> BLOCK_MOTOR_X = registerWithItem("motor_horizontal", BlockMotorX::new);
+    //public static final RegistryObject<Block> BLOCK_MOTOR_Z = registerWithItem("motor_horizontal_z", BlockMotorZ::new);
+
+    public static final RegistryObject<Block> BLOCK_FAIRY = registerWithItem("block_fairy", BlockFairy::new);
 
     public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
             () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));

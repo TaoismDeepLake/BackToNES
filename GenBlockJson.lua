@@ -95,8 +95,8 @@ end
 --	GenSP(i);
 --end
 
-GenBlock("motor_vertical");
-GenBlock("motor_horizontal");
+GenBlock("block_fairy");
+--GenBlock("motor_horizontal");
 --GenItem("misc", "magical_rod");
 --GenItem("misc", "boots");
 --GenItem("misc", "devil_wing");

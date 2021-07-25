@@ -48,7 +48,7 @@ public class BlockSpawnPoint extends BaseBlockMJDS {
                 playerEntity.getCooldowns().addCooldown(handStack.getItem(), CommonDef.TICK_PER_SECOND);
 
                 BlockPos posHere = ItemMapMJDS.getShrinkPosFromRealPos(pos);
-                BlockPos posSpawn = posHere.offset(-5,-5,-3);
+                BlockPos posSpawn = posHere.offset(-5,-5,0);
 
                 ItemMapMJDS.setOriginToStack(handStack, posSpawn);
                 IdlFramework.Log("Player %s marked %s as spawn of his/her map.", playerEntity.getName(), posSpawn);
