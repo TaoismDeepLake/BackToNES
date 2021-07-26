@@ -149,6 +149,9 @@
   "block.backtones.box_9": "宝箱",
 
   "block.backtones.motor_vertical": "天马行空（垂直）",
-  "block.backtones.motor_horizontal": "天马行空（东西）"
+  "block.backtones.motor_horizontal": "天马行空（东西）",
+
+  "block.backtones.block_fairy": "城堡地板·仙灵祝福"
+
 
 }

@@ -1,28 +1,27 @@
 package com.deeplake.backtones.util;
 
 import com.google.common.base.Predicate;
-
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.FishingBobberEntity;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.deeplake.backtones.util.StringDef.TAG_BOSS_STR;
+import static net.minecraft.tags.EntityTypeTags.bind;
 
 public class EntityUtil {
+    public static final ITag.INamedTag<EntityType<?>> BOSS = bind("backtones:bosses");
+
     public static boolean isBoss(LivingEntity creature)
     {
         //EntityTypeTags
-        return creature.getTags().contains(TAG_BOSS_STR);
+        return creature.getType().is(BOSS);
     }
 
     public static <T extends Entity> List<T> getEntitiesWithinAABB(World world, EntityType<T> clazz, AxisAlignedBB aabb, @Nullable Predicate<? super T > filter)

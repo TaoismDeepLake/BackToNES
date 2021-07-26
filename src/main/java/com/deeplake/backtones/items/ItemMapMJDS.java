@@ -1,9 +1,11 @@
 package com.deeplake.backtones.items;
 
 import com.deeplake.backtones.IdlFramework;
-import com.deeplake.backtones.util.*;
+import com.deeplake.backtones.util.AdvancementUtil;
+import com.deeplake.backtones.util.CommonFunctions;
+import com.deeplake.backtones.util.IDLNBTDef;
+import com.deeplake.backtones.util.IDLNBTUtil;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -110,9 +112,11 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
             BlockPos origin = readOriginFromStack(stack);
 
             int playerAtX = pinPoint.getX()-origin.getX();
-            int playerAtY = origin.getY()-pinPoint.getY();
+            int playerAtY = pinPoint.getY()-origin.getY();
 
-            //Client does not know nbt, hence ego
+            event.getToolTip().add(new StringTextComponent(String.format("Player %d,%d",playerAtX,playerAtY)));
+
+            //Client does not know nbt, let alone ego
 //            String playerStr = EgoUtil.getEgo(playerEntity).equals(MJDSDefine.EnumEgo.APHRODITE) ?
 //                    CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_APHRODITE) :
 //                    CommonFunctions.GetStringLocalTranslated(IDLNBTDef.MAP_MARK_PLAYER_POPOLON);

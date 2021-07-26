@@ -2,7 +2,9 @@ package com.deeplake.backtones.blocks;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.items.ItemMapMJDS;
-import com.deeplake.backtones.util.*;
+import com.deeplake.backtones.util.CommonDef;
+import com.deeplake.backtones.util.CommonFunctions;
+import com.deeplake.backtones.util.IDLNBT;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,8 +13,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.vector.Vector3i;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import static com.deeplake.backtones.util.IDLNBTDef.ORI_POS;
@@ -48,7 +48,7 @@ public class BlockSpawnPoint extends BaseBlockMJDS {
                 playerEntity.getCooldowns().addCooldown(handStack.getItem(), CommonDef.TICK_PER_SECOND);
 
                 BlockPos posHere = ItemMapMJDS.getShrinkPosFromRealPos(pos);
-                BlockPos posSpawn = posHere.offset(-5,-5,0);
+                BlockPos posSpawn = posHere.offset(-4,-4,0);
 
                 ItemMapMJDS.setOriginToStack(handStack, posSpawn);
                 IdlFramework.Log("Player %s marked %s as spawn of his/her map.", playerEntity.getName(), posSpawn);

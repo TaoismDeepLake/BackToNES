@@ -1,16 +1,12 @@
 package com.deeplake.backtones.blocks.tileentity;
 
-import com.deeplake.backtones.IdlFramework;
-import com.deeplake.backtones.registry.TileEntityRegistry;
 import com.deeplake.backtones.util.EntityUtil;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -51,13 +47,13 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                     continue;
                 }
                 else {
-                    IdlFramework.Log("Failed : @%s, is %s", posPointer, level.getBlockState(posPointer));
+                    //IdlFramework.Log("Failed : @%s, is %s", posPointer, level.getBlockState(posPointer));
                     isFree = false;
                     break;
                 }
             }
 
-            IdlFramework.Log("@%s, isFree = %s", getBlockPos(), isFree);
+            //IdlFramework.Log("@%s, isFree = %s", getBlockPos(), isFree);
 
             //move
             if (isFree)
