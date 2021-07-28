@@ -151,7 +151,10 @@
   "block.backtones.motor_vertical": "天马行空（垂直）",
   "block.backtones.motor_horizontal": "天马行空（东西）",
 
-  "block.backtones.block_fairy": "城堡地板·仙灵祝福"
+  "block.backtones.block_fairy": "城堡地板·仙灵祝福",
+
+  "effect.backtones.mantle": "披风的加护",
+  "effect.backtones.pure_water": "圣水的力量"
 
 
 }
