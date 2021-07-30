@@ -32,6 +32,11 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
     float maxDistSqr = 2f*2f;
     float disturbanceY = 0.3f;//make the player fall, so they feel the teleport
 
+    public boolean checkEgo(PlayerEntity playerEntity)
+    {
+        return EgoUtil.getEgo(playerEntity) == egoReq;
+    }
+
     //(onBlockActivated)
     public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
         if (playerEntity.distanceToSqr(pos.getX() + 0.5f, pos.getY(), pos.getZ() + 0.5f) >= maxDistSqr)
@@ -48,7 +53,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
         //  flag = false;
         //}
 
-        if (EgoUtil.getEgo(playerEntity) == egoReq)
+        if (checkEgo(playerEntity))
         {
             if (!world.isClientSide) {
                 Vector3d thisPos = new Vector3d(pos.getX()+0.5f, pos.getY(), pos.getZ()+0.5f);
@@ -72,6 +77,5 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
             }
             return ActionResultType.FAIL;
         }
-
     }
 }

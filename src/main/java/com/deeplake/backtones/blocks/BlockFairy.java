@@ -22,7 +22,7 @@ public class BlockFairy extends BaseBlockMJDS {
                         CommonFunctions.flunctate(pos.getX(),rangeParticle, ((PlayerEntity) entity).getRandom()),
                         pos.getY()+0.5f,
                         CommonFunctions.flunctate(pos.getZ(),rangeParticle, ((PlayerEntity) entity).getRandom()),
-                        0,1,0);
+                        0,0.04d,0);
             }else {
                 ((PlayerEntity) entity).heal(0.1f);
             }

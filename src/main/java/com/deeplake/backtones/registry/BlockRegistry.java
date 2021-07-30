@@ -63,6 +63,15 @@ public class BlockRegistry {
     public static final RegistryObject<Block> POPOLON_DOOR = registerWithItem("popolon_door", () -> new BaseBlockEgoDoor(MJDSDefine.EnumEgo.POPLON));
     public static final RegistryObject<Block> APHRO_DOOR = registerWithItem("aphrodite_door", () -> new BaseBlockEgoDoor(MJDSDefine.EnumEgo.APHRODITE));
 
+    public static final RegistryObject<Block> NORMAL_DOOR_1 = registerWithItem("mjds_gate1", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> NORMAL_DOOR_2 = registerWithItem("mjds_gate2", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> NORMAL_DOOR_3 = registerWithItem("mjds_gate3", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> NORMAL_DOOR_4 = registerWithItem("mjds_gate4", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> PILLAR_1 = registerWithItem("mjds_bgp1", BaseBlockMJDS::new);
+    public static final RegistryObject<Block> PILLAR_2 = registerWithItem("mjds_bgp2", BaseBlockMJDS::new);
+    public static final RegistryObject<Block> PILLAR_3 = registerWithItem("mjds_bgp3", BaseBlockMJDS::new);
+
+
     public static final RegistryObject<Block> CASTLE_SPAWN = registerWithItem("castle_spawn", BlockSpawnPoint::new);
 
     public static final RegistryObject<Block> BLOCK_MOTOR_Y = registerWithItem("motor_vertical", BlockMotorY::new);
