@@ -70,8 +70,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> PILLAR_1 = registerWithItem("mjds_bgp1", BaseBlockMJDS::new);
     public static final RegistryObject<Block> PILLAR_2 = registerWithItem("mjds_bgp2", BaseBlockMJDS::new);
     public static final RegistryObject<Block> PILLAR_3 = registerWithItem("mjds_bgp3", BaseBlockMJDS::new);
-
-
+    
     public static final RegistryObject<Block> CASTLE_SPAWN = registerWithItem("castle_spawn", BlockSpawnPoint::new);
 
     public static final RegistryObject<Block> BLOCK_MOTOR_Y = registerWithItem("motor_vertical", BlockMotorY::new);
