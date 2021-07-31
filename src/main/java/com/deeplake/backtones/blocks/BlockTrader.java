@@ -15,6 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -66,7 +67,8 @@ public class BlockTrader extends BlockIndestructible implements INeedInit {
             else {
                 //Nah. Insufficient funds.
                 CommonFunctions.SafeSendMsgToPlayer(TextFormatting.YELLOW, playerEntity, MessageDef.DEAL_FAIL,
-                        sellCount, sellItem.getDescription(), costCount, costItem.getDescription());
+                        sellCount, new TranslationTextComponent(sellItem.getDescriptionId()), costCount,
+                        new TranslationTextComponent(costItem.getDescriptionId()));
                 return ActionResultType.FAIL;
             }
         }
