@@ -1,0 +1,8 @@
+{
+  "backtones.sound.jump": {
+    "subtitle": "subtitles.backtones.sound.jump",
+    "sounds": [
+      "minecraft:random/bow"
+    ]
+  }
+}
