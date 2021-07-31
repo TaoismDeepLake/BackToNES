@@ -5,6 +5,8 @@ import com.deeplake.backtones.util.EgoUtil;
 import com.deeplake.backtones.util.MJDSDefine;
 import com.deeplake.backtones.util.MessageDef;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -21,6 +23,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
     MJDSDefine.EnumEgo egoReq = MJDSDefine.EnumEgo.POPLON;
 
     public BaseBlockEgoDoor(MJDSDefine.EnumEgo egoReq) {
+        super(Properties.of(Material.STONE).isSuffocating((p_235445_0_, p_235445_1_, p_235445_2_) -> false));
         this.egoReq = egoReq;
     }
 
