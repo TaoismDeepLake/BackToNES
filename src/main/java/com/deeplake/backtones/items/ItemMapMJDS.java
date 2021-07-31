@@ -76,9 +76,10 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
     //return (ChunkZ, ChunkY, Floor in Z (as 1,2,3,4))
     public static BlockPos getShrinkPosFromRealPos(BlockPos pos)
     {
-        return new BlockPos(pos.getX() >> 4, pos.getY() >> 4, (pos.getY() % 16) >> 2 + 1);
+        return new BlockPos(pos.getX() >> 4, - pos.getY() >> 4, (pos.getY() % 16) >> 2 + 1);
     }
 
+    //the argument wont be converted
     public static void setOriginToStack(ItemStack stack, BlockPos pos)
     {
         CompoundNBT nbt = stack.getOrCreateTag();
@@ -111,8 +112,8 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
             BlockPos pinPoint = getShrinkPosFromRealPos(playerEntity.blockPosition());
             BlockPos origin = readOriginFromStack(stack);
 
-            int playerAtX = pinPoint.getX()-origin.getX();
-            int playerAtY = pinPoint.getY()-origin.getY();
+            int playerAtX = pinPoint.getX()-origin.getX() - 1;
+            int playerAtY = pinPoint.getY()-origin.getY() - 1;
 
             event.getToolTip().add(new StringTextComponent(String.format("Player %d,%d",playerAtX,playerAtY)));
 
