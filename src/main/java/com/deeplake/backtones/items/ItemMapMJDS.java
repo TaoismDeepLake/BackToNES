@@ -111,8 +111,8 @@ public class ItemMapMJDS extends BaseItemIDF implements INeedLogNBT{
             BlockPos pinPoint = getShrinkPosFromRealPos(playerEntity.blockPosition());
             BlockPos origin = readOriginFromStack(stack);
 
-            int playerAtX = pinPoint.getX()-origin.getX();
-            int playerAtY = pinPoint.getY()-origin.getY();
+            int playerAtX = 10 - (pinPoint.getX()-origin.getX());
+            int playerAtY = 10 - (pinPoint.getY()-origin.getY());
 
             event.getToolTip().add(new StringTextComponent(String.format("Player %d,%d",playerAtX,playerAtY)));
 
