@@ -60,7 +60,8 @@ public class BlockTrader extends BlockIndestructible implements INeedInit {
                 playerEntity.getCooldowns().addCooldown(costItem, CommonDef.TICK_PER_SECOND);
                 playerEntity.addItem(getSellStack(state, world, pos, playerEntity, hand, blockRayTraceResult));
                 CommonFunctions.SafeSendMsgToPlayer(TextFormatting.GREEN, playerEntity, MessageDef.DEAL_SUCCESS,
-                      sellCount, sellItem.getDescription(), costCount, costItem.getDescription());
+                      sellCount, new TranslationTextComponent(sellItem.getDescriptionId()), costCount,
+                        new TranslationTextComponent(costItem.getDescriptionId()));
                 handStack.shrink(costCount);
                 return ActionResultType.SUCCESS;
             }
