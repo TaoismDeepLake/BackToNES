@@ -2,6 +2,7 @@ package com.deeplake.backtones.blocks.tileentity;
 
 import com.deeplake.backtones.util.EntityUtil;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -66,14 +67,14 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                     ((MotorTileEntityBase) te).isPositiveDirection = isPositiveDirection;
                 }
                 level.setBlockAndUpdate(getBlockPos(), Blocks.AIR.defaultBlockState());
-                List<LivingEntity> livingEntities = EntityUtil.getEntitiesWithinAABB(level,
+                List<Entity> entityList = EntityUtil.getEntitiesWithinAABB(level,
                         null,
                         new Vector3d(getBlockPos().getX() + 0.5f,
                                 getBlockPos().getY() + 1f,
                                 getBlockPos().getZ() + 0.5f), 0.5f, EntityUtil.ALL);
 
-                for (LivingEntity living:
-                     livingEntities) {
+                for (Entity living:
+                     entityList) {
 
                     living.teleportTo(living.getX() + getOffset().getX(),
                             living.getY() + getOffset().getY(),

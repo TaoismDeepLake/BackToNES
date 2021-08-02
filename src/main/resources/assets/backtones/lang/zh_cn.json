@@ -36,6 +36,7 @@
   "block.backtones.popolon_door": "男子之门",
   "block.backtones.sp_glass": "地牢玻璃",
   "block.backtones.trade_mongo_sword": "交易·蒙古剑",
+  "block.backtones.trade_main": "交易·主城商店",
   "item.backtones.alterego": "人格之镜",
   "item.backtones.aphrodite_armor_1": "头盔·阿芙洛狄特",
   "item.backtones.aphrodite_armor_2": "胸甲·阿芙洛狄特",
@@ -59,7 +60,9 @@
   "nes.mjds": "魔城传说2：大魔司教加里欧斯",
   "backtones.desc.deal": "用 %sx %s 购买 %sx %s",
   "backtones.msg.deal.success": "已购买： %sx %s，支付了 %sx %s",
-  "backtones.msg.deal.fail": "“欢迎光临。老身小店打包出售%s个%s， 只收你%s个%s”",
+  "backtones.msg.deal.fail": "“欢迎光临。小店打包出售%s个%s， 只收你%s个%s”",
+  "backtones.msg.box.already_get": "已经领取此宝箱。",
+  "backtones.msg.teleport.no_spawn": "未绑定出生点",
   "backtones.msg.ego.swap.1": "切换为波波隆",
   "backtones.msg.ego.swap.2": "切换为阿芙洛狄特",
   "backtones.msg.ego.req.popolon": "需要波波隆",
@@ -92,6 +95,8 @@
 
   "block.backtones.box_7": "宝箱",
   "block.backtones.box_8": "宝箱",
+  "block.backtones.box_17": "宝箱",
+  "block.backtones.box_18": "宝箱",
 
   "block.backtones.covered_floor_forest": "软泥墙",
 
@@ -119,13 +124,13 @@
   "item.backtones.salt": "盐",
   "item.backtones.magical_rod": "无尽魔杖",
 
-  "backtones.advancements.angel_ring.description": "（WIP）传送回魔城起点",
-  "backtones.advancements.angel_ring.title": "天使之戒",
+  "backtones.advancements.angel_ring.description": "原作中可以把你传送回地牢的入口或者主城的雅典娜门口，是很重要的物品，本作中暂时未开发完成。",
+  "backtones.advancements.angel_ring.title": "天使之戒（WIP）",
   "backtones.advancements.boots.description": "热地板不再烫脚",
   "backtones.advancements.boots.title": "耐高温靴子",
 
   "backtones.advancements.devil_wing.description": "（WIP）在各个关卡入口之间传送。",
-  "backtones.advancements.devil_wing.title": "魔鬼之翼",
+  "backtones.advancements.devil_wing.title": "魔鬼之翼（WIP）",
 
   "backtones.advancements.jar.description": "获得的经验双倍",
   "backtones.advancements.jar.title": "知识魔罐",
@@ -147,6 +152,14 @@
   "block.backtones.box_15": "宝箱",
   "block.backtones.box_16": "宝箱",
   "block.backtones.box_9": "宝箱",
+
+  "block.backtones.mjds_gate1": "门",
+  "block.backtones.mjds_gate2": "门",
+  "block.backtones.mjds_gate3": "门",
+  "block.backtones.mjds_gate4": "门",
+  "block.backtones.mjds_bgp1": "柱子",
+  "block.backtones.mjds_bgp2": "柱子",
+  "block.backtones.mjds_bgp3": "柱子",
 
   "block.backtones.motor_vertical": "天马行空（垂直）",
   "block.backtones.motor_horizontal": "天马行空（东西）",

@@ -82,6 +82,9 @@ public class BlockRegistry {
     public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
             () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
 
+    public static final RegistryObject<Block> TRADE_MAIN = registerWithItem("trade_main",
+            () ->new BlockTrader(ItemRegistry.COIN, 40, ItemRegistry.QUIVER, 30));
+
     public static final RegistryObject<Block> BOX_1 = registerWithItem("box_1", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MONGO_SWORD));
     public static final RegistryObject<Block> BOX_2 = registerWithItem("box_2", () ->new BlockAchvBox(ItemRegistry.CERAMIC_BOW, AdvancementUtil.ACHV_CERAMIC_BOW));
     public static final RegistryObject<Block> BOX_3 = registerWithItem("box_3", () ->new BlockAchvBox(ItemRegistry.RED_BOW, AdvancementUtil.ACHV_RED_BOW));
