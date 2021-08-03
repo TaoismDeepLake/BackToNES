@@ -167,7 +167,9 @@
   "block.backtones.block_fairy": "城堡地板·仙灵祝福",
 
   "effect.backtones.mantle": "披风的加护",
-  "effect.backtones.pure_water": "圣水的力量"
+  "effect.backtones.pure_water": "圣水的力量",
 
-
+  "entity.backtones.en_mjds_skeleton": "魔城骷髅兵",
+  "entity.backtones.en_mjds_slime": "魔城史莱姆",
+  "entity.backtones.en_mjds_bat": "魔城蝙蝠"
 }

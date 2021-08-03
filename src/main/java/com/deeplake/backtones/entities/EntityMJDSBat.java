@@ -3,6 +3,7 @@ package com.deeplake.backtones.entities;
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
@@ -43,7 +44,8 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
         spawnPoint = blockPosition();
 
         getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2f);
-
+        getAttribute(Attributes.MAX_HEALTH).setBaseValue(1f);
+        setHealth(1f);
         return p_213386_4_;
     }
 

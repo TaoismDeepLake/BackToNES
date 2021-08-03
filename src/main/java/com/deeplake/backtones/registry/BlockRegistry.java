@@ -80,7 +80,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> BLOCK_FAIRY = registerWithItem("block_fairy", BlockFairy::new);
 
     public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
-            () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
+            () ->new BlockTraderSword(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
 
     public static final RegistryObject<Block> TRADE_MAIN = registerWithItem("trade_main",
             () ->new BlockTrader(ItemRegistry.COIN, 40, ItemRegistry.QUIVER, 30));

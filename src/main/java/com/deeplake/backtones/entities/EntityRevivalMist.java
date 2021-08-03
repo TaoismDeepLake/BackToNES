@@ -38,7 +38,7 @@ public class EntityRevivalMist extends Entity {
     {
         entityType = livingEntity.getType();
         livingEntity.saveWithoutId(entityNBT);
-        IdlFramework.Log("Rememebered: %s@%s\n%s",entityType.toString(), getEyePosition(0), entityNBT.toString());
+        //IdlFramework.Log("Rememebered: %s@%s\n%s",entityType.toString(), getEyePosition(0), entityNBT.toString());
     }
 
     @Override
@@ -47,10 +47,10 @@ public class EntityRevivalMist extends Entity {
         if (!level.isClientSide && isAlive())
         {
             //It will revive if it's outside the screen...
-            if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  32, EntityUtil.ALL).size() == 0)
+            if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  16, EntityUtil.ALL).size() == 0)
             {
                 //But will not revive when it's too far from players. Minecraft will despawn it, and thus keep cycling.
-                if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  90, EntityUtil.ALL).size() != 0)
+                if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  64, EntityUtil.ALL).size() != 0)
                 {
                     Entity entity = entityType.create(level);
                     if (entity instanceof LivingEntity)
@@ -63,7 +63,7 @@ public class EntityRevivalMist extends Entity {
                         ((LivingEntity) entity).setHealth(((LivingEntity) entity).getMaxHealth());
                         level.addFreshEntity(entity);
                     }
-                    IdlFramework.Log("...And with strange aeons even death may die. Recovered: %s@%s", entityType.toString(), getEyePosition(0));
+                    //IdlFramework.Log("...And with strange aeons even death may die. Recovered: %s@%s", entityType.toString(), getEyePosition(0));
                     remove();
                 }
             }

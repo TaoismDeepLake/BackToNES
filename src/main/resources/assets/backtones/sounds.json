@@ -1,8 +1,14 @@
 {
-  "backtones.sound.jump": {
+  "sound.jump": {
     "subtitle": "subtitles.backtones.sound.jump",
     "sounds": [
-      "minecraft:random/bow"
+      "backtones:random/bow"
+    ]
+  },
+  "sound.bgm_castle": {
+    "subtitle": "subtitles.backtones.sound.bgm_castle",
+    "sounds": [
+      "backtones:bgm/bgm_castle"
     ]
   }
 }
