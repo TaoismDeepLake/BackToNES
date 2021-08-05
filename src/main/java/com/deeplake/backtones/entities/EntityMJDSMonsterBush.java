@@ -2,35 +2,36 @@ package com.deeplake.backtones.entities;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
+import com.deeplake.backtones.util.CommonFunctions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.monster.SlimeEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import javax.annotation.Nullable;
-
 import java.util.Objects;
 
-import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
 import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 
-public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
+public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
     public BlockPos spawnPoint;
 
-    public EntityMJDSSlime(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
+    public EntityMJDSMonsterBush(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
         super(p_i48552_1_, p_i48552_2_);
-
+        CommonFunctions.addToEventBus(this);
     }
 
     @Override
@@ -38,9 +39,10 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
         return false;
     }
 
+    //no particles
     @Override
-    public int getSize() {
-        return 1;
+    protected boolean spawnCustomParticles() {
+        return true;
     }
 
     @Nullable
@@ -69,6 +71,11 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
     }
 
     @Override
+    public int getSize() {
+        return 1;
+    }
+
+    @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {
         super.readAdditionalSaveData(nbt);
         spawnPoint = NBTUtil.readBlockPos(nbt.getCompound(SPAWN_POINT));
@@ -80,7 +87,26 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
         nbt.put(SPAWN_POINT,  NBTUtil.writeBlockPos(spawnPoint));
     }
 
+    protected SoundEvent getJumpSound() {
+        return SoundEvents.SWEET_BERRY_BUSH_BREAK;
+    }
+
+    final int MAX_DELAY = 9999;
+    int lastJumpDelay = 999;
+
+    @SubscribeEvent
+    public void onJump(LivingEvent.LivingJumpEvent event) {
+        World world = event.getEntity().level;
+        if (!world.isClientSide && event.getEntity() instanceof PlayerEntity)
+        {
+            lastJumpDelay = 0;
+        }
+
+        //You jump, I jump.
+    }
+
+    @Override
     protected int getJumpDelay() {
-        return this.random.nextInt(40) + 10;
+        return lastJumpDelay > MAX_DELAY ? MAX_DELAY : lastJumpDelay + 10;
     }
 }

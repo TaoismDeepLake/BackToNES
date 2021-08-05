@@ -2,45 +2,34 @@ package com.deeplake.backtones.entities;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
+import com.deeplake.backtones.util.EntityUtil;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.monster.SlimeEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.entity.monster.SpiderEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-
 import java.util.Objects;
 
-import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
 import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 
-public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
+public class EntityMJDSWorm extends SpiderEntity implements IMjdsMonster {
     public BlockPos spawnPoint;
 
-    public EntityMJDSSlime(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
-        super(p_i48552_1_, p_i48552_2_);
-
-    }
-
-    @Override
-    public boolean isTiny() {
-        return false;
-    }
-
-    @Override
-    public int getSize() {
-        return 1;
+    public EntityMJDSWorm(EntityType<? extends SpiderEntity> p_i48550_1_, World p_i48550_2_) {
+        super(p_i48550_1_, p_i48550_2_);
+        getAttribute(Attributes.MAX_HEALTH).setBaseValue(1f);
     }
 
     @Nullable
@@ -80,7 +69,16 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
         nbt.put(SPAWN_POINT,  NBTUtil.writeBlockPos(spawnPoint));
     }
 
-    protected int getJumpDelay() {
-        return this.random.nextInt(40) + 10;
+    public void playerTouch(PlayerEntity p_70100_1_) {
+        this.dealDamage(p_70100_1_);
+    }
+
+    protected void dealDamage(LivingEntity p_175451_1_) {
+        if (this.isAlive()) {
+            if (this.distanceToSqr(p_175451_1_) < 0.6D && this.canSee(p_175451_1_) && p_175451_1_.hurt(DamageSource.mobAttack(this), (float) getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+                this.playSound(SoundEvents.SPIDER_AMBIENT, 1.0F, 1.0F);
+                this.doEnchantDamageEffects(this, p_175451_1_);
+            }
+        }
     }
 }

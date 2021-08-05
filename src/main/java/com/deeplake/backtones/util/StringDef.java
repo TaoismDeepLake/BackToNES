@@ -11,4 +11,6 @@ public class StringDef {
     public static String ENTITY_NAME_MJDS_SKELETON = "en_mjds_skeleton";
     public static String ENTITY_NAME_MJDS_SLIME = "en_mjds_slime";
     public static String ENTITY_NAME_MJDS_BAT = "en_mjds_bat";
+    public static String ENTITY_NAME_MJDS_BUSH = "en_mjds_bush";
+    public static String ENTITY_NAME_MJDS_WORM = "en_mjds_worm";
 }

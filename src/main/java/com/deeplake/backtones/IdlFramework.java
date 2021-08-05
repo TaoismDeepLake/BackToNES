@@ -63,6 +63,8 @@ public class IdlFramework {
             GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_SKELETON.get(), EntityMJDSSkeleton.createAttributes().build());
             GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_SLIME.get(), MonsterEntity.createMonsterAttributes().build());
             GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_BAT.get(), MonsterEntity.createMonsterAttributes().build());
+            GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_BUSH.get(), MonsterEntity.createMonsterAttributes().build());
+            GlobalEntityTypeAttributes.put(EntityRegistry.MJDS_WORM.get(), MonsterEntity.createMonsterAttributes().build());
         });
     }
 
