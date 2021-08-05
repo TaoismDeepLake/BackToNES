@@ -3,6 +3,7 @@ package com.deeplake.backtones.events;
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.blocks.BlockAchvBox;
 import com.deeplake.backtones.blocks.BlockCovered;
+import com.deeplake.backtones.blocks.BlockIndestructibleFake;
 import com.deeplake.backtones.blocks.BlockTrader;
 import com.deeplake.backtones.items.INeedLogNBT;
 import com.deeplake.backtones.items.ItemAlterEgo;
@@ -69,7 +70,10 @@ public class EventsItemDesc {
             } else if (block instanceof BlockCovered)
             {
                 event.getToolTip().add(new TranslationTextComponent(((BlockCovered) block).aftermath.get().getDescriptionId()).withStyle(TextFormatting.ITALIC));
-            } else if (block instanceof BlockAchvBox)
+            } else if (block instanceof BlockIndestructibleFake)
+            {
+                event.getToolTip().add(new TranslationTextComponent(DESC_FAKE).withStyle(TextFormatting.ITALIC));
+            }else if (block instanceof BlockAchvBox)
             {
                 BlockAchvBox blockAchvBox = (BlockAchvBox) block;
                 if (blockAchvBox.hasAchv())

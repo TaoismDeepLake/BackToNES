@@ -28,14 +28,18 @@ local function GenAdvItem(iconName, advName, parentPath, isChall, isHidden, isSi
 	outFile:close();
 end
 
-GenAdvItem("backtones:angel_ring", "angel_ring", "root", false, false, false);
-GenAdvItem("backtones:devil_wing", "devil_wing", "breakable_wall", false, false, false);
-GenAdvItem("backtones:lamp", "lamp", "root", false, false, false);
-GenAdvItem("backtones:salt", "salt", "root", false, false, false);
-GenAdvItem("backtones:boots", "boots", "root", false, false, false);
-GenAdvItem("backtones:sabre", "sabre", "root", false, false, false);
-GenAdvItem("backtones:jar", "jar", "root", false, false, false);
-GenAdvItem("backtones:magical_rod", "magical_rod", "root", false, false, false);
+GenAdvItem("backtones:great_key_1", "dungeon_1", "root", true, true, false);
+GenAdvItem("backtones:great_key_1", "dungeon_2", "root", true, true, false);
+GenAdvItem("backtones:great_key_1", "dungeon_3", "root", true, true, false);
+GenAdvItem("backtones:great_key_1", "dungeon_4", "root", true, true, false);
+GenAdvItem("backtones:great_key_1", "dungeon_5", "root", true, true, false);
+--GenAdvItem("backtones:devil_wing", "devil_wing", "breakable_wall", false, false, false);
+--GenAdvItem("backtones:lamp", "lamp", "root", false, false, false);
+--GenAdvItem("backtones:salt", "salt", "root", false, false, false);
+--GenAdvItem("backtones:boots", "boots", "root", false, false, false);
+--GenAdvItem("backtones:sabre", "sabre", "root", false, false, false);
+--GenAdvItem("backtones:jar", "jar", "root", false, false, false);
+--GenAdvItem("backtones:magical_rod", "magical_rod", "root", false, false, false);
 --GenAdvItem("backtones:coin", "treasure_a_1", "root", false, false, false);
 
 --GenAdvItem("backtones:coin", "treasure_a_1", "root", false, true, true);
