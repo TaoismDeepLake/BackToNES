@@ -88,14 +88,15 @@ public class BlockRegistry {
     public static final RegistryObject<Block> BOX_14 = registerWithItem("box_14", () ->new BlockAchvBox(null, AdvancementUtil.ACHV_MAGICAL_ROD));
     public static final RegistryObject<Block> BOX_15 = registerWithItem("box_15", () ->new BlockAchvBox(null, AdvancementUtil.ACHV_SABRE));
     public static final RegistryObject<Block> BOX_16 = registerWithItem("box_16", () ->new BlockAchvBox(null, AdvancementUtil.ACHV_JAR));
-//    public static final RegistryObject<Block> BOX_17 = registerWithItem("box_17", () ->new BlockAchvBox(null, AdvancementUtil.ACHV_MAGICAL_ROD));
-//    public static final RegistryObject<Block> BOX_18 = registerWithItem("box_18", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_19 = registerWithItem("box_19", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_20 = registerWithItem("box_20", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_21 = registerWithItem("box_21", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_22 = registerWithItem("box_22", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_23 = registerWithItem("box_23", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
-//    public static final RegistryObject<Block> BOX_24 = registerWithItem("box_24", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
+
+    public static final RegistryObject<Block> BOX_17 = registerWithItem("box_17", () ->new BlockAchvBoxCounted(ItemRegistry.COIN, 90, AdvancementUtil.ACHV_TREASURE_A));
+    public static final RegistryObject<Block> BOX_18 = registerWithItem("box_18", () ->new BlockAchvBoxCounted(ItemRegistry.COIN, 150, AdvancementUtil.ACHV_TREASURE_B));
+    public static final RegistryObject<Block> BOX_19 = registerWithItem("box_19", () ->new BlockAchvBoxCounted(ItemRegistry.QUIVER, 50, AdvancementUtil.ACHV_TREASURE_C));
+    public static final RegistryObject<Block> BOX_20 = registerWithItem("box_20", () ->new BlockAchvBox(null, AdvancementUtil.DUNGEON_1));
+    public static final RegistryObject<Block> BOX_21 = registerWithItem("box_21", () ->new BlockAchvBox(null, AdvancementUtil.DUNGEON_2));
+    public static final RegistryObject<Block> BOX_22 = registerWithItem("box_22", () ->new BlockAchvBox(null, AdvancementUtil.DUNGEON_3));
+    public static final RegistryObject<Block> BOX_23 = registerWithItem("box_23", () ->new BlockAchvBox(null, AdvancementUtil.DUNGEON_4));
+    public static final RegistryObject<Block> BOX_24 = registerWithItem("box_24", () ->new BlockAchvBox(null, AdvancementUtil.DUNGEON_5));
 //    public static final RegistryObject<Block> BOX_25 = registerWithItem("box_25", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_26 = registerWithItem("box_26", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));
 //    public static final RegistryObject<Block> BOX_27 = registerWithItem("box_27", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MANTLE));

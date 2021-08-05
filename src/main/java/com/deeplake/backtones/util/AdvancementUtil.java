@@ -34,6 +34,16 @@ public class AdvancementUtil {
     public static final String ACHV_JAR = "jar";
     public static final String ACHV_MAGICAL_ROD = "magical_rod";
 
+    public static final String ACHV_TREASURE_A = "treasure_a_1";
+    public static final String ACHV_TREASURE_B = "treasure_b_1";
+    public static final String ACHV_TREASURE_C = "treasure_c_1";
+
+    public static final String DUNGEON_1 = "dungeon_1";
+    public static final String DUNGEON_2 = "dungeon_2";
+    public static final String DUNGEON_3 = "dungeon_3";
+    public static final String DUNGEON_4 = "dungeon_4";
+    public static final String DUNGEON_5 = "dungeon_5";
+
     public static final String ACHV_ROOT = "root";
 
 

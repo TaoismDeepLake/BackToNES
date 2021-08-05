@@ -51,13 +51,13 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                     continue;
                 }
                 else {
-                    IdlFramework.Log("Failed : @%s, is %s", posPointer, level.getBlockState(posPointer));
+                    //IdlFramework.Log("Failed : @%s, is %s", posPointer, level.getBlockState(posPointer));
                     isFree = false;
                     break;
                 }
             }
 
-            IdlFramework.Log("@%s, isFree = %s", getBlockPos(), isFree);
+            //IdlFramework.Log("@%s, isFree = %s", getBlockPos(), isFree);
 
             //move
             if (isFree)
