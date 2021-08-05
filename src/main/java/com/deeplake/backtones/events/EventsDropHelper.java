@@ -34,7 +34,13 @@ public class EventsDropHelper {
 
         if (chance >= 1f || livingEntity.getRandom().nextFloat() < chance)
         {
-            event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.COIN.get()));
+            if (livingEntity.getRandom().nextBoolean())
+            {
+                event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.COIN.get()));
+            }
+            else {
+                event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.QUIVER.get()));
+            }
         }
     }
 
