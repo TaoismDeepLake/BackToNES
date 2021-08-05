@@ -5,6 +5,8 @@ import com.deeplake.backtones.util.EgoUtil;
 import com.deeplake.backtones.util.MJDSDefine;
 import com.deeplake.backtones.util.MessageDef;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -21,6 +23,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
     MJDSDefine.EnumEgo egoReq = MJDSDefine.EnumEgo.POPLON;
 
     public BaseBlockEgoDoor(MJDSDefine.EnumEgo egoReq) {
+        super(Properties.of(Material.STONE).isSuffocating((p_235445_0_, p_235445_1_, p_235445_2_) -> false));
         this.egoReq = egoReq;
     }
 
@@ -31,6 +34,11 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
 
     float maxDistSqr = 2f*2f;
     float disturbanceY = 0.3f;//make the player fall, so they feel the teleport
+
+    public boolean checkEgo(PlayerEntity playerEntity)
+    {
+        return EgoUtil.getEgo(playerEntity) == egoReq;
+    }
 
     //(onBlockActivated)
     public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
@@ -48,7 +56,7 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
         //  flag = false;
         //}
 
-        if (EgoUtil.getEgo(playerEntity) == egoReq)
+        if (checkEgo(playerEntity))
         {
             if (!world.isClientSide) {
                 Vector3d thisPos = new Vector3d(pos.getX()+0.5f, pos.getY(), pos.getZ()+0.5f);
@@ -72,6 +80,5 @@ public class BaseBlockEgoDoor extends BaseBlockMJDS {
             }
             return ActionResultType.FAIL;
         }
-
     }
 }

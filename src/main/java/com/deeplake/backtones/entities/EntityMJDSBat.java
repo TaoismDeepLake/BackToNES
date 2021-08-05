@@ -3,6 +3,7 @@ package com.deeplake.backtones.entities;
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
@@ -18,6 +19,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.*;
 
@@ -31,6 +33,11 @@ import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
     public BlockPos spawnPoint;
 
+    @Override
+    public AxisAlignedBB getBoundingBox() {
+        return super.getBoundingBox();
+    }
+
     public EntityMJDSBat(EntityType<? extends BatEntity> p_i50290_1_, World p_i50290_2_) {
         super(p_i50290_1_, p_i50290_2_);
         this.xpReward = 5;
@@ -43,7 +50,8 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
         spawnPoint = blockPosition();
 
         getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2f);
-
+        getAttribute(Attributes.MAX_HEALTH).setBaseValue(1f);
+        setHealth(1f);
         return p_213386_4_;
     }
 
@@ -89,7 +97,6 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
         if (p_70108_1_ instanceof IronGolemEntity && this.isDealsDamage()) {
             this.dealDamage((LivingEntity)p_70108_1_);
         }
-
     }
 
     public void playerTouch(PlayerEntity p_70100_1_) {

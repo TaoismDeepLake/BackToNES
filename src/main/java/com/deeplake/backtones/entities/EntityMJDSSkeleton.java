@@ -6,12 +6,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
@@ -33,6 +35,10 @@ public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
 
     public EntityMJDSSkeleton(EntityType<? extends SkeletonEntity> p_i50194_1_, World p_i50194_2_) {
         super(p_i50194_1_, p_i50194_2_);
+        for (EquipmentSlotType slotType :
+                EquipmentSlotType.values()) {
+            setDropChance(slotType, 0f);
+        }
     }
 
     //do not burn under sun
@@ -66,6 +72,28 @@ public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
 //    public void die(DamageSource p_70645_1_) {
 //        super.die(p_70645_1_);
 //    }
+
+
+    @Override
+    public ActionResultType interactAt(PlayerEntity playerEntity, Vector3d p_184199_2_, Hand hand) {
+        if (!playerEntity.level.isClientSide && playerEntity.isCreative())
+        {
+            ItemStack stack = playerEntity.getItemInHand(hand);
+            if (stack.getItem() instanceof ArmorItem)
+            {
+                ArmorItem armorItem = (ArmorItem) stack.getItem();
+                setItemSlot(armorItem.getSlot(), stack.copy());
+            }
+            else if (stack.getItem() instanceof ShieldItem)
+            {
+                setItemSlot(EquipmentSlotType.OFFHAND, stack.copy());
+            }else if (stack.getItem() instanceof SwordItem)
+            {
+                setItemSlot(EquipmentSlotType.MAINHAND, stack.copy());
+            }
+        }
+        return super.interactAt(playerEntity, p_184199_2_, hand);
+    }
 
     @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {

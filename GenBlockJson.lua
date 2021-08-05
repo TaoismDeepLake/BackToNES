@@ -91,12 +91,12 @@ local function GenSP(index)
 	outFile:close();
 end
 
---for i = 1, 50 do
---	GenSP(i);
+--for i = 1, 4 do
+--	GenBlock("mjds_bgp"..i);
 --end
 
-GenBlock("motor_vertical");
-GenBlock("motor_horizontal");
+
+GenBlock("trade_main");
 --GenItem("misc", "magical_rod");
 --GenItem("misc", "boots");
 --GenItem("misc", "devil_wing");

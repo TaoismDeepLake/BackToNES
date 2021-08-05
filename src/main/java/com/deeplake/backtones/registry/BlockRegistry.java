@@ -63,13 +63,27 @@ public class BlockRegistry {
     public static final RegistryObject<Block> POPOLON_DOOR = registerWithItem("popolon_door", () -> new BaseBlockEgoDoor(MJDSDefine.EnumEgo.POPLON));
     public static final RegistryObject<Block> APHRO_DOOR = registerWithItem("aphrodite_door", () -> new BaseBlockEgoDoor(MJDSDefine.EnumEgo.APHRODITE));
 
+    public static final RegistryObject<Block> NORMAL_DOOR_1 = registerWithItem("mjds_gate1", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> NORMAL_DOOR_2 = registerWithItem("mjds_gate2", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> NORMAL_DOOR_3 = registerWithItem("mjds_gate3", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> NORMAL_DOOR_4 = registerWithItem("mjds_gate4", BlockGeneralDoor::new);
+    public static final RegistryObject<Block> PILLAR_1 = registerWithItem("mjds_bgp1", BaseBlockMJDS::new);
+    public static final RegistryObject<Block> PILLAR_2 = registerWithItem("mjds_bgp2", BaseBlockMJDS::new);
+    public static final RegistryObject<Block> PILLAR_3 = registerWithItem("mjds_bgp3", BaseBlockMJDS::new);
+    
     public static final RegistryObject<Block> CASTLE_SPAWN = registerWithItem("castle_spawn", BlockSpawnPoint::new);
 
     public static final RegistryObject<Block> BLOCK_MOTOR_Y = registerWithItem("motor_vertical", BlockMotorY::new);
     public static final RegistryObject<Block> BLOCK_MOTOR_X = registerWithItem("motor_horizontal", BlockMotorX::new);
+    //public static final RegistryObject<Block> BLOCK_MOTOR_Z = registerWithItem("motor_horizontal_z", BlockMotorZ::new);
+
+    public static final RegistryObject<Block> BLOCK_FAIRY = registerWithItem("block_fairy", BlockFairy::new);
 
     public static final RegistryObject<Block> TRADE_MONGO_SWORD = registerWithItem("trade_mongo_sword",
-            () ->new BlockTrader(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
+            () ->new BlockTraderSword(ItemRegistry.COIN, 20, ItemRegistry.MONGO_SWORD, 1));
+
+    public static final RegistryObject<Block> TRADE_MAIN = registerWithItem("trade_main",
+            () ->new BlockTrader(ItemRegistry.COIN, 40, ItemRegistry.QUIVER, 30));
 
     public static final RegistryObject<Block> BOX_1 = registerWithItem("box_1", () ->new BlockAchvBox(ItemRegistry.MONGO_SWORD, AdvancementUtil.ACHV_MONGO_SWORD));
     public static final RegistryObject<Block> BOX_2 = registerWithItem("box_2", () ->new BlockAchvBox(ItemRegistry.CERAMIC_BOW, AdvancementUtil.ACHV_CERAMIC_BOW));

@@ -24,6 +24,10 @@ public class IDLNBT {
 	}
 
 	public static CompoundNBT getPlyrIdlTagSafe(PlayerEntity player) {
+		if(player == null) {
+			return new CompoundNBT();
+		}
+
 		CompoundNBT playerData = player.getPersistentData();
 		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
 		CompoundNBT idl_data = getTagSafe(data, IDEALLAND);
@@ -55,6 +59,11 @@ public class IDLNBT {
 		return getPlyrIdlTagSafe(player).getString(key);
 	}
 	public static BlockPos getPlayerIdeallandBlockPosSafe(PlayerEntity player, String key) {
+		if (player == null)
+		{
+			return BlockPos.ZERO;
+		}
+
 		INBT inbt = getPlyrIdlTagSafe(player).get(key);
 		if (inbt instanceof CompoundNBT)
 		{
@@ -64,6 +73,11 @@ public class IDLNBT {
 	}
 
 	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, int value) {
+		if (player == null)
+		{
+			return;
+		}
+
 		CompoundNBT playerData = player.getPersistentData();
 		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
 		CompoundNBT idl_data = getPlyrIdlTagSafe(player);
@@ -75,6 +89,11 @@ public class IDLNBT {
 	}
 
 	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, int[] value) {
+		if (player == null)
+		{
+			return;
+		}
+
 		CompoundNBT playerData = player.getPersistentData();
 		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
 		CompoundNBT idl_data = getPlyrIdlTagSafe(player);
@@ -86,6 +105,11 @@ public class IDLNBT {
 	}
 
 	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, double value) {
+		if (player == null)
+		{
+			return;
+		}
+
 		CompoundNBT playerData = player.getPersistentData();
 		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
 		CompoundNBT idl_data = getPlyrIdlTagSafe(player);
@@ -97,6 +121,11 @@ public class IDLNBT {
 	}
 
 	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, boolean value) {
+		if (player == null)
+		{
+			return;
+		}
+
 		CompoundNBT playerData = player.getPersistentData();
 		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
 		CompoundNBT idl_data = getPlyrIdlTagSafe(player);
@@ -108,6 +137,11 @@ public class IDLNBT {
 	}
 
 	public static void setPlayerIdeallandTagSafe(PlayerEntity player, String key, String value) {
+		if (player == null)
+		{
+			return;
+		}
+
 		CompoundNBT playerData = player.getPersistentData();
 		CompoundNBT data = getTagSafe(playerData, PlayerEntity.PERSISTED_NBT_TAG);
 		CompoundNBT idl_data = getPlyrIdlTagSafe(player);

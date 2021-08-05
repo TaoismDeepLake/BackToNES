@@ -38,6 +38,11 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
         return false;
     }
 
+    @Override
+    public int getSize() {
+        return 1;
+    }
+
     @Nullable
     public ILivingEntityData finalizeSpawn(IServerWorld p_213386_1_, DifficultyInstance p_213386_2_, SpawnReason p_213386_3_, @Nullable ILivingEntityData p_213386_4_, @Nullable CompoundNBT p_213386_5_) {
         p_213386_4_ = super.finalizeSpawn(p_213386_1_, p_213386_2_, p_213386_3_, p_213386_4_, p_213386_5_);
@@ -64,11 +69,6 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
     }
 
     @Override
-    public int getSize() {
-        return 1;
-    }
-
-    @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {
         super.readAdditionalSaveData(nbt);
         spawnPoint = NBTUtil.readBlockPos(nbt.getCompound(SPAWN_POINT));
@@ -78,5 +78,9 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
     public void addAdditionalSaveData(CompoundNBT nbt) {
         super.addAdditionalSaveData(nbt);
         nbt.put(SPAWN_POINT,  NBTUtil.writeBlockPos(spawnPoint));
+    }
+
+    protected int getJumpDelay() {
+        return this.random.nextInt(40) + 10;
     }
 }
