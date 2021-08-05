@@ -64,8 +64,16 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> SP_EGG_SKELETON = ITEMS.register("spawner_egg_skeleton",
             () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_SKELETON, 0xffffff, 0xcccccc, UNCOMMON_PROP));
+
     public static final RegistryObject<Item> SP_EGG_SLIME = ITEMS.register("spawner_egg_slime",
-            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_SLIME, 0xff0000, 0xffffff, UNCOMMON_PROP));
+            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_SLIME, 0xff1111, 0x666666, UNCOMMON_PROP));
+
     public static final RegistryObject<Item> SP_EGG_BAT = ITEMS.register("spawner_egg_bat",
             () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_BAT, 0x000000, 0xcccccc, UNCOMMON_PROP));
+
+    public static final RegistryObject<Item> SP_EGG_WORM = ITEMS.register("spawner_egg_worm",
+            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_WORM, 0x666600, 0x555533, UNCOMMON_PROP));
+
+    public static final RegistryObject<Item> SP_EGG_BUSH = ITEMS.register("spawner_egg_bush",
+            () -> new SpawnEggItemModded(EntityType.DOLPHIN, MJDS_BUSH, 0x00ff00, 0x00ff00, UNCOMMON_PROP));
 }

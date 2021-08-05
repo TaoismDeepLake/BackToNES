@@ -48,7 +48,15 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<EntityMJDSBat>> MJDS_BAT = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BAT,
             () -> EntityType.Builder.of(EntityMJDSBat::new, EntityClassification.MONSTER)
-                    .sized(0.5F, 0.9F).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
+                    .sized(1F, 1f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
+
+    public static final RegistryObject<EntityType<EntityMJDSMonsterBush>> MJDS_BUSH = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BUSH,
+            () -> EntityType.Builder.of(EntityMJDSMonsterBush::new, EntityClassification.MONSTER)
+                    .sized(1f, 1f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BUSH));
+
+    public static final RegistryObject<EntityType<EntityMJDSWorm>> MJDS_WORM = ENTITY_TYPES.register(ENTITY_NAME_MJDS_WORM,
+            () -> EntityType.Builder.of(EntityMJDSWorm::new, EntityClassification.MONSTER)
+                    .sized(1f, 1f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_WORM));
 //    private static Item spawnEgg(EntityType<?> type, int color, int color2) {
 //        ResourceLocation eggId = new ResourceLocation(type.getRegistryName().getNamespace(), type.getRegistryName().getPath() + "_spawn_egg");
 //        return new SpawnEggItem(type, color, color2, ItemRegistry.UNCOMMON_PROP).setRegistryName(eggId);

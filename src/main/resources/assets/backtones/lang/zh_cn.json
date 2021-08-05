@@ -53,10 +53,12 @@
   "item.backtones.pure_water": "圣水·可食用",
   "item.backtones.quiver": "弹药",
   "item.backtones.red_bow": "赤弓",
-  "item.backtones.spawner_egg_skeleton": "布置·地牢骷髅",
-  "item.backtones.spawner_egg_slime": "布置·地牢史莱姆",
-  "item.backtones.spawner_egg_bat": "布置·地牢蝙蝠",
-  "itemGroup.group1": "神代回归1",
+  "item.backtones.spawner_egg_skeleton": "布置·骷髅兵",
+  "item.backtones.spawner_egg_slime": "布置·史莱姆",
+  "item.backtones.spawner_egg_bat": "布置·蝙蝠",
+  "item.backtones.spawner_egg_worm": "布置·虫子",
+  "item.backtones.spawner_egg_bush": "布置·灌木怪",
+  "itemGroup.group1": "魔城传说3D",
   "nes.mjds": "魔城传说2：大魔司教加里欧斯",
   "backtones.desc.deal": "用 %sx %s 购买 %sx %s",
   "backtones.msg.deal.success": "已购买： %sx %s，支付了 %sx %s",
@@ -126,20 +128,20 @@
 
   "backtones.advancements.angel_ring.description": "原作中可以把你传送回地牢的入口或者主城的雅典娜门口，是很重要的物品，本作中暂时未开发完成。",
   "backtones.advancements.angel_ring.title": "天使之戒（WIP）",
-  "backtones.advancements.boots.description": "热地板不再烫脚",
+  "backtones.advancements.boots.description": "【无需物品】热地板不再烫脚。",
   "backtones.advancements.boots.title": "耐高温靴子",
 
   "backtones.advancements.devil_wing.description": "（WIP）在各个关卡入口之间传送。",
   "backtones.advancements.devil_wing.title": "魔鬼之翼（WIP）",
 
-  "backtones.advancements.jar.description": "获得的经验双倍",
+  "backtones.advancements.jar.description": "【无需物品】获得的经验双倍",
   "backtones.advancements.jar.title": "知识魔罐",
-  "backtones.advancements.lamp.description": "显示地图的Boss房",
+  "backtones.advancements.lamp.description": "【无需物品】显示地图的Boss房",
   "backtones.advancements.lamp.title": "指路明灯",
-  "backtones.advancements.magical_rod.description": "（WIP）BOSS战中，魔城的远程武器不消耗弹药。",
+  "backtones.advancements.magical_rod.description": "【无需物品】BOSS战中，魔城的远程武器不消耗弹药。",
   "backtones.advancements.magical_rod.title": "无尽魔杖",
 
-  "backtones.advancements.sabre.description": "双倍你造成的伤害",
+  "backtones.advancements.sabre.description": "【无需物品】双倍你造成的伤害",
   "backtones.advancements.sabre.title": "克邪佩刀",
   "backtones.advancements.salt.description": "暂时没有效果。原作中用以进入复活房。",
   "backtones.advancements.salt.title": "盐",
@@ -171,5 +173,7 @@
 
   "entity.backtones.en_mjds_skeleton": "魔城骷髅兵",
   "entity.backtones.en_mjds_slime": "魔城史莱姆",
-  "entity.backtones.en_mjds_bat": "魔城蝙蝠"
+  "entity.backtones.en_mjds_bat": "魔城蝙蝠",
+  "entity.backtones.en_mjds_worm": "魔城虫",
+  "entity.backtones.en_mjds_bush": "魔城灌木怪"
 }

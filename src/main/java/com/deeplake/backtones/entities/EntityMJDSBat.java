@@ -19,6 +19,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.*;
 
@@ -31,6 +32,11 @@ import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 
 public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
     public BlockPos spawnPoint;
+
+    @Override
+    public AxisAlignedBB getBoundingBox() {
+        return super.getBoundingBox();
+    }
 
     public EntityMJDSBat(EntityType<? extends BatEntity> p_i50290_1_, World p_i50290_2_) {
         super(p_i50290_1_, p_i50290_2_);
@@ -91,7 +97,6 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
         if (p_70108_1_ instanceof IronGolemEntity && this.isDealsDamage()) {
             this.dealDamage((LivingEntity)p_70108_1_);
         }
-
     }
 
     public void playerTouch(PlayerEntity p_70100_1_) {

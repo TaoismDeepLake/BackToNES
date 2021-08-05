@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import java.util.function.Supplier;
 
 public class BlockTraderSword extends BlockTrader {
-    private static final String ADVENTURE_NBT = "{CanDestroy:[\"backtones:breakable_wall\",\"backtones:covered_floor\"]}";
+    private static final String ADVENTURE_NBT = "{CanDestroy:[\"backtones:breakable_wall\",\"backtones:covered_floor\",\"covered_floor_forest\"]}";
 
     public BlockTraderSword(Supplier<Item> buyItem, int buyCount, Supplier<Item> sellItem, int sellCount) {
         super(buyItem, buyCount, sellItem, sellCount);
