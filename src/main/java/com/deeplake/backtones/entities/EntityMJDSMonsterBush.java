@@ -3,9 +3,8 @@ package com.deeplake.backtones.entities;
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
 import com.deeplake.backtones.util.CommonFunctions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.SpawnReason;
+import com.deeplake.backtones.util.DesignUtil;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.monster.SlimeEntity;
@@ -32,6 +31,12 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
     public EntityMJDSMonsterBush(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
         super(p_i48552_1_, p_i48552_2_);
         CommonFunctions.addToEventBus(this);
+        setSize(2, false);
+    }
+
+    @Override
+    public int getSize() {
+        return 2;
     }
 
     @Override
@@ -60,7 +65,7 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
     @Override
     public void onRemovedFromWorld() {
         super.onRemovedFromWorld();
-        if (!level.isClientSide)
+        if (!level.isClientSide && DesignUtil.canRevive(this))
         {
             //IdlFramework.Log("That is not dead which can eternal lie...");
             EntityRevivalMist mist = new EntityRevivalMist(EntityRegistry.REVIVE_MIST.get(), level);
@@ -70,10 +75,6 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
         }
     }
 
-    @Override
-    public int getSize() {
-        return 1;
-    }
 
     @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {
@@ -109,4 +110,12 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
     protected int getJumpDelay() {
         return lastJumpDelay > MAX_DELAY ? MAX_DELAY : lastJumpDelay + 10;
     }
+
+    @Override
+    public BlockPos getRespawn() {
+        return spawnPoint;
+    }
+//    public EntitySize getDimensions(Pose p_213305_1_) {
+//        return super.getDimensions(p_213305_1_).scale(this.getScale());
+//    }
 }

@@ -2,6 +2,7 @@ package com.deeplake.backtones.entities;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
+import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -58,7 +59,7 @@ public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
     @Override
     public void onRemovedFromWorld() {
         super.onRemovedFromWorld();
-        if (!level.isClientSide)
+        if (!level.isClientSide && DesignUtil.canRevive(this))
         {
             //IdlFramework.Log("That is not dead which can eternal lie...");
             EntityRevivalMist mist = new EntityRevivalMist(EntityRegistry.REVIVE_MIST.get(), level);
@@ -128,8 +129,10 @@ public class EntityMJDSSkeleton extends SkeletonEntity implements IMjdsMonster {
                 }
             }
         }
-
-
     }
 
+    @Override
+    public BlockPos getRespawn() {
+        return spawnPoint;
+    }
 }

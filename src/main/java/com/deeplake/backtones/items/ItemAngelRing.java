@@ -9,6 +9,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -32,30 +34,28 @@ public class ItemAngelRing extends BaseItemIDF {
     @Override
     public void inventoryTick(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) {
         super.inventoryTick(p_77663_1_, p_77663_2_, p_77663_3_, p_77663_4_, p_77663_5_);
-
-
-
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack p_77654_1_, World world, LivingEntity livingEntity) {
-        if (world.isClientSide)
-        {
+    public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
 
+        if (world.isClientSide || hand == Hand.MAIN_HAND) {
+            return super.use(world, playerEntity, hand);
         }else {
-            if (livingEntity instanceof PlayerEntity)
+            if (playerEntity != null)
             {
-                BlockPos spawnPoint = IDLNBT.getPlayerIdeallandBlockPosSafe((PlayerEntity) livingEntity, ORI_POS);
+                ItemStack stack = playerEntity.getItemInHand(hand);
+                BlockPos spawnPoint = IDLNBT.getPlayerIdeallandBlockPosSafe((PlayerEntity) playerEntity, ORI_POS);
                 if (spawnPoint.equals(BlockPos.ZERO))
                 {
-                    CommonFunctions.SafeSendMsgToPlayer(livingEntity, NO_SPAWN);
+                    CommonFunctions.SafeSendMsgToPlayer(playerEntity, NO_SPAWN);
                 }
                 else {
-                    livingEntity.teleportTo(spawnPoint.getX()+0.5f, spawnPoint.getY(), spawnPoint.getZ()+0.5f);
+                    playerEntity.teleportTo(spawnPoint.getX()+0.5f, spawnPoint.getY(), spawnPoint.getZ()+0.5f);
                 }
-                activateCooldown(p_77654_1_, (PlayerEntity) livingEntity);
+                activateCooldown(stack, (PlayerEntity) playerEntity);
             }
         }
-        return super.finishUsingItem(p_77654_1_, world, livingEntity);
+        return super.use(world, playerEntity, hand);
     }
 }

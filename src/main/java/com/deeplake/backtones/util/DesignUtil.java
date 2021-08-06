@@ -25,6 +25,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 import static com.deeplake.backtones.events.EventsJumpHelper.getBlockPosBelowThatAffectsMyMovement;
+import static com.deeplake.backtones.util.IDLNBTDef.NO_REVIVE;
 
 public class DesignUtil {
 
@@ -58,6 +59,11 @@ public class DesignUtil {
                     || entity.getOffhandItem().getItem() instanceof ShieldItem;
         }
         else return entity instanceof IMjdsMonster || entity instanceof WitchEntity;
+    }
+
+    public static boolean canRevive(Entity entity)
+    {
+        return entity != null && IDLNBTUtil.GetInt(entity, NO_REVIVE, 0) <= 0;
     }
 
     public static boolean isWithOffsetMJDS(World world, BlockPos pos, Entity entity)

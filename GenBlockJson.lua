@@ -96,8 +96,8 @@ end
 --end
 
 
-GenBlock("trade_main");
---GenItem("misc", "magical_rod");
+--GenBlock("cleanse_sword");
+GenItem("weapon", "cleanse_sword");
 --GenItem("misc", "boots");
 --GenItem("misc", "devil_wing");
 --GenItem("misc", "jar");

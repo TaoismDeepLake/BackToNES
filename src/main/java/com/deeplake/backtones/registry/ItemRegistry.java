@@ -4,6 +4,7 @@ import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.items.*;
 import com.deeplake.backtones.items.infra.SpawnEggItemModded;
 import com.deeplake.backtones.items.tabs.TabList;
+import com.deeplake.backtones.items.weapons.CleanserSword;
 import com.deeplake.backtones.items.weapons.ItemCeraBow;
 import com.deeplake.backtones.items.weapons.ItemRedBow;
 import com.deeplake.backtones.items.weapons.MongolianSword;
@@ -20,12 +21,13 @@ import static com.deeplake.backtones.registry.EntityRegistry.*;
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IdlFramework.MOD_ID);
 
-    public static final RegistryObject<Item> MONGO_SWORD = ITEMS.register("mongo_sword", MongolianSword::new);
-    //public static final RegistryObject<Item> MURASAMA = ITEMS.register("murasama", MongolianSword::new);
-
     public static final Item.Properties UNCOMMON_PROP = new Item.Properties().rarity(Rarity.UNCOMMON).tab(TabList.MISC_GROUP);
     public static final Item.Properties RARE_PROP = new Item.Properties().rarity(Rarity.RARE).tab(TabList.MISC_GROUP);
     public static final Item.Properties EPIC_PROP = new Item.Properties().rarity(Rarity.EPIC).tab(TabList.MISC_GROUP);
+
+    public static final RegistryObject<Item> MONGO_SWORD = ITEMS.register("mongo_sword", MongolianSword::new);
+    public static final RegistryObject<Item> CLEANSE_SWORD = ITEMS.register("cleanse_sword", CleanserSword::new);
+    //public static final RegistryObject<Item> MURASAMA = ITEMS.register("murasama", MongolianSword::new);
 
     public static final RegistryObject<Item> COIN = ITEMS.register("coin", () -> new BaseItemIDF(UNCOMMON_PROP));
     public static final RegistryObject<Item> QUIVER = ITEMS.register("quiver", () -> new BaseItemIDF(UNCOMMON_PROP));
@@ -47,6 +49,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SABRE = ITEMS.register("sabre", () -> new BaseItemIDF(EPIC_PROP));
     public static final RegistryObject<Item> JAR = ITEMS.register("jar", () -> new BaseItemIDF(EPIC_PROP));
     public static final RegistryObject<Item> MAGICAL_ROD = ITEMS.register("magical_rod", () -> new BaseItemIDF(EPIC_PROP));
+
+
 
     public static final RegistryObject<Item> POPOLON_HELMET = ITEMS.register("popolon_armor_1", () -> new EgoArmor(POPOLON, EquipmentSlotType.HEAD, (RARE_PROP)));
     public static final RegistryObject<Item> POPOLON_CHESTPLATE = ITEMS.register("popolon_armor_2", () -> new EgoArmor(POPOLON, EquipmentSlotType.CHEST, (RARE_PROP)));

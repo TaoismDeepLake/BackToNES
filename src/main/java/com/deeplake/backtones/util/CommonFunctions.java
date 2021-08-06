@@ -414,4 +414,9 @@ public class CommonFunctions {
         return new AxisAlignedBB(origin.x - range, origin.y - MAX_BUILD_HEIGHT, origin.z - range,
                 origin.x + range, origin.y + MAX_BUILD_HEIGHT, origin.z + range);
     }
+
+    public static void activateCooldown(ItemStack stack, PlayerEntity playerEntity, int ticks)
+    {
+        playerEntity.getCooldowns().addCooldown(stack.getItem(), ticks);
+    }
 }

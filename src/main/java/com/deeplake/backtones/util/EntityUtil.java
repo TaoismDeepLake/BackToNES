@@ -1,5 +1,6 @@
 package com.deeplake.backtones.util;
 
+import com.deeplake.backtones.entities.IMjdsMonster;
 import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -48,11 +49,20 @@ public class EntityUtil {
         }
     };
 
+    public static final Predicate<Entity> IS_MJDS = new Predicate<Entity>()
+    {
+        public boolean apply(@Nullable Entity entity)
+        {
+            return entity instanceof IMjdsMonster;
+        }
+    };
+
+    //not null and not a spec player.
     public static final Predicate<Entity> NON_SPEC = new Predicate<Entity>()
     {
         public boolean apply(@Nullable Entity entity)
         {
-            return entity instanceof PlayerEntity && !((PlayerEntity)entity).isSpectator();
+            return entity != null && !entity.isSpectator();
         }
     };
 

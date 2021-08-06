@@ -71,7 +71,7 @@ public class MotorTileEntityBase extends TileEntity implements ITickableTileEnti
                         null,
                         new Vector3d(getBlockPos().getX() + 0.5f,
                                 getBlockPos().getY() + 1f,
-                                getBlockPos().getZ() + 0.5f), 0.5f, EntityUtil.ALL);
+                                getBlockPos().getZ() + 0.5f), 0.5f, EntityUtil.NON_SPEC);
 
                 for (Entity living:
                      entityList) {

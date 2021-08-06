@@ -27,9 +27,9 @@ public class BatRendererMJDS extends MobRenderer<BatEntity, BatModel> {
 
     protected void setupRotations(BatEntity p_225621_1_, MatrixStack p_225621_2_, float p_225621_3_, float p_225621_4_, float p_225621_5_) {
         if (p_225621_1_.isResting()) {
-            p_225621_2_.translate(0.0D, (double)-0.1F, 0.0D);
+            p_225621_2_.translate(0.0D, -1.286, 0.0D);
         } else {
-            p_225621_2_.translate(0.0D, (double)(MathHelper.cos(p_225621_3_ * 0.3F) * 0.1F), 0.0D);
+            p_225621_2_.translate(0.0D, -0.5, 0.0D);
         }
 
         super.setupRotations(p_225621_1_, p_225621_2_, p_225621_3_, p_225621_4_, p_225621_5_);

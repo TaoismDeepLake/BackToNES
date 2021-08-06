@@ -44,15 +44,15 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<EntityMJDSSlime>> MJDS_SLIME = ENTITY_TYPES.register(ENTITY_NAME_MJDS_SLIME,
             () -> EntityType.Builder.of(EntityMJDSSlime::new, EntityClassification.MONSTER)
-                    .sized(1.0F, 1.0F).clientTrackingRange(8).build(ENTITY_NAME_MJDS_SLIME));
+                    .sized(2.0F, 2.0F).clientTrackingRange(8).build(ENTITY_NAME_MJDS_SLIME));
 
     public static final RegistryObject<EntityType<EntityMJDSBat>> MJDS_BAT = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BAT,
             () -> EntityType.Builder.of(EntityMJDSBat::new, EntityClassification.MONSTER)
-                    .sized(0.5f, 0.9f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
+                    .sized(1.0f, 0.9f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
 
     public static final RegistryObject<EntityType<EntityMJDSMonsterBush>> MJDS_BUSH = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BUSH,
             () -> EntityType.Builder.of(EntityMJDSMonsterBush::new, EntityClassification.MONSTER)
-                    .sized(1f, 1f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BUSH));
+                    .sized(2f, 2f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BUSH));
 
     public static final RegistryObject<EntityType<EntityMJDSWorm>> MJDS_WORM = ENTITY_TYPES.register(ENTITY_NAME_MJDS_WORM,
             () -> EntityType.Builder.of(EntityMJDSWorm::new, EntityClassification.MONSTER)

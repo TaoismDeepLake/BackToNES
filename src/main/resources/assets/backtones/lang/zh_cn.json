@@ -97,8 +97,6 @@
 
   "block.backtones.box_7": "宝箱",
   "block.backtones.box_8": "宝箱",
-  "block.backtones.box_17": "宝箱",
-  "block.backtones.box_18": "宝箱",
 
   "block.backtones.covered_floor_forest": "软泥墙",
 
@@ -125,6 +123,7 @@
   "item.backtones.sabre": "克邪佩刀",
   "item.backtones.salt": "盐",
   "item.backtones.magical_rod": "无尽魔杖",
+  "item.backtones.cleanse_sword": "彻底删除之剑（创造模式用）",
 
   "backtones.advancements.angel_ring.description": "原作中可以把你传送回地牢的入口或者主城的雅典娜门口，是很重要的物品，本作中暂时未开发完成。",
   "backtones.advancements.angel_ring.title": "天使之戒（WIP）",

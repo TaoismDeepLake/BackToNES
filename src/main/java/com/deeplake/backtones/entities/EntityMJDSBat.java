@@ -2,6 +2,7 @@ package com.deeplake.backtones.entities;
 
 import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.EntityRegistry;
+import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
@@ -55,7 +56,7 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
     @Override
     public void onRemovedFromWorld() {
         super.onRemovedFromWorld();
-        if (!level.isClientSide)
+        if (!level.isClientSide && DesignUtil.canRevive(this))
         {
             //IdlFramework.Log("That is not dead which can eternal lie...");
             EntityRevivalMist mist = new EntityRevivalMist(EntityRegistry.REVIVE_MIST.get(), level);
@@ -117,6 +118,11 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
 
     protected float getAttackDamage() {
         return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
+    }
+
+    @Override
+    public BlockPos getRespawn() {
+        return spawnPoint;
     }
 
     static class AttackGoal extends Goal {

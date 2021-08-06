@@ -24,6 +24,9 @@ public class IDLNBTDef {
 	public static final String MAP_MARK_PASS = IdlFramework.MOD_ID + ".map.pass";
 	public static final String MAP_MARK_BOSS = IdlFramework.MOD_ID + ".map.boss";
 
+	//Revival
+	public static final String NO_REVIVE = "no_revive";
+
 	//zombie
 	public static final String IS_BABY = "IsBaby";
 
