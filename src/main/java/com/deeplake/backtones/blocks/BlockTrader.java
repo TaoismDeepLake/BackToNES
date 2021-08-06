@@ -109,7 +109,6 @@ public class BlockTrader extends BlockIndestructible implements INeedInit {
 
     @Override
     public void init() {
-        IdlFramework.Log("Init: %s", getDescriptionId());
         this.costItem = buyItemSupp.get();
         this.sellItem = sellItemSupp.get();
     }

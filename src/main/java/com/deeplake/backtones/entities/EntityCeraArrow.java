@@ -41,7 +41,7 @@ public class EntityCeraArrow extends EntityMJDSArrow {
     protected void onHitBlock(BlockRayTraceResult blockRayTraceResult) {
         super.onHitBlock(blockRayTraceResult);
         BlockState state = this.level.getBlockState(blockRayTraceResult.getBlockPos());
-        IdlFramework.Log("Hit %s@%s", state.getBlock().getRegistryName(), blockRayTraceResult.getBlockPos());
+        //IdlFramework.Log("Hit %s@%s", state.getBlock().getRegistryName(), blockRayTraceResult.getBlockPos());
         if (isBreakable(state.getBlock()))
         {
             //probably better if can be divided into 3 stages

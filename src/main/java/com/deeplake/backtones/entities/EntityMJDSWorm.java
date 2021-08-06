@@ -49,7 +49,7 @@ public class EntityMJDSWorm extends SpiderEntity implements IMjdsMonster {
         super.onRemovedFromWorld();
         if (!level.isClientSide)
         {
-            IdlFramework.Log("That is not dead which can eternal lie...");
+            //IdlFramework.Log("That is not dead which can eternal lie...");
             EntityRevivalMist mist = new EntityRevivalMist(EntityRegistry.REVIVE_MIST.get(), level);
             mist.setWith(this);
             mist.setPos(spawnPoint.getX()+0.5f, spawnPoint.getY()+1f, spawnPoint.getZ()+0.5f);
