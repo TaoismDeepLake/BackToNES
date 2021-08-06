@@ -34,7 +34,12 @@ public class EventsDropHelper {
 
         if (chance >= 1f || livingEntity.getRandom().nextFloat() < chance)
         {
-            event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.COIN.get()));
+            if (livingEntity.getRandom().nextInt(6) == 0) {
+                //Most enemy drops 5 arrow each stack, 1 coin each stack.
+                event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.QUIVER.get(), 5));
+            } else {
+                event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.COIN.get()));
+            }
         }
     }
 

@@ -15,10 +15,7 @@ import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.*;
@@ -183,7 +180,12 @@ public class EntityMJDSBat extends BatEntity implements IMjdsMonster  {
     }
 
     public boolean hurt(DamageSource p_70097_1_, float p_70097_2_) {
-        return this.isInvulnerableTo(p_70097_1_) ? false : super.hurt(p_70097_1_, p_70097_2_);
+        if (this.isInvulnerableTo(p_70097_1_)) {
+            return false;
+        } else if (p_70097_1_ == DamageSource.CRAMMING || p_70097_1_ == DamageSource.IN_WALL) {
+            return false;
+        }
+        return super.hurt(p_70097_1_, p_70097_2_);
     }
 
     protected SoundEvent getHurtSound(DamageSource p_184601_1_) {

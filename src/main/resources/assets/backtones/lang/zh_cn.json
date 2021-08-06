@@ -146,6 +146,30 @@
   "backtones.advancements.salt.description": "暂时没有效果。原作中用以进入复活房。",
   "backtones.advancements.salt.title": "盐",
 
+  "backtones.advancements.treasure_a_1.description": "我们发财了！",
+  "backtones.advancements.treasure_a_1.title": "神秘藏宝室1",
+
+  "backtones.advancements.treasure_b_1.description": "我们发财了！",
+  "backtones.advancements.treasure_b_1.title": "神秘藏宝室2",
+
+  "backtones.advancements.treasure_c_1.description": "我们发财了！",
+  "backtones.advancements.treasure_c_1.title": "神秘藏宝室3",
+
+  "backtones.advancements.dungeon_1.description": "（WIP）森林之中，获得蒙古剑，大战骨龙",
+  "backtones.advancements.dungeon_1.title": "地牢·其一·森林",
+
+  "backtones.advancements.dungeon_2.description": "（WIP）火山之中，获得气球，大战蜈蚣",
+  "backtones.advancements.dungeon_2.title": "地牢·其二·火山",
+
+  "backtones.advancements.dungeon_3.description": "（WIP）坟茔之中，获得地雷与滚火，大战BOSS",
+  "backtones.advancements.dungeon_3.title": "地牢·其三·坟茔",
+
+  "backtones.advancements.dungeon_4.description": "（WIP）晶洞之中，获得流火，大战BOSS",
+  "backtones.advancements.dungeon_4.title": "地牢·其四·晶洞",
+
+  "backtones.advancements.dungeon_5.description": "（WIP）最终城堡，冲破诅咒，大战大魔司教",
+  "backtones.advancements.dungeon_5.title": "地牢·其五·终末",
+
   "block.backtones.box_10": "宝箱",
   "block.backtones.box_11": "宝箱",
   "block.backtones.box_12": "宝箱",
@@ -153,7 +177,17 @@
   "block.backtones.box_14": "宝箱",
   "block.backtones.box_15": "宝箱",
   "block.backtones.box_16": "宝箱",
+  "block.backtones.box_17": "宝箱·藏宝室1 - 90x金币",
+  "block.backtones.box_18": "宝箱·藏宝室2 - 150x金币",
+  "block.backtones.box_19": "宝箱·藏宝室3 - 50x弹药",
   "block.backtones.box_9": "宝箱",
+
+
+  "block.backtones.box_20": "宝箱",
+  "block.backtones.box_21": "宝箱",
+  "block.backtones.box_22": "宝箱",
+  "block.backtones.box_23": "宝箱",
+  "block.backtones.box_24": "宝箱",
 
   "block.backtones.mjds_gate1": "门",
   "block.backtones.mjds_gate2": "门",
@@ -162,6 +196,7 @@
   "block.backtones.mjds_bgp1": "柱子",
   "block.backtones.mjds_bgp2": "柱子",
   "block.backtones.mjds_bgp3": "柱子",
+
 
   "block.backtones.motor_vertical": "天马行空（垂直）",
   "block.backtones.motor_horizontal": "天马行空（东西）",

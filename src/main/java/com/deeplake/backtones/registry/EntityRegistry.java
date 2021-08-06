@@ -48,7 +48,7 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<EntityMJDSBat>> MJDS_BAT = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BAT,
             () -> EntityType.Builder.of(EntityMJDSBat::new, EntityClassification.MONSTER)
-                    .sized(1F, 1f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
+                    .sized(0.5f, 0.9f).clientTrackingRange(5).build(ENTITY_NAME_MJDS_BAT));
 
     public static final RegistryObject<EntityType<EntityMJDSMonsterBush>> MJDS_BUSH = ENTITY_TYPES.register(ENTITY_NAME_MJDS_BUSH,
             () -> EntityType.Builder.of(EntityMJDSMonsterBush::new, EntityClassification.MONSTER)
