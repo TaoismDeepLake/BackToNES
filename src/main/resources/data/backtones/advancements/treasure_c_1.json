@@ -10,8 +10,8 @@
 						"translate": "backtones.advancements.treasure_c_1.description"
 				},
 				"hidden": true,
-				"show_toast": false,
-				"announce_to_chat": false,
+				"show_toast": true,
+				"announce_to_chat": true,
 				"frame": "task"
 		},
 		"parent": "backtones:root",
