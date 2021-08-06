@@ -47,10 +47,10 @@ public class EntityRevivalMist extends Entity {
         if (!level.isClientSide && isAlive())
         {
             //It will revive if it's outside the screen...
-            if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  16, EntityUtil.ALL).size() == 0)
+            if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  16, EntityUtil.NON_SPEC).size() == 0)
             {
                 //But will not revive when it's too far from players. Minecraft will despawn it, and thus keep cycling.
-                if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  64, EntityUtil.ALL).size() != 0)
+                if (EntityUtil.getEntitiesWithinAABB(level, EntityType.PLAYER, getEyePosition(0),  64, EntityUtil.NON_SPEC).size() != 0)
                 {
                     Entity entity = entityType.create(level);
                     if (entity instanceof LivingEntity)

@@ -4,6 +4,7 @@ import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -44,6 +45,14 @@ public class EntityUtil {
         public boolean apply(@Nullable Entity entity)
         {
             return entity != null;
+        }
+    };
+
+    public static final Predicate<Entity> NON_SPEC = new Predicate<Entity>()
+    {
+        public boolean apply(@Nullable Entity entity)
+        {
+            return entity instanceof PlayerEntity && !((PlayerEntity)entity).isSpectator();
         }
     };
 
