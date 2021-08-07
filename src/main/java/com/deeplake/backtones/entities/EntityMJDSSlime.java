@@ -13,6 +13,7 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
@@ -25,7 +26,7 @@ import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
 import static com.deeplake.backtones.util.IDLNBTDef.SPAWN_POINT;
 
 public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
-    public BlockPos spawnPoint;
+    public BlockPos spawnPoint = BlockPos.ZERO;
 
     public EntityMJDSSlime(EntityType<? extends SlimeEntity> p_i48552_1_, World p_i48552_2_) {
         super(p_i48552_1_, p_i48552_2_);
@@ -55,6 +56,14 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
     }
 
     @Override
+    public void remove(boolean keepData) {
+        //dont spawn little
+        this.removed = true;
+        if (!keepData)
+            this.invalidateCaps();
+    }
+
+    @Override
     public void onRemovedFromWorld() {
         super.onRemovedFromWorld();
         if (!level.isClientSide && DesignUtil.canRevive(this))
@@ -70,7 +79,10 @@ public class EntityMJDSSlime extends SlimeEntity implements IMjdsMonster {
     @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {
         super.readAdditionalSaveData(nbt);
-        spawnPoint = NBTUtil.readBlockPos(nbt.getCompound(SPAWN_POINT));
+        if (nbt != null && nbt.getCompound(SPAWN_POINT) != null)
+        {
+            spawnPoint = NBTUtil.readBlockPos(nbt.getCompound(SPAWN_POINT));
+        }
     }
 
     @Override
