@@ -4,6 +4,7 @@ import com.deeplake.backtones.IdlFramework;
 import com.deeplake.backtones.registry.ItemRegistry;
 import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,9 +35,10 @@ public class EventsDropHelper {
 
         if (chance >= 1f || livingEntity.getRandom().nextFloat() < chance)
         {
-            if (livingEntity.getRandom().nextInt(6) == 0) {
+            //should be 6 to balance, I just made ammo a little more
+            if (livingEntity.getRandom().nextInt(5) == 0) {
                 //Most enemy drops 5 arrow each stack, 1 coin each stack.
-                event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.QUIVER.get(), 5));
+                event.getDrops().add(livingEntity.spawnAtLocation(new ItemStack(ItemRegistry.QUIVER.get(), 5)));
             } else {
                 event.getDrops().add(livingEntity.spawnAtLocation(ItemRegistry.COIN.get()));
             }
