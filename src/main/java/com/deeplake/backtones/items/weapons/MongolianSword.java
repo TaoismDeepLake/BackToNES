@@ -1,5 +1,7 @@
 package com.deeplake.backtones.items.weapons;
 
+import com.deeplake.backtones.blocks.BlockBreakable;
+import com.deeplake.backtones.blocks.BlockCovered;
 import com.deeplake.backtones.registry.BlockRegistry;
 import com.deeplake.backtones.util.DesignUtil;
 import net.minecraft.block.BlockState;
@@ -15,7 +17,7 @@ public class MongolianSword extends BaseItemSword {
 //    }
 
     public float getDestroySpeed(ItemStack p_150893_1_, BlockState p_150893_2_) {
-        if (p_150893_2_.is(BlockRegistry.BREAKABLE_WALL.get()) || p_150893_2_.is(BlockRegistry.COVERED_WALL.get())) {
+        if (p_150893_2_.getBlock() instanceof BlockBreakable) {
             return 1200.0F;
         } else {
             return super.getDestroySpeed(p_150893_1_, p_150893_2_);
