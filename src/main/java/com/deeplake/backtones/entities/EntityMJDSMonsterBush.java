@@ -85,6 +85,10 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
     @Override
     public void addAdditionalSaveData(CompoundNBT nbt) {
         super.addAdditionalSaveData(nbt);
+        if (spawnPoint == null)
+        {
+            spawnPoint = getOnPos();
+        }
         nbt.put(SPAWN_POINT,  NBTUtil.writeBlockPos(spawnPoint));
     }
 
