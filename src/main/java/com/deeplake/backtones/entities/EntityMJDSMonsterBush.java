@@ -75,6 +75,13 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
         }
     }
 
+    @Override
+    public void remove(boolean keepData) {
+        //dont spawn little
+        this.removed = true;
+        if (!keepData)
+            this.invalidateCaps();
+    }
 
     @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {
