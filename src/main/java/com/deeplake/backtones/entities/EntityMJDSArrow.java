@@ -24,10 +24,13 @@ import net.minecraftforge.fml.network.NetworkHooks;
 
 import java.util.Arrays;
 
+import static com.deeplake.backtones.util.CommonDef.TICK_PER_SECOND;
+
 @SuppressWarnings("EntityConstructor")
 public class EntityMJDSArrow extends ArrowEntity {
 
     public boolean appreanceOnly = false;
+    int timeToLive = TICK_PER_SECOND * 10;
 
     public EntityMJDSArrow(EntityType<? extends ArrowEntity> entityType, World p_i50172_2_) {
         super(entityType, p_i50172_2_);
@@ -37,6 +40,19 @@ public class EntityMJDSArrow extends ArrowEntity {
         super(entityType, world);
         setPos(shooter.getX(), shooter.getEyeY() - (double)0.1F, shooter.getZ());
         this.setOwner(shooter);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!level.isClientSide)
+        {
+            timeToLive--;
+            if (timeToLive <= 0)
+            {
+                remove();
+            }
+        }
     }
 
     @Override
