@@ -75,6 +75,13 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
         }
     }
 
+    @Override
+    public void remove(boolean keepData) {
+        //dont spawn little
+        this.removed = true;
+        if (!keepData)
+            this.invalidateCaps();
+    }
 
     @Override
     public void readAdditionalSaveData(CompoundNBT nbt) {
@@ -85,6 +92,10 @@ public class EntityMJDSMonsterBush extends SlimeEntity implements IMjdsMonster {
     @Override
     public void addAdditionalSaveData(CompoundNBT nbt) {
         super.addAdditionalSaveData(nbt);
+        if (spawnPoint == null)
+        {
+            spawnPoint = getOnPos();
+        }
         nbt.put(SPAWN_POINT,  NBTUtil.writeBlockPos(spawnPoint));
     }
 
