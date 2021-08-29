@@ -31,6 +31,7 @@ import java.util.List;
 
 import static com.deeplake.backtones.util.CommonDef.CHUNK_MASK;
 import static com.deeplake.backtones.util.CommonDef.CHUNK_SIZE;
+import static com.deeplake.backtones.util.CommonFunctions.removeFromEventBus;
 import static com.deeplake.backtones.util.EntityUtil.ALL;
 import static com.deeplake.backtones.util.IDLNBTDef.*;
 
@@ -61,10 +62,10 @@ public class EntityDampingSphere extends Entity {
 
     public EntityDampingSphere(EntityType<?> p_i48580_1_, World p_i48580_2_) {
         super(p_i48580_1_, p_i48580_2_);
-        if (!level.isClientSide)
-        {
-            CommonFunctions.addToEventBus(this);
-        }
+//        if (!level.isClientSide)
+//        {
+//            CommonFunctions.addToEventBus(this);
+//        }
     }
 
     public boolean isInDistance(BlockPos pos)
@@ -73,7 +74,6 @@ public class EntityDampingSphere extends Entity {
                 && (pos.getZ() | CHUNK_MASK) == ((int)getZ() | CHUNK_MASK);
     }
 
-    //@OnlyIn(Dist.DEDICATED_SERVER)
     @SubscribeEvent
     public void onBlockChange(BlockEvent.BreakEvent breakEvent)
     {
@@ -203,5 +203,11 @@ public class EntityDampingSphere extends Entity {
         {
             CommonFunctions.addToEventBus(event.getEntity());
         }
+    }
+
+    @Override
+    public void remove() {
+        super.remove();
+        removeFromEventBus(this);
     }
 }

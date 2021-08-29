@@ -28,6 +28,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.Optional;
 
 import static com.deeplake.backtones.events.EventsBirthHelper.makeBannerShield;
+import static com.deeplake.backtones.util.CommonFunctions.removeFromEventBus;
 import static com.deeplake.backtones.util.IDLNBTDef.*;
 
 @Mod.EventBusSubscriber(modid = IdlFramework.MOD_ID)

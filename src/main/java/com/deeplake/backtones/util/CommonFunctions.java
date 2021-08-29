@@ -393,6 +393,11 @@ public class CommonFunctions {
         MinecraftForge.EVENT_BUS.register(target);
     }
 
+    public static void removeFromEventBus(Object target)
+    {
+        MinecraftForge.EVENT_BUS.unregister(target);
+    }
+
     public static ResourceLocation getResLoc(String key)
     {
         return new ResourceLocation(IdlFramework.MOD_ID, key);
